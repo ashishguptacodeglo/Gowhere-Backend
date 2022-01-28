@@ -385,3 +385,38 @@ position: absolute;
 .breadcrumb{
   background-color: unset;
 }
+.amenities {
+  padding: 40px;
+}
+
+
+.single-amenity  {
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+  outline: 1px solid #E2E2E2;
+  border-radius: 10px;
+  height: auto;
+  vertical-align: middle;
+  cursor: pointer;
+  display: flex;
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: 2%;
+}
+
+
+.amenity-image img {
+height: auto;
+width: 60%;
+}
+.amenity-image {
+  width: 12%;
+height: auto;
+text-align: center;
+}
+.amenity-title {
+  width: 80%;
+}
+
+.edit-amenity {
+  color: #1AB001;
+}
