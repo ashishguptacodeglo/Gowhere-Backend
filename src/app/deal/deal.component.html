@@ -1,0 +1,273 @@
+<section class="creation">
+  <div class="container">
+     <div class="row">
+         <div class="col-md-8">
+             <h4  style="font-size:28px;">Deals Creation</h4>
+             <div class="category">
+                <label>Deal Category</label>
+                       
+                <div style="border: none;"class="form-group">
+
+                  <!--Compaign button-->
+                  <div style="border: none;"class="form-control">
+                      <label class="radio">
+                          <!-- radio inline to inline both buttons in the same line-->
+                          <input type="radio" value="valueoff" name="option" [(ngModel)]="option">
+                          <!--mutually execlusive-->
+                          $ Value off
+                      </label>
+                      
+                
+                  </div>
+                  <div style="border: none;"class="form-control">
+                    <label class="radio">
+                        <input type="radio" value="script" name="option" [(ngModel)]="option">
+                        <!--To make the two buttons mutually execlusive we have to add (name="option") in both buttons -->
+                        Bogo
+                    </label>
+                </div>
+                <!-- price group -->
+                <div style="border: none;"class="form-control">
+                  <label class="radio">
+                      <input type="radio" value="soft" name="option" [(ngModel)]="option">
+                      <!--To make the two buttons mutually execlusive we have to add (name="option") in both buttons -->
+                      Price Drop
+                  </label>
+              </div>
+              <div style="border: none;"class="form-control">
+                <label class="radio">
+                    <input type="radio" value="library" name="option" [(ngModel)]="option">
+                    <!--To make the two buttons mutually execlusive we have to add (name="option") in both buttons -->
+                    Library
+                </label>
+            </div>
+            <!-- form starts here -->
+                  <form style="border: none;"class="example-form" *ngIf="option === 'valueoff'">
+                    <div class="panel ">
+                        <div class="panel-heading">
+                          <h3 class="panel-title">Deal Module</h3>
+                            <input type="text"  id="mycode" name="price" class="price"><select style="width: 65px;height: 48px;">
+                              <option value="">Currency</option>
+                              <option value="$">$</option>
+                              <option value="Rs">Rs</option>
+                          </select>
+                        </div>
+                    </div>
+                </form>   
+               <!-- bogo deal module -->
+               <form style="border: none;"class="example-form" *ngIf="option === 'script'">
+                <div class="panel ">
+                    <div class="panel-heading2">
+                        <h3 class="panel-title">Deal Module</h3>
+                        <h3 style="font-size: 14px;font-weight: 500;color: #444A4A;font-family: Gordita;">Buy <input type="text" id="text" name="no">Get <input type="text" id="text" name="no1">Free</h3>
+                    </div>
+        
+                  
+                </div>
+            </form>
+                <!-- price drop starts here -->
+                <form style="border: none;"class="example-form" *ngIf="option === 'soft'">
+                  <div class="panel d-flex flex-row bd-highlight mb-3 ">
+                      <div class="panel-heading3">
+                        <h3 class="panel-title">Deal Module</h3>
+                          <h3 style="width: 227px; height: 48px;margin-top: 20px;"class="panel-title">
+                            <ng-select [items]="soft"
+                            bindLabel="name"
+                            placeholder="Select Soft Drinks"
+                            [(ngModel)]="selectedSoft"> 
+                 </ng-select></h3>
+             
+                      </div>
+          
+                    
+                  </div>
+                  </form>
+              <!-- library starts here -->
+              <form style="border: none;"class="example-form" *ngIf="option === 'library'">
+                <div class="panel ">
+                    <div class="panel-heading4">
+                      <h3 class="panel-title">Deal Module</h3>
+                        <h3 style="width: 227px; height: 48px;margin-top: 20px;"class="panel-title">
+                          <ng-select [items]="library"
+                          bindLabel="name"
+                          placeholder="Select Library"
+                          [(ngModel)]="selectedLibrary">
+               </ng-select> </h3>
+                    </div>
+        
+                  
+                </div>
+            </form>
+                </div> 
+                 <h4>Deal Type</h4>
+                  <ng-select [items]="cities"
+                bindLabel="name"
+                placeholder="Select Deal"
+                [(ngModel)]="selectedCity">
+     </ng-select>
+
+                 <!-- <select style="width: 315px;height: 48px;font-size: 14px;font-weight: 500;font-family: Gordita;"name="cars" id="cars">
+                     <option value="out">Take-Out</option>
+                     <option value="in">Take-In</option>
+                   </select> -->
+
+                   <form class="checkbox"> 
+                     <label class="checkbox-inline">
+                       <input type="checkbox" value="">Grab’em
+                     </label>
+                     <label class="checkbox-inline">
+                       <input type="checkbox" value="">Grab’em
+                     </label>
+                   </form>
+                   <h4>Establishment Name</h4>
+                   <ng-select [items]="Establishment"
+                   bindLabel="name"
+                   placeholder="Select Establishment"
+                   [(ngModel)]="selectedEstablishment">
+        </ng-select>
+                   <h4>Address</h4>
+                   <input style="width: 727px;height: 48px;font-size: 14px;font-weight: 500;font-family: Gordita;"type="text" id="address" name="address" placeholder="Enter your address">
+                   <h4>Deal Type</h4>
+                   <ng-select [items]="deal"
+                bindLabel="name"
+                placeholder="Select Deal"
+                [(ngModel)]="selectedDeal">
+     </ng-select>
+                   <h4>Deal Caption</h4>
+                   <input style="width: 727px;height: 48px;font-size: 14px;font-weight: 500;font-family: Gordita;"type="text" id="deal" name="deal" placeholder="Enter your Deal Caption">
+                   <h4>Text Colour</h4>
+                   <input type="text" id="color" name="color" class="pick" placeholder="Pick a Color"><input style="width: 24px;;height: 24px;margin-left: -45px;"type="color" id="favcolor" name="favcolor" placeholder="pick a color" value="#ff0000"><br><br>
+       
+                   <div class="row">
+                     <div class="col-md-6">
+                         <h4>Duration</h4>
+                         <ng-select [items]="duration"
+                bindLabel="name"
+                placeholder="Select Duration"
+                [(ngModel)]="selectedDuration">
+     </ng-select>
+                     </div>
+                     <div class="col-md-6">
+                         <h4 style="margin-left: 60px;">Total Deal Count(optional)</h4>
+                         <ng-select [items]="count"
+                         bindLabel="name"
+                         placeholder="Select count"
+                         [(ngModel)]="selectedCount">
+              </ng-select>
+                     </div>
+                 </div>
+                 </div>
+                 <h4>Deal Banner (Upload Vedio or Image)</h4>
+                 <!-- <input type="file" id="file" name="file"  class="banner" title="Upload a deal banner">  -->
+                 <button type="button"  data-toggle="modal" data-target="#exampleModalCenter"class="btn-btn-success">Upload</button>
+                 <h4>Banner Gradient Colour</h4>
+                   <input style="width:315px;height: 48px;"type="text" id="color" name="color" placeholder="Pick a Color"><input style="width: 24px;;height: 24px;margin-left: -45px;"type="color" id="favcolor" name="favcolor" placeholder="pick a color" value="#ff0000"><br><br>
+                  <button type="reset" value="reset" class="btn-save">Save as a draft</button>
+                  <button type="save" value="submit" class="btn-publish">Publish Deal</button>
+         </div>
+             <div class="col-md-4">
+               <div class="img_mobile">
+              <img src="../../assets/images/mobile_frame@1x.png" alt="Noimagefound">
+               <h4 style="margin-left: 150px;">Preveiw</h4>
+              </div>
+             </div>
+     </div>
+ </div>
+ <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Deal Banner</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        <div class="nk_tabs">
+          <div class="banner_wraps">
+            <span class="banner_links" (click)="bannerChange('image_library')" [class]="{'active': page_banner=='image_library'}">all</span>
+            <span class="banner_links" (click)="bannerChange('image')" [class]="{'active': page_banner=='image'}">Upload Image</span>
+            <span class="banner_links" (click)="bannerChange('vedio')" [class]="{'active': page_banner=='vedio'}">Upload Video</span>
+           
+        </div>
+        </div>   
+     
+      <div class="tab-banner"[ngSwitch]="page_banner">
+ 
+        <ng-template [ngSwitchCase]="'image_library'">
+        <div class="image_lib">
+          <div class="row">
+            <div class="col-md-6">
+              <img src="../../assets/images/Bar and night clubes.png" alt="Go Where">
+            </div>
+            <div class="col-md-6">
+              <img src="../../assets/images/Bar and night clubes.png" alt="Go Where">
+            </div>
+          
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <img src="../../assets/images/Bar and night clubes.png" alt="Go Where">
+            </div>
+            <div class="col-md-6">
+              <img src="../../assets/images/Bar and night clubes.png" alt="Go Where">
+            </div>
+          
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <img src="../../assets/images/Bar and night clubes.png" alt="Go Where">
+            </div>
+            <div class="col-md-6">
+              <img src="../../assets/images/Bar and night clubes.png" alt="Go Where">
+            </div>
+          
+          </div>
+          <div class="row">
+            <div class="col-md-6">
+              <img src="../../assets/images/Bar and night clubes.png" alt="Go Where">
+            </div>
+            <div class="col-md-6">
+              <img src="../../assets/images/Bar and night clubes.png" alt="Go Where">
+            </div>
+          
+          </div>
+        </div>
+        </ng-template>
+        <ng-template [ngSwitchCase]="'image'">
+            <div class="upload_image">
+              <form action="/action_page.php">
+                <input type="file" id="myFile" name="filename">
+            
+              </form>
+              <!-- <span class="comment">Min: 360 * 640 (in pixels)    Max: 1080 * 1920</span> -->
+            </div>
+        </ng-template>
+        <ng-template [ngSwitchCase]="'vedio'">
+          <div class="upload_Vedio">
+            <form action="/action_page.php">
+              <input type="file" id="myFile" name="filename">
+          
+            </form>
+            <!-- <span class="comment">Min: 360 * 640 (in pixels)    Max: 1080 * 1920</span> -->
+          </div>
+        </ng-template>
+      </div>
+      </div>
+    
+    </div>
+  </div>
+</div>
+</section>
+
+
+
+<!-- new code -->
+
+   
+
+
+
+
+
+

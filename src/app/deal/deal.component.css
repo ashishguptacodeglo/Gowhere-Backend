@@ -1,0 +1,220 @@
+.animate-if {
+    background:white;
+    border:1px solid black;
+    padding:10px;
+  }
+  
+  .animate-if.ng-enter, .animate-if.ng-leave {
+    transition:all cubic-bezier(0.250, 0.460, 0.450, 0.940) 0.5s;
+  }
+  
+  .animate-if.ng-enter,
+  .animate-if.ng-leave.ng-leave-active {
+    opacity:0;
+  }
+  
+  .animate-if.ng-leave,
+  .animate-if.ng-enter.ng-enter-active {
+    opacity:1;
+  }
+  .btn-save{
+    font-size: 18px;
+    font-family: Gordita;
+    font-weight: 500;
+    margin-top: 30px;
+    margin-right: 50px;
+    border-radius: 5px;
+    padding:10px;
+    background-color: #fff;
+    border-color: #1AB001;
+    color: #1AB001;
+  }
+  .btn-publish{
+    font-size: 18px;
+    margin-top: 30px;
+    margin-right: 50px;
+    border-radius: 5px;
+    padding:10px;
+    background-color:#1AB001;
+    color: #fff;
+    font-family: Gordita;
+    font-weight: 500;
+  }
+  .banner{
+    border: solid 2px #000;
+    padding: 10px;
+    padding-left: 430px !important;
+    width: 650px;
+    height: 48px;
+  }
+  .pick{
+    width:315px;
+    height: 48px;
+    font-size: 14px;
+    font-weight: 600;
+    font-family: Gordita;
+    color: #8E8E93;
+  }
+  .checkbox{
+    padding-top: 5px;
+  }
+  .price input{
+    width:148px;
+    height:48px;
+    font-size: 14px;
+    font-family: Gordita;
+    font-weight: 600;
+    color:#444A4A;
+  }
+  .price{
+    width: 65px;
+     height: 48px;
+    
+  }
+.panel-heading2 input{
+  padding-top: 20px;
+  width: 60px;
+  height: 48px;
+}
+.radio{
+font-size: 14px;
+font-weight: 600;
+font-family: Gordita;
+color:#444A4A;
+border: solid 2px #E2E2E2;
+padding: 10px;
+width: 200px;
+    height: 48px;
+}
+.panel-heading, .panel-heading2,.panel-heading3, .panel-heading4{
+  padding-top: 50px;
+}
+.checkbox input[type=checkbox], .checkbox-inline input[type=checkbox], .radio input[type=radio], .radio-inline input[type=radio]{
+  position: unset !important;
+  margin-left: 0px !important;
+}
+.form-control{
+  padding: 0px !important;
+  margin-bottom: 20px;
+}
+h3.panel-title {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Gordita';
+    color: #444A4A;
+}
+  /* ng select css */
+
+  ::ng-deep .ng-dropdown-panel {
+    background: #fff;
+    border: 1px solid #CCCCCC;
+    box-shadow: 5px 5px 21px 0px rgb(211 211 211 / 50%);
+    border-radius: 5px;
+    top: 39px;
+}
+::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option {
+    padding: 9px 15px;
+    border-bottom: 1px solid rgb(204 204 204 / 30%);
+    white-space: normal !important;
+}
+::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items .ng-option:last-child {
+    border-bottom: none;
+}
+::ng-deep .ng-dropdown-panel .ng-dropdown-panel-items{
+    max-height: 265px !important;
+}
+::ng-deep .ng-select .ng-clear-wrapper {
+    display: none;
+}
+::ng-deep .ng-option-label {
+    font-size: 14px;
+    line-height: 20px;
+    color: #000;
+    font-family: 'Gotham';
+    font-weight: 400;
+}
+::ng-deep .ng-select-container.ng-has-value .ng-placeholder {
+    display: none;
+}
+::ng-deep .ng-select .ng-select-container {
+    height: 40px;
+    border: 1px solid #CCCCCC;
+    border-radius: 5px;
+    align-items: center;
+    padding: 12px 15px;
+}
+::ng-deep .ng-select.ng-select-single .ng-select-container .ng-value-container .ng-input {
+    top: 0;
+}
+::ng-deep .ng-select .ng-arrow-wrapper {
+    line-height: 0;
+}
+::ng-deep .ng-select .ng-arrow-wrapper .ng-arrow {
+    background: url(/assets/images/drop-down.png) no-repeat center;
+    width: 11px !important;
+    height: 6px !important;
+}
+::ng-deep .ng-select.has-error .ng-select-container {
+    box-shadow: 0 0 4px #fe0000;
+    border: 1px solid #fe0000 !important;
+}
+::ng-deep .ng-placeholder {
+    color: #8E8E93;
+    font-size: 14px;
+    line-height: 20px;
+}
+input[type="checkbox"] {
+  margin-right: 10px;
+}
+.creation h4 {
+  font-size: 14px;
+  color: #444A4A;
+  font-weight: 500;
+  font-family: Gordita;
+  padding-top: 20px;
+}
+.creation{
+  padding: 40px;
+  cursor: pointer;
+  }
+  button.btn-btn-success {
+    width: 650px;
+    height: 40px;
+    text-align: right;
+    background-color: #FFFFFF;
+    border-color: #E2E2E2;
+  }
+  span.status_links {
+    margin-right: 10px;
+    cursor: pointer;
+}
+.image_lib{
+  padding: 40px;
+}
+.image_lib img{
+  width: 100%;
+}
+span.banner_links {
+  margin-right: 10px;
+  font-size: 14px;
+  font-weight: 500;
+  font-family: 'Gordita';
+  cursor: pointer;
+  padding: 30px;
+}
+.upload_image {
+  padding: 100px;
+}
+.upload_Vedio {
+  padding: 100px;
+}
+span.comment {
+  position: fixed;
+  font-size: 14px;
+  font-family: 'Gordita';
+  font-weight: 400;
+  color: #444A4A;
+}
+.img_mobile img{
+  width: 100%;
+}

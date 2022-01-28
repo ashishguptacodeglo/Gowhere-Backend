@@ -1,0 +1,48 @@
+<section class="login_form">
+    <div class="container">
+        <div class="form-inner">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="login_img">
+                <img src="../../assets/images/Screen_1@1x.png" alt="Go where">
+                 </div>
+            </div>
+            <div class="col-md-6">
+                <div class="login_form">
+                    <img src="../../assets/images/gowhere-logo.png" alt="Go Where">
+
+                    <!-- form -->
+                    <form class="send-otp" *ngIf="tabIndex == 0" #otpForm="ngForm" (ngSubmit)="otpForm.form.valid && sendOtp()">
+                        <div class="input_form">
+                            <input type="email" name="email" #name="ngModel"  placeholder="Enter your email" required pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" [(ngModel)]="modal.email">
+                            <p class="error-msg" *ngIf="errorMsg?.length">{{errorMsg}}</p>
+                        </div>
+                        
+                       <div class="submit_button">
+                        <button type="submit" [disabled]="!otpForm.valid">Next</button>
+                    </div>
+                    
+                    </form>
+                    <form *ngIf="tabIndex != 0" name="form" (ngSubmit)="f1.form.valid && otplogin()" #f1="ngForm" novalidate>
+                        <h4>A security code has been sent to <br><span class="email-add">{{modal.email}}</span></h4>
+                        <span class="edit_emial" (click)="back()">Edit Email</span>
+                        <ng-otp-input #ngOtpInput class="text-center" (onInputChange)="onOtpChange($event)"  [config]="{length:4, allowNumbersOnly: true}" required></ng-otp-input>
+                        <span *ngIf="otpTimer != 0" class="otp">I didn’t receive a code {{otpTimer}}</span>
+                        <span *ngIf="otpTimer == 0" class="otp" (click)="sendOtp()">I didn’t receive a code</span>
+                        <p *ngIf="errorMsg?.length">{{errorMsg}}</p>    
+                        <div class="submit_button">
+                           <button type="submit" [disabled]="!f1.valid || isDisabled">Next</button>
+                        </div>
+                    </form>
+                    <!-- end form -->
+                </div>
+               
+
+                <span class="agreement">
+                    By signing in, you agree GoWhere Terms and Privacy
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+</section>

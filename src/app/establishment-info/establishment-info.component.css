@@ -1,0 +1,337 @@
+/* establishment component starts */
+.dashboard {
+    padding: 40px;
+    
+  }
+  .dashboard1{
+    font-size: 28px;
+    font-family: Gordita;
+    font-weight: 400;
+    color: #373737;
+  }
+  .add button{
+    border-color: Green #1AB001;
+  }
+  .card1{
+    border: solid 2px #1AB001;
+    box-shadow: 0px 2px #888888;
+    padding: 10px;
+    color: #fff;
+    background-color: #1AB001;
+     border-radius: 10px;
+  }
+  .card-body h2{
+    font-size: 14px;
+    font-family: Gordita;
+    font-weight: 500;
+    color: #373737;
+  }
+  
+  .card2{
+    border: solid 2px #239FA4;
+    box-shadow: 0px 2px #888888;
+    padding: 10px;
+    color: #fff;
+    background-color: #239FA4;
+     border-radius: 10px;
+  }
+  .card3{
+    border: solid 2px #23A476;
+    box-shadow: 0px 2px #888888;
+    padding: 10px;
+    color: #fff;
+    background-color: #23A476;
+     border-radius: 10px;
+  }
+  .card{
+    border-radius: 10px !important;
+  }
+  .first{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .first h4{
+    font-size: 14px;
+    font-family: Gordita;
+    font-weight: 500;
+    color: #262632;
+  }
+  .second{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .second h4{
+    font-size: 14px;
+    font-family: Gordita;
+    font-weight: 500;
+    color: #262632;
+  }
+  .third{
+    padding-top: 20px;
+    padding-bottom: 20px;
+  }
+  .third h4{
+    font-size: 14px;
+    font-family: Gordita;
+    font-weight: 500;
+    color: #262632;
+  }
+  .vl {
+    border-left: 2px solid #E2E2E2;
+    height: 55px;
+  }
+  .mt-100 {
+    margin-top: 200px
+  }
+  
+  .progress {
+    width: 150px;
+    height: 150px !important;
+    float: left;
+    line-height: 150px;
+    background: none;
+    margin: 20px;
+    box-shadow: none;
+    position: relative
+  }
+  
+  .progress:after {
+    content: "";
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    border: 12px solid #fff;
+    position: absolute;
+    top: 0;
+    left: 0
+  }
+  
+  .progress>span {
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    z-index: 1;
+  }
+  
+  .progress .progress-left {
+    left: 0
+  }
+  
+  .progress .progress-bar {
+    width: 100%;
+    height: 100%;
+    background: none;
+    border-width: 12px;
+    border-style: solid;
+    position: absolute;
+    top: 0
+  }
+  
+  .progress .progress-left .progress-bar {
+    left: 100%;
+    border-top-right-radius: 80px;
+    border-bottom-right-radius: 80px;
+    border-left: 0;
+    -webkit-transform-origin: center left;
+    transform-origin: center left
+  }
+  
+  .progress .progress-right {
+    right: 0
+  }
+  
+  .progress .progress-right .progress-bar {
+    left: -100%;
+    border-top-left-radius: 80px;
+    border-bottom-left-radius: 80px;
+    border-right: 0;
+    -webkit-transform-origin: center right;
+    transform-origin: center right;
+    animation: loading-1 1.8s linear forwards
+  }
+  
+  .progress .progress-value {
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    background: #fff;
+    font-size: 24px;
+    color: #000;
+    line-height: 135px;
+    text-align: center;
+    position: absolute;
+    top: 5%;
+    left: 5%
+  }
+  
+  .progress.blue .progress-bar {
+    border-color: #409C3F
+  }
+  
+  .progress.blue .progress-left .progress-bar {
+    animation: loading-2 1.5s linear forwards 1.8s
+  }
+  
+  .progress.yellow .progress-bar {
+    border-color: #fdba04
+  }
+  
+  .progress.yellow .progress-right .progress-bar {
+    animation: loading-3 1.8s linear forwards
+  }
+  
+  .progress.yellow .progress-left .progress-bar {
+    animation: none
+  }
+  
+  @keyframes loading-1 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+  
+    100% {
+        -webkit-transform: rotate(180deg);
+        transform: rotate(180deg)
+    }
+  }
+  
+  @keyframes loading-2 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+  
+    100% {
+        -webkit-transform: rotate(144deg);
+        transform: rotate(144deg)
+    }
+  }
+  
+  @keyframes loading-3 {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg)
+    }
+  
+    100% {
+        -webkit-transform: rotate(135deg);
+        transform: rotate(135deg)
+    }
+  }
+  section.percentage {
+    background-color: #F9F9F9;
+    padding-bottom: 30px;
+  }
+  .estab_list{
+    padding-top: 20px;
+    padding-left: 20px;
+    }
+    .estab_list h4{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 18px;
+    font-family: Gordita;
+    font-weight: 500;
+    color: #4A4A4A;
+    }
+    .estab_list tr ,th{
+    border: solid 2px #F7F7F7;
+    background-color:#F7F7F7;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444A4A;
+    text-align: center !important;
+    font-family: Gordita;
+    padding-left: 40px;
+    margin-top: 20px;
+    width: 1125px;
+      height: 60px;
+    
+    }
+    
+    .estab_list td{
+    
+    background-color:#FFFFFF;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #444A4A;
+    text-align: center;
+    font-family: Gordita;
+    padding-left: 40px;
+    margin-top: 20px;
+    width: 26px;
+      height: 14px;
+      border-radius: 10px;
+      border-block: solid 2px #E2E2E2;
+    
+    }
+    .estab_list{
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-bottom: 40px;
+    }
+    .list{
+      padding: 40px;
+    }
+    .form-select {
+      background-color: #449B44;
+      padding:10px;
+      border-radius:8px;
+      color: #FFFFFF;
+    }
+    .filter{
+     
+        margin-top: 7px;
+        border-color: Green #1AB001;
+      }
+      .modal-body h5{
+        text-align: center;
+      }
+      .choice {
+        margin: 0 auto;
+        display: table;
+        padding: 30px;
+        cursor: pointer;
+    }
+    .rester h4{
+      text-align: center;
+      font-size: 14px;
+      font-family: Gordita;
+      font-weight: 400;
+      color: #444A4A;
+    }
+    .bar h4{
+      text-align: center;
+      font-size: 14px;
+      font-family: Gordita;
+      font-weight: 400;
+      color: #444A4A;
+    }
+    span.status_links {
+      cursor: pointer;
+      padding: 40px;
+      padding-left: 65px;
+  }
+  .status_wraps {
+    margin-top: 20px;
+    margin-left: -60px;
+}
+.page_tabs .links.active {
+  border-color: #1AB001;
+    font-weight: 500;
+}
+.search-hero {
+  width: 240px;
+  height: 36px;
+  background-color: #1AB001;
+}
+.status_links .links.active {
+  border-color: #1AB001;
+    font-weight: 500;
+}
+  

@@ -1,0 +1,86 @@
+<nav class="header navbar navbar-expand-lg">
+    <div class="brand-logo">
+        <a class="navbar-brand" href="#">
+          <img src="/assets/images/gowhere-logo.png">
+        </a>
+        <button class="btn btn-dark d-inline-block d-lg-none toggle-btn" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-controls="collapsibleNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <i class="fas fa-align-justify"></i>
+        </button>
+        </div>
+        <div class="collapse navbar-collapse nav-menu" id="collapsibleNavbar">
+          <ul class="navbar-nav ml-auto">
+            <li class="nav-item"> 
+              <a class="nav-link" href="#"><span class="info">Contact Support</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="icon"><img alt="icon" src="/assets/images/prifile-iconnew1.png"></span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#"><span class="icon"><img alt="icon" src="./assets/media/navigation/notifications.png"></span></a>
+            </li>    
+          </ul>
+      </div>  
+</nav>
+<div class="sidebar"  [class]="{'collapse-navbar' : this.collapse}">
+    <div class="inner-sidebar">
+        <ul class="list-unstyled components" id="main-sidebar">
+			<li  routerLinkActive="is-active">
+                <a routerLink="establishment-info">
+                    <span class="icon"><img alt="icon" class="unactive-img" src="/assets/images/establishment.svg"><img alt="icon" class="active-img" src="/assets/images/establishment-white.svg"></span>
+                    <span class="nav-text">Establishment Info</span>
+                </a>
+            </li>
+		    <li  routerLinkActive="is-active">
+                <a routerLink="deal-management">
+                    <span class="icon"><img alt="icon" class="unactive-img" src="/assets/images/deals.svg"><img alt="icon" class="active-img" src="/assets/images/deals-white.svg"></span>
+                    <span class="nav-text">Deals Management</span>
+                </a>
+            </li>
+            <li  routerLinkActive="is-active">
+                <a routerLink="establishment-support">
+                    <span class="icon"><img alt="icon" class="unactive-img" src="/assets/images/support.svg"><img alt="icon" class="active-img" src="/assets/images/support-white.svg"></span>
+                    <span class="nav-text">Establishment Support</span>
+                </a>
+            </li>
+            <li  routerLinkActive="is-active">
+                <a routerLink="save-plate">
+                    <span class="icon"><img alt="icon" class="unactive-img" src="/assets/images/save.svg"><img alt="icon" class="active-img" src="/assets/images/save-white.svg"></span>
+                    <span class="nav-text">Save a Plate</span>
+                </a>
+            </li>
+            <li  routerLinkActive="is-active">
+                <a routerLink="backend-user">
+                    <span class="icon"><img alt="icon" class="unactive-img" src="/assets/images/backend.svg"><img alt="icon" class="active-img" src="/assets/images/backend-white.svg"></span>
+                    <span class="nav-text">Backend Users</span>
+                </a>
+            </li>
+            <li  routerLinkActive="is-active">
+                <a routerLink="#">
+                    <span class="icon"><img alt="icon" class="unactive-img" src="/assets/images/transaction.svg"><img alt="icon" class="active-img" src="/assets/images/transaction-white.svg"></span>
+                    <span class="nav-text">Transactions</span>
+                </a>
+            </li>
+            <li  routerLinkActive="is-active">
+                <a routerLink="#">
+                    <span class="icon">
+                        <img alt="icon" class="unactive-img" src="/assets/images/report.svg">
+                        <img alt="icon" class="active-img" src="/assets/images/report-white.svg"></span>
+                    <span class="nav-text">Report</span>
+                </a>
+            </li>
+            <li  routerLinkActive="is-active">
+                <a routerLink="category-Management">
+                    <span class="icon">
+                        <img alt="icon" class="unactive-img" src="/assets/images/report.svg">
+                        <img alt="icon" class="active-img" src="/assets/images/report-white.svg"></span>
+                    <span class="nav-text">Category Management</span>
+                </a>
+            </li>
+            
+        </ul>    
+        <div class="collapse-btn">
+            <button type="button" class="arrow-btn" (click)="collapsenavbar()">
+            </button>
+        </div>
+    </div>
+</div>

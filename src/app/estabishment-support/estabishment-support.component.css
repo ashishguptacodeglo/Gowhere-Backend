@@ -1,0 +1,621 @@
+.modal-header h5{
+    font-size: 28px;
+    font-weight: 500;
+    color: #444A4A;
+    font-family: Gordita;
+}
+label {
+    font-size: 14px;
+    font-family: Gordita;
+    font-weight: 500;
+    color: #444A4A;
+    padding: 5px;
+    margin-top: 10px;
+}
+/* tickets module starts */
+.tickets{
+    padding: 40px;
+    
+    }
+    .ticket1 h2{
+    width: 169px;
+    height: 28px;
+    font-family: Gordita;
+    font-weight: 400;
+    font-size: 28px;
+    color: #444A4A;
+    margin-left: 25px;
+    }
+    
+    
+    
+    .content_ticket tr ,th{
+    border: solid 2px #F7F7F7;
+    background-color:#F7F7F7;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444A4A;
+    text-align: center !important;
+    font-family: Gordita;
+    padding-left: 40px;
+    margin-top: 20px;
+    width: 1125px;
+      height: 60px;
+    
+    }
+    
+    .content_ticket td{
+    
+    background-color:#FFFFFF;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #444A4A;
+    text-align: center;
+    font-family: Gordita;
+    padding-left: 0px;
+    margin-top: 20px;
+    width: 26px;
+      height: 14px;
+      border-radius: 10px;
+      border-block: solid 2px #E2E2E2;
+    
+    }
+    .content_ticket{
+    margin-left: 40px;
+    margin-right: 40px;
+    }
+    button.btn.btn-secondary {
+        background-color: #1AB001;
+    }
+    button.btn.btn-primary {
+        background-color: #E6E6E6;
+        color: #000;
+        border-color: #E6E6E6;
+    }
+    .modal-footer {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding: 0.75rem;
+        border-top: 1px solid #dee2e6;
+        border-bottom-right-radius: calc(0.3rem - 1px);
+        border-bottom-left-radius: calc(0.3rem - 1px);
+    }
+    .issue i{
+        color: #4086F4;
+    }
+    .slip i{
+        color: #FF0000;
+    }
+    .form-select {
+        background-color: #449B44;
+        padding:10px;
+        border-radius:8px;
+        color: #FFFFFF;
+      }
+      /* establishment support starts here */
+.establishment{
+    padding-top: 40px;
+    
+    }
+    .establishment1 h2{
+    width: 169px;
+    height: 28px;
+    font-family: Gordita;
+    font-weight: 400;
+    font-size: 22px;
+    color: #444A4A;
+    margin-left: 25px;
+    }
+    
+    
+    
+    .content_establishment tr ,th{
+    border: solid 2px #F7F7F7;
+    background-color:#F7F7F7;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444A4A;
+    text-align: center !important;
+    font-family: Gordita;
+    padding-left: 40px;
+    margin-top: 20px;
+    width: 1125px;
+      height: 60px;
+    
+    }
+    
+    .content_establishment td{
+    
+    background-color:#FFFFFF;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #444A4A;
+    text-align: center;
+    font-family: Gordita;
+    padding-left: 0px;
+    margin-top: 20px;
+    width: 26px;
+      height: 14px;
+      border-radius: 10px;
+      border-block: solid 2px #E2E2E2;
+    
+    }
+    .content_establishment{
+    margin-left: 40px;
+    margin-right: 40px;
+    }
+    /* profile */
+    .profile h4{
+    padding-top: 40px;
+    }
+    
+    .mat-tab-group {
+    margin-bottom: 48px;
+    }
+    .mat-tab label{
+    font-size: 50px !important;
+    
+    }
+    .nnk input{
+    border: solid 3px #F7F7F7;
+      background: #F7F7F7;
+      padding: 5px;
+      font-size: 18px;
+      font-family: Gordita;
+      color: #444A4A;
+      font-weight: 600;
+      width: 1,312px;
+      height: 48px;
+      margin-bottom: 25px;
+    }
+    .nnk h4{
+    margin-top: 0px;
+      padding-bottom: 20px;
+      font-size: 18px;
+      font-family: Gordita;
+      color: #444A4A;
+      font-weight: 600;
+    }
+    .s-2 button{
+    width: 175px;
+    height: 50px;
+    color: Green #1AB001;
+    border: solid 2px #1AB001;
+      margin-right: 45px;
+      border-radius: 10px;
+    font-size: 18px;
+    color: #1AB001;
+    }
+    .s-3 button{
+    width: 175px;
+    height: 50px;
+    color: Green #1AB001;
+    border: solid 2px #1AB001;
+      margin-right: 45px;
+      border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    background-color: #1AB001;
+    }
+    
+    
+    .coperate h3{
+    font-size: 28px;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    }
+    .time{
+    margin-right: 300px;
+    }
+    .time h4{
+    font-size: 18px;
+    font-family: Gordita;
+    font-weight: 700;
+    color: 3. #444A4A #444A4A;
+    
+    }
+    .time h6{
+    font-size: 14px;
+    font-family: Gordita;
+    font-weight: 600;;
+    color: #444A4A;
+    }
+    .drop select{
+    width: 120px;
+    height: 48px;
+    font-size: 14px;
+    color: #9EA1A2;
+    font-family: Gordita;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 20px;
+    }
+    .bar select{
+    width: 120px;
+    height: 48px;
+    font-size: 14px;
+    color: #9EA1A2;
+    font-family: Gordita;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 20px;
+    }
+    .lunch select{
+    width: 120px;
+    height: 48px;
+    font-size: 14px;
+    color: #9EA1A2;
+    font-family: Gordita;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 20px;
+    }
+    .dinner select{
+    width: 120px;
+    height: 48px;
+    font-size: 14px;
+    color: #9EA1A2;
+    font-family: Gordita;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 20px;
+    }
+    .happy select{
+    width: 120px;
+    height: 48px;
+    font-size: 14px;
+    color: #9EA1A2;
+    font-family: Gordita;
+    font-weight: 400;
+    border-radius: 5px;
+    padding: 5px;
+    margin-right: 20px;
+    }
+    .tuesday{
+    margin-left: 40px;
+    }
+    .wednesday{
+    margin-left: 40px;
+    }
+    .thursday{
+    margin-left: 40px;
+    }
+    .friday{
+    margin-left: 40px;
+    }
+    .saturday{
+    margin-left: 10px;
+    }
+    .sunday{
+    margin-left: 10px;
+    }
+    p {
+    font-family: Lato;
+    }
+    
+    .app-centered-radios {
+    width: 100%;
+    justify-content: center;
+    border: 1px solid deeppink;
+    }
+    .select{
+    padding-top: 20px;
+    
+    }
+    .select h4{
+    font-size: 14px;
+    font-family: Gordita;
+    font-weight: 500;
+    color:#444A4A;
+    
+    padding-bottom: 20px;
+      padding-top: 20px;
+    }
+    .select label{
+    margin-right: 30px;
+    padding-bottom: 10px;
+    }
+    .status label{
+    margin-right: 30px;
+    padding-bottom: 10px;
+    }
+    .select input[type=radio]{
+    margin-right: 5px;
+    }
+    .status input[type=radio]{
+    margin-right: 5px;
+    }
+    
+    .select h2{
+    font-size: 18px;
+    font-family: Gordita;
+    font-weight: 500;
+    color:#444A4A;
+    padding: 10px;
+    background-color: #F7F7F7;
+    }
+    .select a{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Gordita;
+    color: #1AB001;
+    }
+    .select i{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: Gordita;
+    color: #1AB001;
+    border: solid 1px #1AB001;
+    border-radius: 25px;
+    padding: 5px;
+    }
+    .select select{
+    width: 285px;
+    height:48px ;
+    background-color: #F9F9F9;
+    font-size: 14px;
+    font-family: Gordita;
+    font-weight: 500;
+    margin-bottom: 20px;
+    }
+    .menu h4{
+    padding-top: 10px;
+    padding-bottom: 10px;
+    }
+    .menu button{
+    margin-top: 20px;
+    margin-bottom: 20px;
+    width: 150px;
+    height: 36px;
+    background-color: #FFFFFF;
+    color: #444A4A;
+    font-size: 14px;
+    font-weight: 500;
+    font-family: Gordita;
+    }
+    .nnk{
+    
+    padding-bottom: 40px;
+    
+    }
+    .new{
+    padding-top: 20px;
+    font-size: 16px;
+    font-family: Gordita;
+    font-weight: 500;
+    color: #1AB001 !important;
+    }
+    .new_sec input{
+    border: solid 3px #F7F7F7;
+      background: #F7F7F7;
+      padding: 5px;
+      font-size: 18px;
+      font-family: Gordita;
+      color: #444A4A;
+      font-weight: 600;
+      width: 1,312px;
+      height: 48px;
+      margin-bottom: 25px;
+    }
+    .new_sec h4{
+    margin-top: 0px;
+      padding-bottom: 20px;
+      font-size: 18px;
+      font-family: Gordita;
+      color: #444A4A;
+      font-weight: 600;
+    }
+    .new_sec{
+    
+    padding-bottom: 40px;
+    padding-left: 40px;
+    padding-top: 40px;
+    width: 775px;
+    }
+    .status_new{
+    padding-left: 40px;
+    padding-bottom: 40px;
+    }
+    .status_new label{
+    margin-right: 30px;
+    padding-bottom: 10px;
+    }
+    
+    .status_new input[type=radio]{
+    margin-right: 5px;
+    }
+    
+    .menu{
+    padding-left: 40px;
+    }
+    .blank{
+    padding-left: 40px;
+    }
+    .save{
+    padding-left: 40px;
+    }
+    .estab_list{
+    padding-top: 20px;
+    padding-left: 20px;
+    }
+    .estab_list h4{
+    padding-bottom: 20px;
+    padding-top: 20px;
+    font-size: 18px;
+    font-family: Gordita;
+    font-weight: 500;
+    color: #4A4A4A;
+    }
+    .estab_list tr ,th{
+    border: solid 2px #F7F7F7;
+    background-color:#F7F7F7;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 600;
+    color: #444A4A;
+    text-align: center !important;
+    font-family: Gordita;
+    padding-left: 40px;
+    margin-top: 20px;
+    width: 1125px;
+      height: 60px;
+    
+    }
+    
+    .estab_list td{
+    
+    background-color:#FFFFFF;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #444A4A;
+    text-align: center;
+    font-family: Gordita;
+    padding-left: 40px;
+    margin-top: 20px;
+    width: 26px;
+      height: 14px;
+      border-radius: 10px;
+      border-block: solid 2px #E2E2E2;
+    
+    }
+    .estab_list{
+    margin-left: 40px;
+    margin-right: 40px;
+    padding-bottom: 40px;
+    }
+    form.example input[type=text] {
+    padding: 10px;
+    font-size: 17px;
+    border: 1px solid #1AB001;
+    float: left;
+    width: 75%;
+    background: #fff;
+    border-right: none;
+    }
+    
+    form.example button {
+    float: left;
+    width: 20%;
+    padding: 10px;
+    background: #fff;
+    color: #000;
+    font-size: 17px;
+    border: 1px solid #1AB001;
+    border-left: none;
+    cursor: pointer;
+    }
+    
+    form.example button:hover {
+    background: #0b7dda;
+    }
+    
+    form.example::after {
+    content: "";
+    clear: both;
+    display: table;
+    }
+    .filter button{
+    width: 118px;
+    height: 36px;
+    background-color: #fff;
+    color: #444A4A;
+    font-size: 14px;
+    font-weight: 500;
+    border-radius: 5px;
+    border-color: Green #1AB001 !important;
+    
+    }
+    .filter{
+    margin-right: -500px;
+      margin-top: 7px;
+      border-color: Green #1AB001;
+    }
+    .add{
+    border-color: Green #1AB001 !important;
+    }
+    .mat-tab-label-content{
+    font-size: 14px;
+    font-family: Gordita;
+    color: #444A4A;
+    font-weight: 400;
+    }
+    .mat-tab-group {
+    margin-bottom: 48px;
+    }
+    .heading h4{
+    font-size: 28px;
+    font-family: Gordita;
+    color: #373737;
+    padding-top: 40px;
+    }
+    .log{
+    padding: 5px;
+    background-color: #F7F7F7;
+    font-size:18px;
+    color: #444A4A;
+    font-weight: 500;
+    }
+    .w3-panel{
+    border: 1px solid;
+    padding: 10px;
+    box-shadow: 0px 4px #E2E2E2;
+    padding-top: 40px;
+    padding-bottom: 20px;
+    margin: 40px;
+    }
+    .button{
+    padding-right: 20px;
+    }
+    .menu{
+    padding-top: 40px; 
+    }
+    .menu h4{
+    margin-top: 20px;
+    }
+    listing td,tr{
+    text-align: center;
+    }
+    /*Tab CSS*/
+    .page_tabs {
+      background-color: #fff;
+        padding: 10px 30px;
+        position: fixed;
+        width: 100%;
+        z-index: 9;
+        top: 75px;
+        border-bottom: #E7E7E7;
+        box-shadow: 3px 3px 9px 0px rgb(218 218 218 / 3%);
+    }
+    .page_tabs .links {
+      font-size: 16px;
+        line-height: 16px;
+        font-weight: 400;
+        padding: 10px 7px;
+        position: relative;
+        border-bottom: 3px solid transparent;
+        margin: 0 0 0 40px;
+        display: inline-block;
+        vertical-align: middle;
+        cursor: pointer;
+        color: #444A4A;
+        min-height: 40px;
+    }
+    .page_tabs .links.active {
+      border-color: #1AB001;
+        font-weight: 500;
+    }
+    .tab-content {
+      padding-top: 60px;
+    }
+    

@@ -1,0 +1,423 @@
+<div class="page_tabs">
+    <div class="wraps">
+        <span class="links" (click)="tabChange('dashboard')" [class]="{'active': page=='dashboard'}">Dashboard</span>
+        <span class="links" (click)="tabChange('management')" [class]="{'active': page=='management'}">Management</span>
+        <span class="links" (click)="tabChange('library')" [class]="{'active': page=='library'}">Deals Library</span>
+        <span class="links" (click)="tabChange('images')" [class]="{'active': page=='images'}">Images</span>
+    </div>
+  </div>   
+  <div class="tab-content" [ngSwitch]="page">
+  
+    <ng-template [ngSwitchCase]="'dashboard'">
+      <section class="deal">
+        <div class="d-flex justify-content-between">
+            <div class="deal1">
+            <h2>Deals Managment</h2>
+        </div>
+        <div class="choose">
+        <select id="option">
+            <option value="volvo">La Casa Del Pueblo </option>
+            <option value="saab">La Casa Del Pueblo </option> 
+            <option value="vw">La Casa Del Pueblo </option>
+            <option value="audi" selected>La Casa Del Pueblo </option>
+          </select>
+        </div>
+        <div class="add">
+          <a routerLink="/deal" routerLinkActive="active"><button type="button">Add new</button></a>
+          
+        </div>  
+        </div>
+        
+    </section>
+    
+      <section class="status">
+          <div class="container">
+              <div class="row">
+                  <div class="col-md-6">
+                      <h4>Status Overveiw</h4>
+                      <div class="row">
+                        <div class="col-md-4">
+                          <div class="pie">
+                            <div [hidden]="!chart">
+                              <canvas id="canvas"></canvas>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-8">
+                          <div class="Overveiw">
+                            <table>
+                      
+                              <tr>
+                                  <td align="left">Price drop deals </td>
+                                  <td align="right">15 % </td>
+                              </tr>
+                              <tr>
+                                  <td align="left">Year end sales </td>
+                                  <td align="right">15 % </td>
+                              </tr>
+                              <tr>
+                                  <td align="left">Free delivery deals </td>
+                                  <td align="right">15 % </td>
+                              </tr>
+                              <tr>
+                                  <td align="left">Christmas Special </td>
+                                  <td align="right">15 % </td>
+                              </tr>
+                              <tr>
+                                  <td align="left">Price drop deals </td>
+                                  <td align="right">15 % </td>
+                              </tr>
+                             
+                          </table>
+                          </div>
+                        </div>
+                      </div>
+                     
+              </div>
+                  <div class="col-md-6">
+                      <h4>App Platform Overveiw</h4>
+                      <div class="app">
+                        
+                          <table>
+                              <tr>
+                                  <th scope="col">Deal Name</th>
+                                  <th scope="col">IOS users</th>
+                                  <th scope="col">Android Users</th>
+                              </tr><br/>
+                              <tr>
+                                  <td align="left">Price drop deals </td>
+                                  <td align="right"><div class="progress">
+                                    <div class="progress-bar" style="width:70%"></div>
+  
+                                    </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td align="left">Year end sales</td>
+                                  <td align="right"><div class="progress">
+                                      <div class="progress-bar" style="width:70%"></div>
+                                    </div>
+                                  </td>
+                              </tr>
+                              <tr>
+                                  <td>Free delivery deals</td>
+                                  <td align="right"><div class="progress">
+                                    <div class="progress-bar" style="width:70%"></div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                  <td>Christmas Special</td>
+                                  <td align="right"><div class="progress">
+                                    <div class="progress-bar" style="width:70%"></div>
+                                  </div>
+                                </td>
+                              </tr>
+                              <tr>
+                                  <td>New year Eve</td>
+                                  <td align="right"><div class="progress">
+                                    <div class="progress-bar" style="width:70%"></div>
+                                  </div>
+                                </td>
+                              </tr>
+                          </table>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </section>
+      <section class="table_format">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <h4>Deal Module</h4>
+              <table datatable>
+                <thead>
+                  <tr>
+                    <th class="no-sorting">Num</th>
+                    <th>Deal Name</th>
+                    <th>No. of Sales
+                      on iOS</th>
+                      <th>No. of Sales
+                        on Android</th>
+                    <th>Descriptions</th>
+                    <th>Valid Till</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>1</td>
+                <td  style="color: #007AFF;">50% Offer</td>
+                <td>1452</td>
+                <td>1452</td>
+                <td>Lorem ipsum dolor si</td>
+                <td>Nov 2020</td>
+                  </tr>
+                  <tr>
+                    <td>2</td>
+                    <td  style="color: #007AFF;">20% off. for all org</td>
+                    <td>1452</td>
+                    <td>1452</td>
+                    <td>Lorem ipsum dolor si</td>
+                    <td>Dec 2020</td>
+                    
+                  
+                </tr><br/>
+                <tr>
+                    <td>3</td>
+                    <td  style="color: #007AFF;">Buy 1 Get 1</td>
+                    <td>1452</td>
+                    <td>1452</td>
+                    <td>Lorem ipsum dolor si</td>
+                    <td>Dec 2020</td>
+                   
+                  
+                </tr><br/>
+                <tr>
+                    <td>4</td>
+                    <td style="color: #007AFF;">Buy 2 Get 1</td>
+                    <td>1452</td>
+                    <td>1452</td>
+                    <td>Lorem ipsum dolor si</td>
+                    <td>Dec 2020</td>
+                  
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td  style="color: #007AFF;">Buy 2 Get 1</td>
+                    <td>1452</td>
+                    <td>1452</td>
+                    <td>Lorem ipsum dolor si</td>
+                    <td>Jan 2021</td>
+                  
+                  
+                </tr>
+                <h4>Other Deals</h4>
+                <tr>
+                    <td>6</td>
+                    <td  style="color: #007AFF;">Happy Hour</td>
+                    <td>1453</td>
+                    <td>1453</td>
+                    <td>Lorem ipsum dolor si</td>
+                    <td></td>
+                  
+                  
+                  
+                </tr><br/>
+                  
+                </tbody>
+              </table>
+      
+            </div>
+          </div>
+        </div>
+      </section>
+  
+    </ng-template>
+    <ng-template [ngSwitchCase]="'management'">
+        <section class="deal">
+      <div class="d-flex justify-content-between">
+          <div class="deal1">
+          <h2>Deals Managment</h2>
+      </div>
+      <div class="choose">
+      <select id="option">
+          <option value="volvo">La Casa Del Pueblo </option>
+          <option value="saab">La Casa Del Pueblo </option> 
+          <option value="vw">La Casa Del Pueblo </option>
+          <option value="audi" selected>La Casa Del Pueblo </option>
+        </select>
+      </div>
+      <div class="add">
+        <button type="button"  data-toggle="modal" data-target="#exampleModalCenter"class="btn-btn-success">Add new</button>
+      </div>  
+      </div>
+      
+  </section>
+      <div class="deal_module">
+        <table datatable>
+          <thead>
+              <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Deal Category</th>
+                  <th scope="col">Description</th>
+                  <th scope="col">Deal Type</th>
+                  <th scope="col">Range</th>
+                  <th scope="col">Duration</th>
+                  <th scope="col">Valid Till</th>
+                  <th scope="col">Status</th>
+                
+                  
+  
+              </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td  style="color: #007AFF;">50% off. available</td>
+              <td>Only for first 10 &</td>
+              <td>Dine-In</td>
+              <td>20 miles</td>
+              <td>1 hour</td>
+              <td>9:30 PM</td>
+              <td>
+                
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Live</option>
+                  <option value="1">Close</option>
+                  </select></td>
+             
+            </tr>
+            <tr>
+                <td>2</td>
+                <td  style="color: #007AFF;">20% off. for all org</td>
+                <td>1 Hour Deal</td>
+                <td>—</td>
+                <td>—</td>
+                <td>1 hour</td>
+                <td>6:30 PM</td>
+                <td>
+                
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Live</option>
+                      <option value="1">Close</option>
+                      </select></td>
+              
+            </tr>
+           
+            <h4>Other Deals</h4>
+            <tr>
+                <th scope="col">No.<i class="fas fa-caret-down mr-2"></i></th>
+                <th scope="col">Deal Caption<i class="fas fa-caret-down mr-2"></i></th>
+                <th scope="col">Available Days<i class="fas fa-caret-down mr-2"></i></th>
+                <th scope="col">Deal Type<i class="fas fa-caret-down mr-2"></i></th>
+                <th scope="col">Available Time<i class="fas fa-caret-down mr-2"></i></th>
+                <th scope="col">Discount Offer <i class="fas fa-caret-down mr-2"></i></th>
+                <th scope="col">Status <i class="fas fa-caret-down mr-2"></i></th>
+             
+  
+            </tr>
+            <tr>
+                <td>1</td>
+               <td>Happy Hour</td>
+               <td>Tue,Wed,Thur</td>
+                <td>-</td>
+               <td>10:00 AM - 12:00 PM</td>
+                <td>Buy 1 Get 1</td>
+               
+                <td>
+                
+                    <select class="form-select" aria-label="Default select example">
+                      <option selected>Live</option>
+                      <option value="1">Close</option>
+                      </select></td>
+                
+  
+            </tr>
+              
+          </tbody>
+        </table>
+  
+  
+  
+  
+  </div>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'library'">
+      <div class="deal_module">
+        <h4>Deals Library</h4>
+        <table datatable>
+          <thead>
+              <tr>
+                  <th scope="col">No.</th>
+                  <th scope="col">Deal Category</th>
+                  <th scope="col">Deal Caption</th>
+                  <th scope="col">Type</th>
+                  <th scope="col">Modified At</th>
+                  <th scope="col">Status</th>
+                
+                  
+  
+              </tr><br/>
+          </thead>
+          <tbody>
+            <tr>
+              <td>1</td>
+              <td>By percentage</td>
+              <td>50% off. available </td>
+              <td>Customized</td>
+              <td>19.04.2020 12:34</td>
+               <td style="color: #449B44;">Edit</td>
+             
+            </tr><br/>
+            <tr>
+              <td>2</td>
+              <td>By percentage</td>
+              <td>20% off. for all organic food</td>
+              <td>Customized</td>
+              <td>19.04.2020 12:34</td>
+              
+              <td style="color: #449B44;">Edit</td>
+            <tr>
+              <td>3</td>
+              <td>By Iterm value</td>
+              <td>20% off.availble</td>
+              <td>Customized</td>
+              <td>19.04.2020 12:34</td>
+              
+              <td style="color: #449B44;">Edit</td>
+            <tr>
+              <td>4</td>
+              <td>By Item count</td>
+              <td>$10 Offer</td>
+              <td>Library</td>
+              <td>19.04.2020 12:34</td>
+              
+              <td style="color: #449B44;">Edit</td>
+            <tr>
+              <td>5</td>
+              <td>10% Offer</td>
+              <td>$10 Offer</td>
+              <td>Library</td>
+              <td>19.04.2020 12:34</td>
+              
+              <td style="color: #449B44;">Edit</td>
+              
+          </tbody>
+        </table>
+  </div>
+    </ng-template>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">New Ticket</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <label>
+            Subject
+           </label>
+           <input type="text" id="subject" class="form-control" placeholder="Issue with payment">
+           <label for="description">Issue Description</label>
+  
+           <textarea id="description" name="description" rows="4" cols="50">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed fringilla massa scelerisque mauris euismod congue. ,Ssit amet, consectetur adipiscing elit. Sed fringilla massa scelerisque mauris euismod congue.
+           </textarea>
+         
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary">Add</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+          </div>
+        </div>
+      </div>
+    </div>
+   
+  </div>
+  
+  
+      <!-- table section -->
+   

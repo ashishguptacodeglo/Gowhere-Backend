@@ -1,0 +1,419 @@
+.project-main{
+    background: #F9F9F9;
+    padding: 30px 0;
+    }
+    h3.top-h3 {
+        font-size: 14px;
+        color: #8E8E93;
+        font-weight: 500;
+    }
+    
+    span.top-span {
+        color: #373737;
+        font-weight: 500;
+    }
+    
+    .top-head {
+        padding-left: 20px;
+            position: relative;
+    }
+    
+    h4.top-h4 {
+        font-size: 28px;
+        font-weight: 400 !important;
+        color: #444A4A !important;
+        margin-bottom: 30px;
+    }
+    .project-main .cta-btn .create-btn {
+        font-size: 14px;
+        line-height: 18px;
+        color: #fff;
+        background: #1AB9AB;
+        text-align: center;
+        padding: 10px 20px;
+        font-weight: bold;
+        font-family: "Gotham-light";
+        display: block;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+    .project-main .top-inner {
+        padding: 0 10px;
+    }
+    .form-control {
+        font-size: 14px;
+        font-family: "Gotham-light";
+        font-weight: bold;
+        padding: 10px 15px;
+        height: 100%;
+        border-radius: 20px;
+        color: #57616B;
+        border: 1px solid #DADADA;
+        background-image: url(/assets/media/navigation/search.png);
+        background-repeat: no-repeat;
+        background-position: 95% 10px;
+    }
+    .form-control:focus{
+        box-shadow: none;
+        background-image: none;
+    }
+    .form-control:focus::-webkit-input-placeholder { color:transparent; }
+    .form-control:focus:-moz-placeholder { color:transparent; } 
+    .form-control:focus::-moz-placeholder { color:transparent; }
+    .form-control:focus:-ms-input-placeholder { color:transparent; }
+    .top {
+        padding: 0 15px 35px;
+    }
+    .project-content {
+        margin: 0 15px;
+    }
+    .inner-content {
+        padding: 25px 20px;
+        background: #fff;
+        border-radius: 5px;
+        box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+        position: relative;
+        margin-bottom: 30px;
+    }
+    .inner-content .project-title {
+        font-size: 14px;
+        line-height: 18px;
+        text-transform: uppercase;
+        margin-bottom: 20px;
+        display: block;
+    }
+    
+    .progress{
+        background: #E8E8E8;
+        height: 3px;
+    }
+    .progress-bar{
+        background: #0FB3F2;
+    }
+    
+    
+    .text{
+        font-size: 10px;
+        line-height: 14px;
+        color: #737373;
+        font-weight: 300;
+        font-family: "Gotham-light";
+        margin: 0;
+    }
+    .total-time{
+        text-align: right;
+    }
+    .inner-detail {
+        display: inline-block;
+        width: 33%;
+        vertical-align: bottom;
+    }
+    .comment{
+        text-align: right;
+    }
+    .user img {
+        width: 24px;
+        height: 24px;
+        border-radius: 50%;
+        margin: 4px 4px 4px 0;
+    }
+    .user {
+        margin: 35px 0 20px;
+    }
+    .text.one {
+        font-weight: 500;
+        font-family: "Gotham-medium";
+    }
+    .comment-list {
+        font-size: 14px;
+        margin-left: 5px;
+        color: #1AB9AB;
+    }
+    .ellipsis {
+        position: absolute;
+        right: 20px;
+        top: 15px;
+    }
+    
+    .dot {
+        display: block;
+        line-height: 7px;
+        color: #8E8E8E;
+        font-size: 18px;
+    }
+    .user-list {
+        background: #1AB9AB;
+        font-size: 10px;
+        border-radius: 50%;
+        text-align: center;
+        padding: 5px;
+        color: #fff;
+        margin: 4px 4px 4px 0;
+        font-family: "Gotham-light";
+        font-weight: 600;
+        width: 24px;
+        height: 24px;
+        display: inline-block;
+    }
+    .empty-user {
+        line-height: 32px;
+    }
+    @media screen and (max-width: 1250px) {
+        .user{
+            min-height: 60px;
+        }
+    }
+    @media screen and (max-width: 1200px) {
+        .user{
+            min-height: 0px;
+        }
+    }
+    @media screen and (max-width: 767px) {
+        .project-main .top-inner {
+            margin-bottom: 20px;
+        }
+    }
+    
+    @media screen and (max-width: 480px) {
+    .project-content{
+        margin: 0;
+    }
+    .project-main .top-inner {
+        padding: 0;
+    }
+    }
+    .common {
+        display: inline-block;
+        vertical-align: top;
+        background: #fff;
+        min-height: 160px;
+        border-radius: 5px;
+        width: 24%;
+    }
+    .task {
+        width: 24%;
+        background: #F9F9F9;
+        padding-right: 20px;
+    }
+    .time-detail {
+        padding: 20px;
+    }
+    .request {
+        padding: 20px;
+    }
+    .name {
+        font-size: 14px;
+        margin-bottom: 20px;
+        line-height: 20px;
+    }
+    .dashboard .scope.common {
+        width: 26%;
+        border-left: solid 2px #f9f9f9;
+        border-right: solid 1px #f9f9f9;
+    }
+    .common h3 {
+        color: #57616B;
+        text-align: center;
+    }
+    .task-detail {
+        margin: 20px;
+    }
+    h3.tra-num {
+        position: absolute;
+        bottom: 9px;
+        color: #44926C !important;
+        font-weight: 700;
+        font-size: 50px;
+    }
+    
+    h3.tra-num.tra-num1 {
+        color: #239FA4 !important;
+    }
+    
+    h3.tra-num.tra-num2 {
+        color: #BE6262 !important;
+    }
+    
+    h3.tra-num.tra-num3 {
+        color: #1AB001 !important;
+    }
+    .task-inner {
+      background: #fff;
+        min-height: 160px;
+        border-radius: 10px;
+        padding: 20px;
+        position: relative;
+        border: 1px solid #E2E2E2;
+        box-shadow: 0px 4px 8px 0px #e6e6e6;
+    }
+    .scope-docs p {
+        display: inline-block;
+        margin: 0;
+        vertical-align: top;
+    }
+    .scope-docs {
+        padding: 20px 10px 10px 20px;
+    }
+    .scope-docs .view {
+        color: #1AB9AB;
+        text-align: right;
+        float: right;
+    }
+    .scope-name {
+        padding: 15px 10px 10px 20px;
+        border-top: solid 2px #CAD3DB;
+        border-bottom: solid 1px #CAD3DB;
+    }
+    .docs-name {
+        font-size: 14px;
+        color: #57616B;
+        margin: 0 15px;
+    }
+    .version {
+        font-size: 10px;
+        background: #E38C2B;
+        color: #fff;
+        padding: 2px 6px;
+        border-radius: 10px;
+    }
+    .brd-docs {
+        padding: 15px 10px 10px 20px;
+    }
+    .scope-name span,  .brd-docs span{
+        vertical-align: middle;
+    }
+    .download-icon {
+        float: right;
+    }
+    .employees table{
+        width: 100% ;
+    }
+    .drop-sec {
+        position: absolute;
+        right: 30px;
+        bottom: 0;
+    }
+    .btn-secondary {
+        color: #444A4A;
+        background-color: #fff;
+        border-color: #E2E2E2;
+        border-radius: 18px;
+    }
+    thead th {
+    border-top: none;
+    border-bottom: 5px solid #F9F9F9;
+    font-size: 14px;
+    font-weight: 500;
+    color: #373737;
+    }
+    thead tr th.head-cell {
+        padding: 20px 12px 15px;
+    }
+    thead tr {
+        background: #EFEFEF;
+    }
+    tbody tr {
+        background: #fff;
+    }
+    thead>tr>th:first-child {
+        padding: 20px 12px 15px 30px;
+    }
+    tbody>tr>td:first-child{
+        padding: 15px 0px 10px 30px;
+    }
+    tbody tr td{
+        color: #57616B;
+        font-weight: 500;
+        font-size: 14px;
+        font-family: "Gotham-light";
+        border-top: none;
+        border-bottom: 5px solid #F9F9F9;
+        padding: 15px 0px 10px 12px;
+    }
+    .employee-profile {
+        border-radius: 50%;
+        width: 24px;
+        margin-right: 10px;
+    }
+    @media screen and (max-width: 1350px) {
+        .common{
+            width: 23%;
+        }
+    
+        .task{
+            width: 24%;
+        }
+        .dashboard .scope.common{
+            width: 30%;
+        }
+    }
+    
+    @media screen and (max-width: 1200px) {
+        .common{
+            width: 22%;
+        }
+        .task{
+            padding-right: 15px;
+            width: 24%;
+        }
+        .docs-name{
+            margin: 0 5px;
+        }
+        .task-inner, .request, .time-detail{
+            padding: 20px 15px;
+        }
+        .scope-docs{
+            padding: 20px 10px 10px 15px;
+        }
+        .scope-name {
+            padding: 15px 10px 10px 15px;
+        }
+        .brd-docs{
+            padding: 15px 10px 10px 15px;
+        }
+        .dashboard .scope.common{
+            width: 32%;
+        }
+        thead>tr>th:first-child {
+            width: 200px;
+        }
+    }
+    @media screen and (max-width: 1100px) {
+        .scope-docs{
+            padding: 20px 10px 10px;
+        }
+        .scope-name {
+            padding: 15px 10px 10px;
+        }
+        .brd-docs{
+            padding: 15px 10px 10px;
+        }
+        .common{
+            width: 21%;
+        }
+        .task{
+            padding-right: 10px;
+            width: 23%;
+        }
+        .dashboard .scope.common{
+            width: 35%;
+        }
+    }
+    @media screen and (max-width: 767px) {
+    .common {
+        width: 100%;
+        display: block;
+        margin: 20px 0;
+    }
+    .task {
+        padding-right: 0;
+        width: 100%;
+        display: block;
+    }
+    .dashboard .scope.common{
+        width: 100%;
+    }
+    .employees table{
+        width: 800px ;
+    }
+    }

@@ -1,0 +1,172 @@
+<section class="saveaplate">
+    <div style="margin-bottom: 20px;margin-left: 20px;"class="d-flex justify-content-between">
+        <div class="saveaplate1">
+        <h2>Save a plate</h2>
+    </div>
+   <div class="option">
+     
+   </div>
+    <div class="add">
+      <button type="button"  data-toggle="modal" data-target="#exampleModalCenter"class="btn-btn-success">Add Items</button>
+    </div>
+    </div>
+    <table datatable>
+        <thead>
+          <tr>
+            <th class="no-sorting">No.</th>
+            <th>Item Image</th>
+            <th>Item Name</th>
+            <th>Available Time</th>
+              <th>Item Count</th>
+            <th>Offer Price</th>
+            <th>Deal Type</th>
+            <th>Status</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+        <td></td>
+        <td>All-in one Spaghetti</td>
+        <td>8:00 PM - 11:00 PM</td>
+        <td>12 / 20</td>
+        <td>$10</td>
+        <td>Dine-In</td>
+        <td>
+              
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Status</option>
+            <option value="1">Open</option>
+            <option value="2">Pending</option>
+            <option value="2">Closed</option>
+            
+          </select></td>
+        <td>Close</td>
+
+          </tr>
+          <tr>
+            <td>2</td>
+        <td></td>
+        <td>All-in one Spaghetti</td>
+        <td>8:00 PM - 11:00 PM</td>
+        <td>12 / 20</td>
+        <td>$10</td>
+        <td>Dine-In</td>
+        <td>
+              
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Status</option>
+            <option value="1">Open</option>
+            <option value="2">Pending</option>
+            <option value="2">Closed</option>
+            
+          </select></td>
+        <td>Close</td>
+
+          </tr>
+          <tr>
+            <td>3</td>
+        <td></td>
+        <td>All-in one Spaghetti</td>
+        <td>8:00 PM - 11:00 PM</td>
+        <td>12 / 20</td>
+        <td>$10</td>
+        <td>Dine-In</td>
+        <td>
+              
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Status</option>
+            <option value="1">Open</option>
+            <option value="2">Pending</option>
+            <option value="2">Closed</option>
+            
+          </select></td>
+        <td>Close</td>
+
+          </tr>
+          <tr>
+            <td>4</td>
+        <td></td>
+        <td>All-in one Spaghetti</td>
+        <td>8:00 PM - 11:00 PM</td>
+        <td>12 / 20</td>
+        <td>$10</td>
+        <td>Dine-In</td>
+        <td>
+              
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Status</option>
+            <option value="1">Open</option>
+            <option value="2">Pending</option>
+            <option value="2">Closed</option>
+            
+          </select></td>
+        <td>Close</td>
+
+          </tr>
+          <tr>
+            <td>5</td>
+        <td></td>
+        <td>All-in one Spaghetti</td>
+        <td>8:00 PM - 11:00 PM</td>
+        <td>12 / 20</td>
+        <td>$10</td>
+        <td>Dine-In</td>
+        <td>
+              
+          <select class="form-select" aria-label="Default select example">
+            <option selected>Status</option>
+            <option value="1">Open</option>
+            <option value="2">Pending</option>
+            <option value="2">Closed</option>
+            
+          </select></td>
+        <td>Close</td>
+
+          </tr>
+          
+        </tbody>
+      </table>
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Add Item</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <label>Item Name</label><br/>
+            <select name="item" id="item">
+                <option value="#">Select Item Name</option>
+                <option value="drink">Drnks</option>
+                <option value="food">Food</option>
+                <option value="soft">Soft Drink</option>
+              </select>
+              <label>Available Time</label><br/>
+              <div class="row">
+                  <div class="col-md-6">
+                    <input type="time" name="time" id="time" placeholder="Pick Start Time">
+                  </div>
+                  <div class="col-md-6">
+                    <input type="time" name="time" id="time" placeholder="Pick End Time">
+                  </div>
+              </div><br/>
+              <label>Item available Count</label><br/>
+              <input type="count" name="count" id="count" placeholder="Enter Item available count"><br/>
+              <label>Selling Price</label><br/>
+              <input type="price" name="price" id="price" placeholder="Enter Selling Price"><br/>
+              <label>Offer Price</label><br/>
+              <input type="text" name="offer" id="offer" placeholder="Enter Offer Price"><br/>
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary">Add</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    

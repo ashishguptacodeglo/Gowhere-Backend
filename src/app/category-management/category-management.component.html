@@ -1,0 +1,166 @@
+<div class="page_tabs">
+   <div class="wraps">
+      <span class="links" (click)="tabChange('category')" [class]="{'active': page=='category'}">Category</span>
+      <span class="links" (click)="tabChange('amenities')" [class]="{'active': page=='amenities'}">Amenities</span>
+      <span class="links" (click)="tabChange('services')" [class]="{'active': page=='services'}">Services</span>
+      <span class="links" (click)="tabChange('est')" [class]="{'active': page=='est'}">Type of Establishment</span>
+      <span class="links" (click)="tabChange('payments')" [class]="{'active': page=='payments'}">Payments</span>
+   </div>
+</div>
+<div class="tab-content"[ngSwitch]="page">
+   <ng-template [ngSwitchCase]="'category'">
+      <section class="dashboard">
+         <div class="container">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                     <a href="#">
+                        <h5>Home</h5>
+                     </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                     <h5>Category Management</h5>
+                  </li>
+               </ol>
+            </nav>
+            <div class="d-flex mb-3">
+               <div class="dashboard1  flex-fill ">Category Management</div>
+               <div class="add fill ">
+                  <button type="button"  data-toggle="modal" data-target="#add-category-modal"class="btn-btn-success">Add</button>
+               </div>
+            </div>
+            <div class="row">
+               <table class="categories">
+                  <thead>
+                     <tr>
+                        <th scope="col" >No.</th>
+                        <th scope="col" >Icon</th>
+                        <th scope="col">Category Name</th>
+                        <th scope="col">Sub Categories</th>
+                        <th scope="col">Establishment Enrolled</th>
+                     </tr>
+                     <br/>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let cat of categories; let index = index" >
+                        <td class="sr-no">{{index+1}}</td>
+                        <td class="icon-td">
+                           <img alt="{{cat.name}}" class="category-icon" src="{{cat.icon}}">
+                        </td>
+                        <td>{{cat.name}}</td>
+                        <td>{{cat.sub_cat_count}}</td>
+                        <td>{{cat.est_enrolled}}</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </section>
+   </ng-template>
+   <ng-template [ngSwitchCase]="'amenities'">
+      <section class="list">
+         <div class="d-flex justify-content-between">
+            <div class="list1">
+               <h2>Amenities</h2>
+            </div>
+            <div class="add">
+               <button type="button"  data-toggle="modal" data-target="#exampleModalCenter"class="btn-btn-success">Add new</button>
+            </div>
+            <!-- <div class="filter">
+               <button type="button"  data-toggle="modal" data-target="#exampleModalCenter"class="btn-btn-success">Filter</button>
+               </div> -->
+            <div class="search-hero">
+               <!-- <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442; Serch Here"> -->
+            </div>
+         </div>
+         <!-- tab bar starts -->
+         <div class="status_wraps">
+            <span class="status_links" (click)="statusChange('all')" [class]="{'active': page=='all'}">all</span>
+            <span class="status_links" (click)="statusChange('progress')" [class]="{'active': page=='progress'}">In-Progress</span>
+            <span class="status_links" (click)="statusChange('decline')" [class]="{'active': page=='decline'}">Decline</span>
+            <span class="status_links" (click)="statusChange('approved')" [class]="{'active': page=='approved'}">Approved</span>
+         </div>
+      </section>
+   </ng-template>
+   <div class="modal fade" id="add-category-modal" tabindex="-1" role="dialog" aria-labelledby="add-category-modalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+         <div class="modal-content">
+            <div class="modal-header border-bottom-0 pb-0">
+               <h3 class="modal-title" id="exampleModalLongTitle">Add Category</h3>
+               <button type="button" (click)="ModalClosed()"  class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <form class="form-horizontal" role="form" method="POST"  >
+                  <div class="row">
+                     <div class="form-group col">
+                        <label for="cat_name" class="control-label">Category Name</label>
+                        <div>
+                           <input id="cat_name" type="text" class="form-control"  placeholder="Category Name" name="cat_name" >
+                        </div>
+                     </div>
+                     <div class="form-group col mr-5">
+                        <label for="category_icon" class="control-label">Category Icon</label>
+                        <div>
+                           <input  type="file" id="category_icon" class="form-control" name="category_icon">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="form-group col">
+                        <label for="cat_name" class="control-label">Sub Category Name</label>
+                        <div>
+                           <input id="cat_name" type="text" class="form-control"  placeholder="Category Name" name="cat_name" >
+                        </div>
+                     </div>
+                     <div class="form-group col mr-5">
+                        <label for="category_icon" class="control-label">Sub Category Name</label>
+                        <div>
+                           <input  type="file" id="category_icon" class="form-control" name="category_icon">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row" *ngFor='let in of counter(sub_cats) ;let i = index;let last = last'>
+                     <div class="form-group col">
+                        <div>
+                           <input id="cat_name"  type="text" class="form-control"  placeholder="Category Name" name="subcat_name[]" >
+                        </div>
+                     </div>
+                     <div class="form-group col mr-5">
+                        <div>
+                           <input  type="file" id="category_icon" class="form-control" name="subcategory_icon[]">
+                           <a *ngIf="last" (click)="RemoveSubCatField()"  class="btn remove-cat-field">
+                           <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-x" 
+                              viewBox="0 0 16 16">
+                              <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                           </svg>
+                           </a>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row text-right">
+                     <div class="form-group col">
+                        <button (click)="AddSubCatField()" type="button" class="btn btn-outline-secondary line-height-1">
+                        Add
+                        </button>
+                     </div>
+                  </div>
+                  <div class="form-group row">
+                     <div class="col-6">
+                        <button type="submit" class="btn btn-outline-secondary line-height-1 save-button">
+                        Save
+                        </button>
+                     </div>
+                     <div class="col-6">
+                        <button type="button" class="btn btn-outline-secondary line-height-1" >
+                        Cancel
+                        </button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>

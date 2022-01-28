@@ -1,0 +1,408 @@
+<div class="page_tabs">
+      <div class="wraps">
+          <span class="links" (click)="tabChange('dashboard')" [class]="{'active': page=='dashboard'}">Dashboard</span>
+          <span class="links" (click)="tabChange('profile')" [class]="{'active': page=='profile'}">Profile</span>
+          <span class="links" (click)="tabChange('menu')" [class]="{'active': page=='menu'}">Menu</span>
+          <span class="links" (click)="tabChange('animites')" [class]="{'active': page=='animites'}">Animities</span>
+      </div>
+    </div>   
+    <div class="tab-content" [ngSwitch]="page">
+    
+      <ng-template [ngSwitchCase]="'dashboard'">
+    
+    
+      </ng-template>
+      <ng-template [ngSwitchCase]="'profile'">
+            <section class="profile">
+                  <div class="container">
+                      <div class="row">
+                        <div class="col-md-12">
+                         <div class=" coperate d-flex justify-content-between ">
+                                <div class="nnk ">
+                               <h3>La Casa Del Pueblo - City Mall</h3>
+                                <h2>Corporate Profile</h2>
+                               <h4>Basic Info</h4>
+                                <label>Resturant name</label>
+                                <input style="font-size: 14px;"type="text" id="profile1" class="form-control" placeholder="Resturant Name">
+                                <h4>Contact Information</h4>
+                                <label>Contact Person</label>
+                                <input style="font-size: 14px;"type="text" id="contact" class="form-control" placeholder="Contact name">
+                                <label>Mobile No</label>
+                                <input style="font-size: 14px;"type="text" id="mobile" class="form-control" placeholder="Mobile No">
+                                <label>Email</label>
+                                <input style="font-size: 14px;"type="email" id="email" class="form-control" placeholder="Email">
+                                <label>Website</label>
+                                <input style="font-size: 14px;"type="text" id="web" class="form-control" placeholder="Website">
+                                <label>Address</label>
+                                <input style="font-size: 14px;"type="text" id="address" class="form-control" placeholder="Address">
+                                <div class="d-inline-flex m-3 ">  
+                                    <div class="m-2 ">
+                                        <label>Zipcode</label>
+                                <input style="font-size: 14px;"type="text" id="code" class="form-control" placeholder="Zipcode">
+                                    </div>
+                                    <div class="m-2 ">
+                                        <label>City</label>
+                                <input style="font-size: 14px;"type="text" id="city" class="form-control" placeholder="City">
+                                    </div>
+                                    <div class="m-2 ">
+                                        <label>State</label>
+                                <input style="font-size: 14px;"type="text" id="state" class="form-control" placeholder="State">
+                                    </div>
+                                  </div>
+                                  <div class="d-inline-flex s ">
+                                    <div class="s-2 ">
+                                        <button type="button" class="btn ">Save as draft</button>
+                                    </div>
+                                    <div class="s-3 ">
+                                        <button type="button" class="btn ">Add Establishment </button>
+                                    </div>
+                                    
+                                  </div>
+                              </div>
+                            
+                              <div class="new">
+                               <a routerLink="/new" routerLinkActive="active">+ New Establishment</a>
+                              </div>
+                            </div>
+                          </div>
+                         </div>
+                        </div>
+                      </section>
+      </ng-template>
+      <ng-template [ngSwitchCase]="'menu'">
+            <div class="menu_tab">
+              <div class="menu_title">
+                <div class="d-flex justify-content-between">
+                  <div class="Meni_tile">
+                  <h2>Menu</h2>
+              </div>
+              <div *ngIf="page_new=='Category'" class="add">
+                <button type="button"  data-toggle="modal" data-target="#exampleModalCenter"class="btn-btn-success">Add new</button>
+              </div>
+              <div *ngIf="page_new=='menu_items'" class="newitem">
+                <a routerLink="/newitemcomponent" routerLinkActive="active">Add Item</a>
+              </div>
+              </div>
+            </div>
+                  <div class="wraps_menu">
+                      <span class="menu_links" (click)="menuchange('Category')" [class]="{'active': page_new=='Category'}">Category</span>
+                      <span class="menu_links" (click)="menuchange('menu_items')" [class]="{'active': page_new=='menu_items'}">Menu Items</span>
+                     
+                  </div>
+                </div>
+                <div class="tab-content" [ngSwitch]="page_new">
+    
+                  <ng-template [ngSwitchCase]="'Category'">
+                       
+                    <table datatable>
+                      <thead>
+                          <tr>
+                              <th scope="col">Category Title</th>
+                              <th scope="col">Catalogue</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Action</th>
+                            
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td> Salads</td>
+                          <td>4</td>
+                          <td> <ng-select [searchable]="false" [items]="status"
+                            bindLabel="name"
+                            placeholder="Select Status"
+                            [(ngModel)]="selectedStatus"> 
+                            
+                 </ng-select></td>
+                 <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td> Fresh Salads</td>
+                            <td>4</td>
+                            <td> <ng-select [searchable]="false" [items]="status"
+                              bindLabel="name"
+                              placeholder="Select Status"
+                              [(ngModel)]="selectedStatus"> 
+                              
+                   </ng-select></td>
+                   <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                            </tr>
+                            <tr>
+                                <td> With Chicken</td>
+                                <td>4</td>
+                                <td> <ng-select [searchable]="false" [items]="status"
+                                  bindLabel="name"
+                                  placeholder="Select Status"
+                                  [(ngModel)]="selectedStatus"> 
+                                  
+                       </ng-select></td>
+                       <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                </tr>
+                                <tr>
+                                    <td> Soups</td>
+                                    <td>4</td>
+                                    <td> <ng-select [searchable]="false" [items]="status"
+                                      bindLabel="name"
+                                      placeholder="Select Status"
+                                      [(ngModel)]="selectedStatus"> 
+                                      
+                           </ng-select></td>
+                           <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                    </tr>
+                                    <tr>
+                                        <td> Spaghetti</td>
+                                        <td>4</td>
+                                        <td> <ng-select [searchable]="false" [items]="status"
+                                          bindLabel="name"
+                                          placeholder="Select Status"
+                                          [(ngModel)]="selectedStatus"> 
+                                          
+                               </ng-select></td>
+                               <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                        </tr>
+                                        <tr>
+                                            <td> Pizza</td>
+                                            <td>4</td>
+                                            <td> <ng-select [searchable]="false" [items]="status"
+                                              bindLabel="name"
+                                              placeholder="Select Status"
+                                              [(ngModel)]="selectedStatus"> 
+                                              
+                                   </ng-select></td>
+                                   <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                            </tr>
+                                            <tr>
+                                                <td> Fish Meals</td>
+                                                <td>4</td>
+                                                <td> <ng-select [searchable]="false" [items]="status"
+                                                  bindLabel="name"
+                                                  placeholder="Select Status"
+                                                  [(ngModel)]="selectedStatus"> 
+                                                  
+                                       </ng-select></td>
+                                       <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                                </tr>
+                                                <tr>
+                                                    <td> Desserts</td>
+                                                    <td>4</td>
+                                                    <td> <ng-select [searchable]="false" [items]="status"
+                                                      bindLabel="name"
+                                                      placeholder="Select Status"
+                                                      [(ngModel)]="selectedStatus"> 
+                                                      
+                                           </ng-select></td>
+                                           <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td> Ice Creams</td>
+                                                        <td>4</td>
+                                                        <td> <ng-select [searchable]="false" [items]="status"
+                                                          bindLabel="name"
+                                                          placeholder="Select Status"
+                                                          [(ngModel)]="selectedStatus"> 
+                                                          
+                                               </ng-select></td>
+                                               <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                              
+                                                        </tr>
+                        
+                      </tbody>
+                    </table>
+                  </ng-template>
+                  <!-- menu items starts here -->
+                  <ng-template [ngSwitchCase]="'menu_items'">
+                       
+                    <table datatable>
+                      <thead>
+                          <tr>
+                              <th scope="col">Image</th>
+                              <th scope="col">Dish Name</th>
+                              <th scope="col">Category</th>
+                              <th scope="col">Price</th>
+                              <th scope="col">Status</th>
+                              <th scope="col">Action</th>
+                            
+                          </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td> </td>
+                          <td>All-in one Spaghetti</td>
+                          <td>Spaghetti</td>
+                          <td>$8.90</td>
+                          <td> <ng-select [searchable]="false" [items]="status"
+                            bindLabel="name"
+                            placeholder="Select Status"
+                            [(ngModel)]="selectedStatus"> 
+                            
+                 </ng-select></td>
+                 <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                          </tr>
+                          <tr>
+                            <td> </td>
+                            <td>All-in one Spaghetti</td>
+                            <td>Spaghetti</td>
+                            <td>$8.90</td>
+                            <td> <ng-select [searchable]="false" [items]="status"
+                              bindLabel="name"
+                              placeholder="Select Status"
+                              [(ngModel)]="selectedStatus"> 
+                              
+                   </ng-select></td>
+                   <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                            </tr>
+                            <tr>
+                              <td> </td>
+                              <td>All-in one Spaghetti</td>
+                              <td>Spaghetti</td>
+                              <td>$8.90</td>
+                              <td> <ng-select [searchable]="false" [items]="status"
+                                bindLabel="name"
+                                placeholder="Select Status"
+                                [(ngModel)]="selectedStatus"> 
+                                
+                     </ng-select></td>
+                     <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                              </tr>
+                              <tr>
+                                <td> </td>
+                                <td>All-in one Spaghetti</td>
+                                <td>Spaghetti</td>
+                                <td>$8.90</td>
+                                <td> <ng-select [searchable]="false" [items]="status"
+                                  bindLabel="name"
+                                  placeholder="Select Status"
+                                  [(ngModel)]="selectedStatus"> 
+                                  
+                       </ng-select></td>
+                       <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                </tr>
+                                <tr>
+                                  <td> </td>
+                                  <td>All-in one Spaghetti</td>
+                                  <td>Spaghetti</td>
+                                  <td>$8.90</td>
+                                  <td> <ng-select [searchable]="false" [items]="status"
+                                    bindLabel="name"
+                                    placeholder="Select Status"
+                                    [(ngModel)]="selectedStatus"> 
+                                    
+                         </ng-select></td>
+                         <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                  </tr>
+                                  <tr>
+                                    <td> </td>
+                                    <td>All-in one Spaghetti</td>
+                                    <td>Spaghetti</td>
+                                    <td>$8.90</td>
+                                    <td> <ng-select [searchable]="false" [items]="status"
+                                      bindLabel="name"
+                                      placeholder="Select Status"
+                                      [(ngModel)]="selectedStatus"> 
+                                      
+                           </ng-select></td>
+                           <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                    </tr>
+                                    <tr>
+                                      <td> </td>
+                                      <td>All-in one Spaghetti</td>
+                                      <td>Spaghetti</td>
+                                      <td>$8.90</td>
+                                      <td> <ng-select [searchable]="false" [items]="status"
+                                        bindLabel="name"
+                                        placeholder="Select Status"
+                                        [(ngModel)]="selectedStatus"> 
+                                        
+                             </ng-select></td>
+                             <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                      </tr>
+                                      <tr>
+                                        <td> </td>
+                                        <td>All-in one Spaghetti</td>
+                                        <td>Spaghetti</td>
+                                        <td>$8.90</td>
+                                        <td> <ng-select [searchable]="false" [items]="status"
+                                          bindLabel="name"
+                                          placeholder="Select Status"
+                                          [(ngModel)]="selectedStatus"> 
+                                          
+                               </ng-select>
+                              </td>
+                              <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                        </tr>
+                                        <tr>
+                                          <td> </td>
+                                          <td>All-in one Spaghetti</td>
+                                          <td>Spaghetti</td>
+                                          <td>$8.90</td>
+                                          <td> <ng-select [searchable]="false" [items]="status"
+                                            bindLabel="name"
+                                            placeholder="Select Status"
+                                            [(ngModel)]="selectedStatus"> 
+                                            
+                                 </ng-select></td>
+                                 <td><span><i class="fa fa-pencil mr-4" aria-hidden="true"></i></span><span> <i class="fa fa-trash mr-4" aria-hidden="true"></i></span><span><i class="fa fa-arrows" aria-hidden="true"></i></span></td>
+                                          </tr>
+                        
+                      </tbody>
+                    </table>
+                  </ng-template>
+                  </div>
+      </ng-template>
+      <ng-template [ngSwitchCase]="'animites'">
+            <section class="animites">
+                  <div style="margin-bottom: 20px;margin-left: 20px;"class="d-flex justify-content-between">
+                      <div class="animites1">
+                      <h2>Amenities</h2>
+                  </div>
+                 
+                  <div class="add_new">
+                      <button type="button"  data-toggle="modal" data-target="#exampleModalCenter"class="btn-btn-success">Add/Remove</button>
+                  </div>
+                  
+                 
+                  </div>
+              <div class="content_animites">
+                  <div class="col-md-6">
+                      <div class="card">
+                          <h4><i class="fa fa-umbrella mr-2" aria-hidden="true"></i>Outdoor Seating</h4>
+                          <h4><i class="fa fa-parking mr-2" aria-hidden="true"></i>Parking</h4>
+                          <h4><i class="fa fa-wifi mr-2" aria-hidden="true"></i>Wi-Fi</h4>
+                          <h4><i class="fa fa-file mr-2" aria-hidden="true"></i>Reservations</h4>
+                          <h4><i class="fa fa-coffee mr-2" aria-hidden="true"></i>Takeout</h4>
+                      </div>
+                  </div>
+              </div>
+              </section>
+              
+              
+      </ng-template>
+      <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLongTitle">Add Category</h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <div class="modal-body">
+            <label>Category Title</label>
+            <input type="text" id="cat" name="cat" placeholder="Enter the category title">
+            </div>
+            <div class="modal-footer">
+              <button type="button" class="btn btn-secondary">Add</button>
+              <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
+            </div>
+          </div>
+        </div>
+      </div>
+     <!-- menu popup -->
+    
+    </div>
+    
+    
+        <!-- table section -->
+        <!-- add item -->
+
+         

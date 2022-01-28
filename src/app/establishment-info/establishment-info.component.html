@@ -1,0 +1,611 @@
+<div class="page_tabs">
+    <div class="wraps">
+        <span class="links" (click)="tabChange('dashboard_new')" [class]="{'active': page=='dashboard_new'}">Dashboard</span>
+        <span class="links" (click)="tabChange('listing')" [class]="{'active': page=='listing'}">Listing</span>
+        
+    </div>
+  </div>   
+  <div class="tab-content"[ngSwitch]="page">
+   
+    <ng-template [ngSwitchCase]="'dashboard_new'">
+    <section class="dashboard">
+      <div class="container">
+          <div class="d-flex mb-3">
+              <div class="dashboard1  flex-fill ">Dashboard</div>
+             
+              <div class="add fill ">
+                  <button type="button"  data-toggle="modal" data-target="#exampleModalCenter"class="btn-btn-success">Add new</button>
+              </div>
+            </div>
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="card">
+                      <div class="card1" >
+                       <h4>Dine-In</h4><br/>
+                       <h2>23,421</h2>
+                      </div>
+                      <div class="card-body d-flex justify-content-between ">
+                        <h2>
+                          #BOGO<br/>
+                          4,824<br/>
+                          Male 2800
+                        </h2>
+                        <h2>
+                          %Redeem<br/>
+                          89%<br/>
+                          Female 2024
+                        </h2>
+                        <h2>
+                          Cost<br/>
+                          $8,901<br/>
+                        
+                        </h2>
+                      </div>
+                      <div class="d-flex k-3 ">
+                        <div style="border: solid 2px #0B9ABA; width: 210px; height: 1px;"class="k-2 bg-info"></div>
+                        
+                        <div style="border: solid 2px #B74C1E;background-color: #B74C1E; width: 380px; height: 1px;"class="k-2 bg-primary"></div>
+                      </div>
+                      <hr/>
+                    
+                     
+                      <!-- 2nd column -->
+                      <div class="card-body d-flex justify-content-between ">
+                          <h2>
+                            
+                              #%Off<br/>
+                              2,122<br/>
+                            Male 2800
+                          </h2>
+                          <h2>
+                            %Redeem<br/>
+                            76%<br/>
+                            Female 2024
+                          </h2>
+                          <h2>
+                            Cost<br/>
+                           
+                          $3,521<br/>
+                          
+                          </h2>
+                        </div>
+                        <div class="d-flex k-3 ">
+                          <div style="border: solid 2px #0B9ABA; width: 210px; height: 1px;"class="k-2 bg-info"></div>
+                          
+                          <div style="border: solid 2px #B74C1E;background-color: #B74C1E; width: 380px; height: 1px;"class="k-2 bg-primary"></div>
+                        </div>
+                        <hr/>
+                        <!-- 3rd column -->
+                        <div class="card-body d-flex justify-content-between ">
+                          <h2>
+                            
+                              #Fry Friday
+                              <br/>
+                              2,098
+                              <br/>
+                            Male 2800
+                          </h2>
+                          <h2>
+                            %Redeem<br/>
+                            92%<br/>
+                            Female 2024
+                          </h2>
+                          <h2>
+                            Cost<br/>
+                           
+                            $4,217
+                            <br/>
+                          
+                          </h2>
+                        </div>
+                    </div>
+                    
+              </div>
+              <!-- 2nd card starts -->
+              <div class="col-md-4">
+                  <div class="card">
+                      <div class="card2" >
+                       <h4>Take-Out</h4><br/>
+                       <h2>23,421</h2>
+                      </div>
+                      <div class="card-body d-flex justify-content-between ">
+                        <h2>
+                          #BOGO<br/>
+                          4,824<br/>
+                          Male 2800
+                        </h2>
+                        <h2>
+                          %Redeem<br/>
+                          89%<br/>
+                          Female 2024
+                        </h2>
+                        <h2>
+                          Cost<br/>
+                          $8,901<br/>
+                        
+                        </h2>
+                      </div>
+                      <div class="d-flex k-3 ">
+                        <div style="border: solid 2px #0B9ABA; width: 210px; height: 1px;"class="k-2 bg-info"></div>
+                        
+                        <div style="border: solid 2px #B74C1E;background-color: #B74C1E; width: 380px; height: 1px;"class="k-2 bg-primary"></div>
+                      </div>
+                      <hr/>
+                            <!-- 2nd column -->
+                      <div class="card-body d-flex justify-content-between ">
+                          <h2>
+                            
+                              #%Off<br/>
+                              2,122<br/>
+                            Male 2800
+                          </h2>
+                          <h2>
+                            %Redeem<br/>
+                            76%<br/>
+                            Female 2024
+                          </h2>
+                          <h2>
+                            Cost<br/>
+                           
+                          $3,521<br/>
+                          
+                          </h2>
+                        </div>
+                        <div class="d-flex k-3 ">
+                          <div style="border: solid 2px #0B9ABA; width: 210px; height: 1px;"class="k-2 bg-info"></div>
+                          
+                          <div style="border: solid 2px #B74C1E;background-color: #B74C1E; width: 380px; height: 1px;"class="k-2 bg-primary"></div>
+                        </div>
+                        <hr/>
+                        <!-- 3rd column -->
+                        <div class="card-body d-flex justify-content-between ">
+                          <h2>
+                            
+                              #Fry Friday
+                              <br/>
+                              2,098
+                              <br/>
+                            Male 2800
+                          </h2>
+                          <h2>
+                            %Redeem<br/>
+                            92%<br/>
+                            Female 2024
+                          </h2>
+                          <h2>
+                            Cost<br/>
+                           
+                            $4,217
+                            <br/>
+                          
+                          </h2>
+                        </div>
+                    </div>
+                    
+              </div>
+              <!-- 2nd card ends -->
+              <!-- 3rd card starts -->
+              <div class="col-md-4">
+                  <div class="card">
+                      <div class="card3" >
+                       <h4>SAP</h4><br/>
+                       <h2>23,421</h2>
+                      </div>
+                      <div class="card-body d-flex justify-content-between ">
+                        <h2>
+                          #BOGO<br/>
+                          4,824<br/>
+                          Male 2800
+                        </h2>
+                        <h2>
+                          %Redeem<br/>
+                          89%<br/>
+                          Female 2024
+                        </h2>
+                        <h2>
+                          Cost<br/>
+                          $8,901<br/>
+                        
+                        </h2>
+                      </div>
+                      <div class="d-flex k-3 ">
+                        <div style="border: solid 2px #0B9ABA; width: 210px; height: 1px;"class="k-2 bg-info"></div>
+                        
+                        <div style="border: solid 2px #B74C1E;background-color: #B74C1E; width: 380px; height: 1px;"class="k-2 bg-primary"></div>
+                      </div>
+                      <hr/>
+                      <!-- 2nd column -->
+                      <div class="card-body d-flex justify-content-between ">
+                          <h2>
+                            
+                              #%Off<br/>
+                              2,122<br/>
+                            Male 2800
+                          </h2>
+                          <h2>
+                            %Redeem<br/>
+                            76%<br/>
+                            Female 2024
+                          </h2>
+                          <h2>
+                            Cost<br/>
+                           
+                          $3,521<br/>
+                          
+                          </h2>
+                        </div>
+                        <div class="d-flex k-3 ">
+                          <div style="border: solid 2px #0B9ABA; width: 210px; height: 1px;"class="k-2 bg-info"></div>
+                          
+                          <div style="border: solid 2px #B74C1E;background-color: #B74C1E; width: 380px; height: 1px;"class="k-2 bg-primary"></div>
+                        </div>
+                        <hr/>
+                        <!-- 3rd column -->
+                        <div class="card-body d-flex justify-content-between ">
+                          <h2>
+                            
+                              #Fry Friday
+                              <br/>
+                              2,098
+                              <br/>
+                            Male 2800
+                          </h2>
+                          <h2>
+                            %Redeem<br/>
+                            92%<br/>
+                            Female 2024
+                          </h2>
+                          <h2>
+                            Cost<br/>
+                           
+                            $4,217
+                            <br/>
+                          
+                          </h2>
+                        </div>
+                    </div>
+                    
+              </div>
+              <!-- 3ed card ends -->
+          </div>
+      </div>
+  </section>
+  <!-- 2nd row starts -->
+  <section class="percentage">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <div class="first">
+            <div class="card w-420 h-420">
+              <div class="card-body">
+               <h4>#Deals</h4>
+               <div class="cont d-flex justify-content-between">
+                 <h4># Pushed <br/><span style="font-size: 30px;">2,345</span></h4><br/>
+                 <div class="vl"></div>
+                 <h4># Redmd <br/> <span style="color: #3C9D39;font-size: 30px;">1,897</span></h4>
+                 
+               </div>
+               <div class="progress blue"> <span class="progress-left"> <span class="progress-bar"></span> </span> <span class="progress-right"> <span class="progress-bar"></span> </span>
+                <div class="progress-value">90%</div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 2nd card -->
+        <div class="col-md-4">
+          <div class="second">
+            <div class="card w-420 h-420">
+              <div class="card-body">
+               <h4># Video</h4>
+               <div class="cont d-flex justify-content-between">
+                 <h4># Pushed <br/><span style="font-size: 30px;">2,345</span></h4><br/>
+                 <div class="vl"></div>
+                 <h4># Redmd <br/> <span style="color: #3CA175;font-size: 30px;">1,897</span></h4>
+                 
+               </div>
+               <div class="progress blue"> <span class="progress-left"> <span style="border-color:#3CA175 !important;"class="progress-bar"></span> </span> <span class="progress-right"> <span style="border-color:#3CA175 !important;"class="progress-bar"></span> </span>
+                <div class="progress-value">90%</div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- 3rd card -->
+        <div class="col-md-4">
+          <div class="third">
+            <div class="card w-420 h-420">
+              <div class="card-body">
+               <h4># Ban</h4>
+               <div class="cont d-flex justify-content-between">
+                 <h4># Pushed <br/><span style="font-size: 30px;">2,345</span></h4><br/> 
+                 <div class="vl"></div>
+                 <h4># Redmd <br/> <span style="color: #C78331;font-size: 30px;">1,897</span></h4>
+                 
+               </div>
+              
+               <div class="progress blue"> <span class="progress-left"> <span style="border-color:#C78331 !important;"class="progress-bar"></span> </span> <span class="progress-right"> <span style="border-color:#C78331 !important;"class="progress-bar"></span> </span>
+                <div class="progress-value">90%</div>
+            </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  
+  
+    </ng-template>
+    <ng-template [ngSwitchCase]="'listing'">
+      <section class="list">
+        <div class="d-flex justify-content-between">
+            <div class="list1">
+            <h2>Establishment List</h2>
+        </div>
+        <div class="add">
+            <button type="button"  data-toggle="modal" data-target="#exampleModalCenter"class="btn-btn-success">Add new</button>
+          </div>
+          <!-- <div class="filter">
+            <button type="button"  data-toggle="modal" data-target="#exampleModalCenter"class="btn-btn-success">Filter</button>
+          </div> -->
+          <div class="search-hero">
+            <input class="form-control" type="text" name="search" [(ngModel)]="searchText" autocomplete="off" placeholder="&#61442; Serch Here">
+          </div>
+    </div>
+        <!-- tab bar starts -->
+        <div class="status_wraps">
+          <span class="status_links" (click)="statusChange('all')" [class]="{'active': page=='all'}">all</span>
+          <span class="status_links" (click)="statusChange('progress')" [class]="{'active': page=='progress'}">In-Progress</span>
+          <span class="status_links" (click)="statusChange('decline')" [class]="{'active': page=='decline'}">Decline</span>
+          <span class="status_links" (click)="statusChange('approved')" [class]="{'active': page=='approved'}">Approved</span>
+          
+      </div>
+    </section>
+   
+  <div class="tab-prog"[ngSwitch]="page_prog">
+   
+    <ng-template [ngSwitchCase]="'all'">
+      <table datatable>
+        <thead>
+            <tr>
+                <th scope="col">Est. ID.</th>
+                <th scope="col">Est. Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Contact Person</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">City</th>
+                <th scope="col">Status</th>
+              
+                
+    
+            </tr><br/>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ASF134</td>
+            <td>Corcoran's Grill & Pub</td>
+            <td>Bars and night clubs</td>
+            <td>Ola Higgins</td>
+            <td>422 124 2322</td>
+            <td>San Antonio</td>
+           
+            <td>
+            
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Live</option>
+                <option value="1">Close</option>
+                </select></td>
+           
+          </tr>
+          <tr>
+            <td>SDG314</td>
+            <td>DSTRKT Bar & Grill</td>
+            <td>Restaurants</td>
+            <td>Cecelia Dean</td>
+            <td>422 124 2322</td>
+            <td>San Jose</td>
+            
+            <td>
+            
+                <select class="form-select" aria-label="Default select example">
+                  <option selected>Pending</option>
+                  <option value="1">Close</option>
+                  </select></td>
+          
+        </tr>
+        <tr>
+          <td>SDF233</td>
+          <td>Delilah's Chicago</td>
+          <td>Restaurants</td>
+          <td>Madge Gordon</td>
+          <td>422 124 2322</td>
+          <td>Houston</td>
+          
+          <td>
+          
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Decline</option>
+                <option value="1">Close</option>
+                </select></td>
+        
+      </tr>
+      <tr>
+        <td>FSD21D</td>
+        <td>2Twenty2 Tavern</td>
+        <td>Bars and night clubs</td>
+        <td>Ora Griffith</td>
+        <td>422 124 2322</td>
+        <td>San Antonio</td>
+        
+        <td>
+        
+            <select class="form-select" aria-label="Default select example">
+              <option selected>In-Progress</option>
+              <option value="1">Close</option>
+              </select></td>
+      
+    </tr>
+        </tbody>
+      </table>
+    </ng-template>
+    <ng-template [ngSwitchCase]="'progress'">
+      <table datatable>
+        <thead>
+            <tr>
+                <th scope="col">Est. ID.</th>
+                <th scope="col">Est. Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Contact Person</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">City</th>
+                <th scope="col">Status</th>
+              
+                
+    
+            </tr><br/>
+        </thead>
+        <tbody>
+  
+      <tr>
+        <td>FSD21D</td>
+        <td>2Twenty2 Tavern</td>
+        <td>Bars and night clubs</td>
+        <td>Ora Griffith</td>
+        <td>422 124 2322</td>
+        <td>San Antonio</td>
+        
+        <td>
+        
+            <select class="form-select" aria-label="Default select example">
+              <option selected>In-Progress</option>
+              <option value="1">Close</option>
+              </select></td>
+      
+    </tr>
+        </tbody>
+      </table>
+    </ng-template>
+    
+    <ng-template [ngSwitchCase]="'decline'">
+      <table datatable>
+        <thead>
+            <tr>
+                <th scope="col">Est. ID.</th>
+                <th scope="col">Est. Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Contact Person</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">City</th>
+                <th scope="col">Status</th>
+              
+                
+    
+            </tr><br/>
+        </thead>
+        <tbody>
+  
+        <tr>
+          <td>SDF233</td>
+          <td>Delilah's Chicago</td>
+          <td>Restaurants</td>
+          <td>Madge Gordon</td>
+          <td>422 124 2322</td>
+          <td>Houston</td>
+          
+          <td>
+          
+              <select class="form-select" aria-label="Default select example">
+                <option selected>Decline</option>
+                <option value="1">Close</option>
+                </select></td>
+        
+      </tr>
+  
+        </tbody>
+      </table>
+    </ng-template>
+    
+    <ng-template [ngSwitchCase]="'approved'">
+      <table datatable>
+        <thead>
+            <tr>
+                <th scope="col">Est. ID.</th>
+                <th scope="col">Est. Name</th>
+                <th scope="col">Category</th>
+                <th scope="col">Contact Person</th>
+                <th scope="col">Contact Number</th>
+                <th scope="col">City</th>
+                <th scope="col">Status</th>
+              
+                
+    
+            </tr><br/>
+        </thead>
+        <tbody>
+  
+      <tr>
+        <td>FSD21D</td>
+        <td>2Twenty2 Tavern</td>
+        <td>Bars and night clubs</td>
+        <td>Ora Griffith</td>
+        <td>422 124 2322</td>
+        <td>San Antonio</td>
+        
+        <td>
+        
+            <select class="form-select" aria-label="Default select example">
+              <option selected>Approved</option>
+              <option value="1">Close</option>
+              </select></td>
+      
+    </tr>
+        </tbody>
+      </table>
+    </ng-template>
+    
+    </div>
+  </ng-template>
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <!-- <h5 class="modal-title" id="exampleModalLongTitle">New Ticket</h5> -->
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+           <h5>Choose Establishment Category</h5>
+           <div class="choice">
+             <div class="row">
+               <div class="col-md-6">
+                <a routerLink="/profile" routerLinkActive="active">
+                 <div class="rester">
+                  <img src="../../assets/images/Restaurants.png" alt="Gowhere" >
+                  <h4>Restaurants</h4>
+                 </div></a>
+               </div>
+               <div class="col-md-6">
+                <a routerLink="/profile" routerLinkActive="active">
+                 <div class="bar">
+                 
+                  <img src="../../assets/images/Bar and night clubes.png" alt="noimage">
+                  <h4>Bar and Night Clubs</h4>
+                 </div></a>
+               </div>
+             </div>
+           
+           
+          </div>
+          </div>
+        
+        </div>
+      </div>
+    </div>
+   <!--  -->
+  </div>
+  
+  
+      <!-- table section -->
+   

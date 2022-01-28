@@ -1,0 +1,59 @@
+<section class="item">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="add_item">
+            <h4>Add item</h4>
+          <h3>Characteristics</h3>
+            <h6>Dish Name</h6>
+            <input type="text" id="dish" name="dish" placeholder="Enter dish name">
+            <h6>Category</h6>
+            <ng-select [searchable]="false" [items]="Category"
+                            bindLabel="name"
+                            placeholder="Select category"
+                            [(ngModel)]="selectedCategory"> 
+                            
+                 </ng-select>
+                 <h3>Different sizes & Price details</h3>
+                 <h6>Set Different Sizes</h6>
+                 <label *ngFor="let radiobutton of radioItems">
+                  <input
+                    type="radio"
+                    name="options"
+                    (click)="model.option = radiobutton"
+                    [checked]="radiobutton === model.option"
+                  />{{ radiobutton }}
+                </label>
+                <div class="row">
+                  <div class="col-md-6">
+                    <h6>Size 1</h6>
+                    <ng-select [searchable]="false" [items]="size"
+                    bindLabel="name"
+                    placeholder="Select size"
+                    [(ngModel)]="selectedSize"> 
+                    
+         </ng-select>
+                  </div>
+                  <div class="col-md-6">
+                    <h6>Price</h6>
+                      <input type="text" id="cost" name="cost" placeholder="Enter price">
+                  </div>
+                </div>
+                <h3>Upload Image</h3>
+                <h6>Image</h6>
+                  <input type="file" id="myFile" name="filename">
+                  <h6>
+                      Status
+                  </h6>
+                  <ng-select [searchable]="false" [items]="status"
+                  bindLabel="name"
+                  placeholder="Select status"
+                  [(ngModel)]="selectedStatus"> 
+                  
+       </ng-select>
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </section>
