@@ -9,17 +9,19 @@
 </div>
 <div class="tab-content"[ngSwitch]="current_page">
    <ng-template [ngSwitchCase]="'category'">
-      <section class="dashboard">
+
+
+      <section *ngIf="isCat" class="dashboard" >
          <div class="container">
             <nav aria-label="breadcrumb">
                <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                     <a href="#">
-                        <h5>Home</h5>
+                     <a (click)="tabChange('category')">
+                        <span>Home</span>
                      </a>
                   </li>
                   <li class="breadcrumb-item active" aria-current="page">
-                     <h5>Category Management</h5>
+                     <span (click)="tabChange('category')">Category Management</span>
                   </li>
                </ol>
             </nav>
@@ -47,7 +49,11 @@
                         <td class="icon-td">
                            <img alt="{{cat.name}}" class="category-icon" src="{{cat.icon}}">
                         </td>
-                        <td>{{cat.name}}</td>
+                        <td>
+                           <span (click)="showSubCategories(cat.name,cat.id)">
+                              {{cat.name}}
+                           </span>
+                        </td>
                         <td>{{cat.sub_cat_count}}</td>
                         <td>{{cat.est_enrolled}}</td>
                      </tr>
@@ -56,19 +62,111 @@
             </div>
          </div>
       </section>
+
+      <section  *ngIf="isSubCat" class="subcategories">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                     <span (click)="tabChange('category')" >
+                        Home
+                     </span>
+                  </li> 
+                  <li class="breadcrumb-item">
+                     <span (click)="tabChange('category')">
+                        Category Management
+                     </span>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                     <span>{{category}}</span>
+                  </li>
+               </ol>
+            </nav>
+            <div class="d-flex mb-3">
+               <div class="dashboard1  flex-fill ">{{category}}</div>
+               <div class="add fill ">
+                  <button type="button"  data-toggle="modal" data-target="#add-amenity-modal" class="btn-btn-success">Add</button>
+               </div>
+            </div>
+
+             <div class="row">
+               <table class="subcategories-table">
+                  <thead>
+                     <tr>
+                        <th scope="col" >No.</th>
+                        <th scope="col" >Icon</th>
+                        <th scope="col">Category Name</th>
+                        <th class="text-left-th" scope="col">Establishment Enrolled</th>
+                     </tr>
+                     <br/>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let cat of subcategories; let index = index" >
+                        <td class="sr-no">{{index+1}}</td>
+                        <td class="icon-td">
+                           <img alt="{{cat.name}}" class="category-icon" src="{{cat.icon}}">
+                        </td>
+                        <td class="subcat-title"> {{cat.name}}</td>
+                        <td class="text-left">{{cat.est_enrolled}}</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+
+         </div>
+      </section>
+
+
+
    </ng-template>
+
+
+   <ng-template [ngSwitchCase]="'payments'">
+       <section class="payments">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                     <span>Home</span>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                     <span>Payments</span>
+                  </li>
+               </ol>
+            </nav>
+            <div class="d-flex mb-3">
+               <div class="dashboard1  flex-fill ">Payments</div>
+               <div class="add fill ">
+                  <button type="button"  data-toggle="modal" data-target="#add-payment-modal" class="btn-btn-success">Add</button>
+               </div>
+            </div>
+            <div class="row">
+               <div class="col-lg-6 col-md-6">
+                  <div class="col-sm-12" *ngFor="let payment of payments; let index = index" >
+                    
+                     <div class="single-payment">
+                        <span class="amenity-title">{{payment.name}}</span>
+                        <div class="edit-payment text-right">Edit</div>
+                  </div>
+                  </div>
+            </div>
+            </div>
+            
+         </div>
+      </section>
+   </ng-template>
+
+
    <ng-template [ngSwitchCase]="'amenities'">
       <section class="amenities">
         <div class="container">
             <nav aria-label="breadcrumb">
                <ol class="breadcrumb">
                   <li class="breadcrumb-item">
-                     <a href="#">
-                        <h5>Home</h5>
-                     </a>
+                     <span>Home</span>
                   </li>
                   <li class="breadcrumb-item active" aria-current="page">
-                     <h5>Amenities Management</h5>
+                     <span>Amenities Management</span>
                   </li>
                </ol>
             </nav>
@@ -85,7 +183,7 @@
                         <div class="amenity-image">
                              <img alt="{{amenity.name}}" src="{{amenity.icon}}">
                         </div>
-                        <span class="amenity-title">{{index}}--{{amenity.name}}</span>
+                        <span class="amenity-title">{{amenity.name}}</span>
                         <div class="edit-amenity">
                            Edit
                         </div>
@@ -96,6 +194,7 @@
          </div>
       </section>
    </ng-template>
+
 
 
    <div class="modal fade" id="add-category-modal" tabindex="-1" role="dialog" aria-labelledby="add-category-modalTitle" aria-hidden="true">
@@ -113,13 +212,13 @@
                      <div class="form-group col">
                         <label for="cat_name" class="control-label">Category Name</label>
                         <div>
-                           <input id="cat_name" type="text" class="form-control"  placeholder="Category Name" name="cat_name" >
+                           <input id="cat_name" type="text" class="form-control shadow  bg-white rounded"  placeholder="Category Name" name="cat_name" >
                         </div>
                      </div>
                      <div class="form-group col mr-5">
                         <label for="category_icon" class="control-label">Category Icon</label>
                         <div>
-                           <input  type="file" id="category_icon" class="form-control" name="category_icon">
+                           <input  type="file" id="category_icon" class="form-control shadow  bg-white rounded" name="category_icon">
                         </div>
                      </div>
                   </div>
@@ -127,25 +226,25 @@
                      <div class="form-group col">
                         <label for="cat_name" class="control-label">Sub Category Name</label>
                         <div>
-                           <input id="cat_name" type="text" class="form-control"  placeholder="Subcategory Name" name="subcat_name[]" >
+                           <input id="cat_name" type="text" class="form-control shadow  bg-white rounded"  placeholder="Subcategory Name" name="subcat_name[]" >
                         </div>
                      </div>
                      <div class="form-group col mr-5">
                         <label for="category_icon" class="control-label">Sub Category Icon</label>
                         <div>
-                           <input  type="file" id="category_icon" class="form-control" name="subcategory_icon[]">
+                           <input  type="file" id="category_icon" class="form-control shadow  bg-white rounded" name="subcategory_icon[]">
                         </div>
                      </div>
                   </div>
                   <div class="row" *ngFor='let in of counter(sub_cats) ;let i = index;let last = last'>
                      <div class="form-group col">
                         <div>
-                           <input id="cat_name"  type="text" class="form-control"  placeholder="Subcategory Name" name="subcat_name[]" >
+                           <input id="cat_name"  type="text" class="form-control shadow  bg-white rounded"  placeholder="Subcategory Name" name="subcat_name[]" >
                         </div>
                      </div>
                      <div class="form-group col mr-5">
                         <div>
-                           <input  type="file" id="category_icon" class="form-control" name="subcategory_icon[]">
+                           <input  type="file" id="category_icon" class="form-control shadow  bg-white rounded" name="subcategory_icon[]">
                            <a *ngIf="last" (click)="RemoveSubCatField()"  class="btn remove-cat-field">
                            <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-x" 
                               viewBox="0 0 16 16">
@@ -196,25 +295,25 @@
                      <div class="form-group col">
                         <label for="cat_name" class="control-label">Amenity Name</label>
                         <div>
-                           <input id="cat_name" type="text" class="form-control"  placeholder="Amenity Name" name="amenity_name[]" >
+                           <input id="cat_name" type="text" class="form-control shadow  bg-white rounded"  placeholder="Amenity Name" name="amenity_name[]" >
                         </div>
                      </div>
                      <div class="form-group col mr-5">
                         <label for="category_icon" class="control-label">Sub Category Icon</label>
                         <div>
-                           <input  type="file" id="category_icon" class="form-control" name="amenity_icon[]">
+                           <input  type="file" id="category_icon" class="form-control shadow  bg-white rounded" name="amenity_icon[]">
                         </div>
                      </div>
                   </div>
                   <div class="row" *ngFor='let in of counterAmenity(amenity_form_field) ;let i = index;let last = last'>
                      <div class="form-group col">
                         <div>
-                           <input id="cat_name"  type="text" class="form-control"  placeholder="Amenity Name" name="amenity_name[]" >
+                           <input id="cat_name"  type="text" class="form-control shadow  bg-white rounded"  placeholder="Amenity Name" name="amenity_name[]" >
                         </div>
                      </div>
                      <div class="form-group col mr-5">
                         <div>
-                           <input  type="file" id="category_icon" class="form-control" name="amenity_icon[]">
+                           <input  type="file" id="category_icon" class="form-control shadow  bg-white rounded" name="amenity_icon[]">
                            <a *ngIf="last" (click)="RemoveAmenityField()"  class="btn remove-cat-field">
                            <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-x" 
                               viewBox="0 0 16 16">
@@ -247,9 +346,70 @@
             </div>
          </div>
       </div>
+   </div> 
+
+
+
+
+   <div class="modal fade" id="add-payment-modal" tabindex="-1" role="dialog" aria-labelledby="add-payment-modalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+         <div class="modal-content">
+            <div class="modal-header border-bottom-0 pb-0">
+               <h3 class="modal-title" id="exampleModalLongTitle">Add Payments</h3>
+               <button type="button" (click)="ModalClosedPayments()"  class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <form class="form-horizontal" role="form" method="POST"  >
+                  <div class="row">
+                     <div class="form-group col-6">
+                        <label for="payments-name" class="control-label">Payments Name</label>
+                        <div>
+                           <input id="payments-name" type="text" class="form-control shadow  bg-white rounded"  placeholder="Payments Name" name="payment_name[]" >
+                        </div>
+                     </div>
+                  </div>
+
+                  <div *ngFor='let in of counterPaymentFields(payment_form_field) ;let i = index;let last = last' class="row">
+                     <div class="form-group col-6">
+                        <div>
+                           <input id="payments-name" type="text" class="form-control shadow  bg-white rounded"  placeholder="Payments Name" name="payment_name[]" >
+
+                            <a *ngIf="last" (click)="RemovePaymentsField()"  class="btn remove-cat-field">
+                              <svg  xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="red" class="bi bi-x" 
+                                 viewBox="0 0 16 16">
+                                 <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z"/>
+                              </svg>
+                           </a>
+
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row text-right">
+                     <div class="form-group col">
+                        <button (click)="AddPaymentsField()" type="button" class="btn btn-outline-secondary line-height-1">
+                            Add
+                        </button>
+                     </div>
+                  </div>
+                  <div class="form-group row">
+                     <div class="col-6">
+                        <button type="submit" class="btn btn-outline-secondary line-height-1 save-button">
+                             Save
+                        </button>
+                     </div>
+                     <div class="col-6">
+                        <button type="button" (click)="ModalClosedPayments()"  data-dismiss="modal" class="btn btn-outline-secondary line-height-1" >
+                              Cancel
+                        </button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
    </div>
-
-
 
 
 </div>

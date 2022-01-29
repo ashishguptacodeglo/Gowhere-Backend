@@ -378,13 +378,25 @@ left: 76%;
 position: absolute;
 }
 
-#add-category-modal .modal-title {
-  font-family: "Gordita";
-  font-weight : 400;
-}
+
+
+
+
+
 .breadcrumb{
   background-color: unset;
+  padding: 0;
 }
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: black;
+font-weight: bold;
+font-family: 'Gordita';
+}
+
+
+
+
 .amenities {
   padding: 40px;
 }
@@ -419,4 +431,62 @@ text-align: center;
 
 .edit-amenity {
   color: #1AB001;
+}
+
+.subcategories {
+   padding-top: 40px; 
+}
+.subcategories-table tbody tr {
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+  outline: 1px solid #E2E2E2;
+  border-radius: 10px;
+  height: 70px;
+  vertical-align: middle;
+  padding: 10px;
+  cursor: pointer;
+}
+.subcat-title{
+  width: 15%;
+}
+
+.subcategories-table {
+  border-collapse: unset;
+  border-spacing: 0 10px !important;
+}
+.text-left-th{
+  text-align: left !important;
+}
+
+.payments {
+   padding-top: 40px; 
+}
+
+.breadcrumb span{
+  font-size: 14px;
+font-weight: 500;
+font-family: 'Gordita';
+
+}
+
+.edit-payment {
+  color: #1AB001;
+  width: 20%;
+  margin-right: 2%;
+}
+.single-payment {
+  box-shadow: 0 2px 4px 0 rgb(0 0 0 / 8%);
+  outline: 1px solid #E2E2E2;
+  border-radius: 10px;
+  height: auto;
+  vertical-align: middle;
+  cursor: pointer;
+  display: flex;
+  padding: 3%;
+  margin-bottom: 2%;
+}
+
+
+#add-category-modal .modal-title,#add-payment-modal .modal-title, #add-amenity-modal .modal-title {
+  font-family: "Gordita";
+  font-weight : 400;
 }
