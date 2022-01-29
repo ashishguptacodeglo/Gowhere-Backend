@@ -490,3 +490,29 @@ font-family: 'Gordita';
   font-family: "Gordita";
   font-weight : 400;
 }
+
+
+#amenities-pagination{
+  background: #F7F7F7;
+  margin-top: 2%;
+}
+#amenities-pagination .pagination .page-link{
+  background-color: unset;
+  border: unset;
+}
+
+#amenities-pagination .pagination .page-link {
+  background-color: unset;
+  color: #444A4A;
+  border-color: #dee2e6;
+  font-family: 'Gordita';
+}
+
+#amenities-pagination .pagination{
+  margin-top: 1%;
+}
+
+#amenities-pagination .pagination .page-item.active {
+  border: 1px solid #E2E2E2;
+  background-color: white;
+}
