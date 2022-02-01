@@ -3,10 +3,16 @@
     position: relative;
 }
 .top-head {
-   position: relative;
+    position: relative;
 }
-
-.export-btndiv a.export-btn {border: 2px solid #1AB001;padding: 11px 25px;font-size: 14px;font-weight: 500;color: #444A4A !important;border-radius: 5px;}
+.export-btndiv a.export-btn {
+    border: 2px solid #1AB001;
+    padding: 11px 25px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444A4A !important;
+    border-radius: 5px;
+}
 span.top-span {
     color: #373737;
     font-weight: 500;
@@ -32,7 +38,6 @@ h4.top-h4 {
     padding: 15px 20px 10px 20px;
     border-radius: 10px 10px 0 0;
 }
-
 .din-sec h3 {
     font-size: 14px;
     font-weight: 500;
@@ -40,13 +45,11 @@ h4.top-h4 {
     margin-bottom: 0;
     line-height: 30px;
 }
-
 .din-sec h2 {
     font-size: 30px;
     font-weight: 700;
     color: #fff;
 }
-
 .din-wrap {
     padding: 15px 15px 15px 15px;
     display: table;
@@ -62,7 +65,6 @@ span.bo-span {
     font-size: 14px;
     font-weight: 500;
 }
-
 .din-inner {
     display: table;
     width: 100%;
@@ -80,22 +82,19 @@ span.bo-span {
     height: 1px;
 }
 .din-inner.din-inner-new:after {
-    width: 0px; 
+    width: 0px;
 }
 .din-in1 {
     display: table-cell;
     position: relative;
 }
-
 .din-in2 {
     display: table-cell;
     position: relative;
 }
-
 .din-in {
     display: table-cell;
 }
-
 .din-in1:before {
     content: '';
     background-color: #E2E2E2;
@@ -106,13 +105,11 @@ span.bo-span {
     width: 1px;
     height: 42px;
 }
-
 span.bo-num {
     font-size: 20px;
     font-weight: 700;
     color: #4A4A4A !important;
 }
-
 .din-in2:before {
     content: '';
     background-color: #E2E2E2;
@@ -126,7 +123,6 @@ span.bo-num {
 .din-sec.din-sec3 {
     background-color: #23A476;
 }
-
 .din-sec.din-sec2 {
     background-color: #239FA4;
 }
@@ -140,13 +136,11 @@ span.bo-num {
     display: table;
     width: 100%;
 }
-
 .dropdown {
     padding: 20px 20px 20px 0;
     text-align: right;
     display: table-cell;
     width: 100%;
-
 }
 .dropdown a#dropdownMenuLink {
     color: #444A4A;
@@ -165,9 +159,38 @@ span.deals-span-new {
     font-size: 14px;
     font-weight: 500;
 }
-span.bo-span.bo-span-gray {color: #4A4A4A !important;margin-top: 20px;}
-
+span.bo-span.bo-span-gray {
+    color: #4A4A4A !important;
+    margin-top: 20px;
+}
 span.bo-num.bo-num-color- {
     color: #3C9D39 !important;
     font-size: 30px !important;
+}
+
+.tab-content {
+    padding: 40px;
+    margin-top: 8%;
+}
+.breadcrumb{
+  background-color: unset;
+  padding: 0;
+}
+
+.breadcrumb-item + .breadcrumb-item::before {
+  color: black;
+font-weight: bold;
+font-family: 'Gordita';
+}
+
+.breadcrumb span{
+  font-size: 14px;
+font-weight: 500;
+font-family: 'Gordita';
+
+}
+
+#chart {
+  max-width: 650px;
+  margin: 35px auto;
 }
