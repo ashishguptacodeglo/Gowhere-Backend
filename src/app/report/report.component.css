@@ -167,30 +167,153 @@ span.bo-num.bo-num-color- {
     color: #3C9D39 !important;
     font-size: 30px !important;
 }
-
 .tab-content {
     padding: 40px;
     margin-top: 8%;
 }
-.breadcrumb{
-  background-color: unset;
-  padding: 0;
+.breadcrumb {
+    background-color: unset;
+    padding: 0;
+}
+.breadcrumb-item+.breadcrumb-item::before {
+    color: black;
+    font-weight: bold;
+    font-family: 'Gordita';
 }
 
-.breadcrumb-item + .breadcrumb-item::before {
-  color: black;
-font-weight: bold;
-font-family: 'Gordita';
+.dashboard1 {
+     font-family: 'Gordita';
 }
-
-.breadcrumb span{
-  font-size: 14px;
-font-weight: 500;
-font-family: 'Gordita';
-
+.breadcrumb span {
+    font-size: 14px;
+    font-weight: 500;
+    font-family: 'Gordita';
 }
-
 #chart {
-  max-width: 650px;
-  margin: 35px auto;
+    max-width: 650px;
+    margin: 35px auto;
+}
+.total-downloads {
+    width: 70%;
+}
+.download-number {
+    font-size: 30px;
+    font-family: 'Gordita';
+    font-weight: 700;
+}
+.download-title {
+    font-family: 'Gordita';
+    font-size: 14px;
+    font-weight: bold;
+}
+.downlods-data {
+    background: #373737;
+    color: #FFFFFF;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    padding: 5%;
+}
+.new-user-title {
+    font-size: 11px;
+    font-family: 'Gordita';
+}
+.download-number {
+    font-size: 18px;
+    font-family: 'Gordita';
+    font-weight: 700;
+}
+.downlods-card-title {
+    font-size: 14px;
+    color: #373737;
+    font-family: 'Gordita';
+}
+.user-type-1 {
+    width: 50%;
+    border-right: 3px solid #ebebeb;
+}
+.usage-title {
+    color: #373737;
+    font-size: 14px;
+    font-family: 'Gordita';
+}
+.usage-number {
+    font-size: 20px;
+    font-weight: 700;
+    color: #0B9ABA;
+}
+.usage-desc {
+    font-size: 12px;
+    font-family: 'Gordita';
+    font-weight: 500;
+}
+.user-type-2 .usage-number {
+    color: #B74C1E;
+}
+.choose-options .option {
+    width: auto;
+    height: auto;
+    text-align: center;
+    font-size: 14px;
+    font-family: Gordita;
+    color: #444A4A;
+    font-weight: 500;
+    border-color: #E2E2E2;
+    background-color: unset;
+    border-top: unset;
+    border: unset;
+}
+.border-none-class {
+    background: unset;
+    border-bottom: unset;
+}
+.border-none-class .graph-title {
+    width: 50%;
+    font-size: 14px;
+    font-family: 'Gordita';
+}
+.choose-options {
+    position: absolute;
+    right: 0;
+    margin-right: 3%;
+}
+#panel-body .progress {
+    height: 0.7rem;
+}
+.user-type-2 {
+    margin-left: .5rem !important;
+}
+.color-red.usage-number {
+    color: #C14E48 !important;
+}
+.color-black.usage-number {
+    color: #4A4A4A !important;
+}
+.color-green.usage-number {
+    color: #3C9D39 !important;
+}
+
+.option-filters {
+    width: 100%;
+    height: auto;
+    border-radius: 20px;
+    text-align: center;
+    font-size: 14px;
+    font-family: Gordita;
+    color: #444A4A;
+    font-weight: 500;
+    border-color: #E2E2E2;
+    background-color: #FFFFFF;
+}
+.col-sm-6.col-md-3.single-filter {
+    display: flex;
+}
+.filter-title {
+    width: 50%;
+}
+
+.filter-field{
+    width: 50%;
+}
+.filter-field.full-width {
+    width: 100%;
 }

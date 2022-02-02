@@ -23,6 +23,7 @@ import { ProfileComponent } from './profile/profile.component';
 import { LoginComponent } from './login/login.component';
 import { NewItemComponent } from './new-item/new-item.component';
 import { HttpInterceptorInterceptor } from './services/http-interceptor.interceptor';
+import { DatepickerDirective } from './directive/datepicker.directive';
 
 
 @NgModule({
@@ -32,7 +33,8 @@ import { HttpInterceptorInterceptor } from './services/http-interceptor.intercep
     DealComponent,
     ProfileComponent,
     LoginComponent,
-    NewItemComponent
+    NewItemComponent,
+    DatepickerDirective,
   ],
   imports: [
     BrowserModule,

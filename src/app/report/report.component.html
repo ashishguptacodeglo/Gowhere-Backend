@@ -1,48 +1,42 @@
-   
 <div class="page_tabs">
    <div class="wraps">
       <span class="links" (click)="tabChange('consumer_stats')" [class]="{'active': current_page=='consumer_stats'}">
-         Consumer Stats
+      Consumer Stats
       </span>
       <span class="links" (click)="tabChange('reward_stats')" [class]="{'active': current_page=='reward_stats'}">
-        Rewards Stats
+      Rewards Stats
       </span>
       <span class="links" (click)="tabChange('deal_stats')" [class]="{'active': current_page=='deal_stats'}">
-        Deal Stats
+      Deal Stats
       </span>
       <span class="links" (click)="tabChange('deal_type_stats')" [class]="{'active': current_page=='deal_type_stats'}">
-        Deal Type Stats
+      Deal Type Stats
       </span>
       <span class="links" (click)="tabChange('deal_type_by_restaurents')" [class]="{'active': current_page=='deal_type_by_restaurents'}">
-          Deal Type By Restaurent Category
-        </span>
+      Deal Type By Restaurent Category
+      </span>
       <span class="links" (click)="tabChange('sales_stats')" [class]="{'active': current_page=='sales_stats'}">
-          Sales Stats
+      Sales Stats
       </span>
       <span class="links" (click)="tabChange('help_tickets')" [class]="{'active': current_page=='help_tickets'}">
-        Help Tickets
+      Help Tickets
       </span>
-     
    </div>
 </div>
-
-
-
 <div class="tab-content"[ngSwitch]="current_page">
    <ng-template [ngSwitchCase]="'consumer_stats'">
-     <section class="customer-stats" >
+      <section class="customer-stats" >
          <div class="container">
             <nav aria-label="breadcrumb">
                <ol class="breadcrumb">
                   <li class="breadcrumb-item">
                      <a (click)="tabChange('consumer_stats')">
-                        <span>Home</span>
+                     <span>Home</span>
                      </a>
-                  </li> 
-
+                  </li>
                   <li class="breadcrumb-item">
                      <a (click)="tabChange('consumer_stats')">
-                        <span>Reports</span>
+                     <span>Reports</span>
                      </a>
                   </li>
                   <li class="breadcrumb-item active" aria-current="page">
@@ -50,254 +44,275 @@
                   </li>
                </ol>
             </nav>
-            <apx-chart
-            [series]="chartOptions.series"
-            [chart]="chartOptions.chart"
-            [xaxis]="chartOptions.xaxis"
-            [stroke]="chartOptions.stroke"
-            [dataLabels]="chartOptions.dataLabels"
-            [yaxis]="chartOptions.yaxis"
-            [labels]="chartOptions.labels"
-            [legend]="chartOptions.legend"
-            [title]="chartOptions.title"
-            [subtitle]="chartOptions.subtitle"
-          ></apx-chart>
-          
+ 
+            <div class="d-flex mb-3">
+               <div class="dashboard1  flex-fill "><h2 class="">Consumer & Establishment Stats</h2></div>
+               <div class="add fill ">
+                  <button type="button" class="btn-btn-success">Export Report  </button>
+               </div>
+            </div>
+            
+            <div class="row filter-options mt-2 mb-2">
+               <div class="col-sm-6 col-md-3 single-filter">
+                  <div class="filter-title">
+                     Region
+                  </div>
+                  <div class="filter-field">
+                     <select class="option-filters">
+                        <option value="volvo">West </option>
+                        <option value="saab">East </option>
+                        <option value="saab">North </option>
+                        <option value="saab">South </option>
+                     </select>
+                  </div>
+               </div> 
+
+                <div class="col-sm-6 col-md-3 single-filter">
+                  <div class="filter-title">
+                     State
+                  </div>
+                  <div class="filter-field">
+                     <select class="option-filters">
+                        <option value="volvo">Texas </option>
+                        <option value="saab">East </option>
+                        <option value="saab">North </option>
+                        <option value="saab">South </option>
+                     </select>
+                  </div>
+               </div>  
+
+               <div class="col-sm-6 col-md-3 single-filter">
+                  <div class="filter-title">
+                     City
+                  </div>
+                  <div class="filter-field">
+                     <select class="option-filters">
+                        <option value="volvo">Austin </option>
+                        <option value="saab">East </option>
+                        <option value="saab">North </option>
+                        <option value="saab">South </option>
+                     </select>
+                  </div>
+               </div>
+
+               <div class="col-sm-6 col-md-3 single-filter">
+                  <div class="filter-field full-width">
+                     <!-- <input type="date" class="form-control"> -->
+                      <select class="option-filters">
+                        <option value="volvo">01 Sep 2021 - 30 Sep 2021 </option>
+                     </select>
+
+                  </div>
+               </div>
+
+               
+            </div>
+
+
+            <div class="row card">
+               <apx-chart
+               [series]="chartOptions.series"
+               [chart]="chartOptions.chart"
+               [xaxis]="chartOptions.xaxis"
+               [stroke]="chartOptions.stroke"
+               [dataLabels]="chartOptions.dataLabels"
+               [yaxis]="chartOptions.yaxis"
+               [labels]="chartOptions.labels"
+               [legend]="chartOptions.legend"
+               [title]="chartOptions.title"
+               [subtitle]="chartOptions.subtitle"
+               [fill]="chartOptions.fill"
+               ></apx-chart>
+            </div>
+            <div class="row mt-5">
+               <div class="col-md-4 col-sm-6" id="panel-body">
+                  <div class="card item-card card-block">
+                     <div class="d-flex downlods-data" >
+                        <div class="total-downloads ml-2">
+                           <div class="download-title">
+                              Total downloads
+                           </div>
+                           <div class="download-number">
+                              324,339
+                           </div>
+                        </div>
+                        <div class="new-user">
+                           <div class="new-user-title"> 
+                              New User/Day
+                           </div>
+                           <div class="new-user-number">
+                              2,134
+                           </div>
+                        </div>
+                     </div>
+                     <div class="m-2">
+                        <div class="ios-users ml-2">
+                           <div class="downlods-card-title">
+                              <div class="downlods-card-title">
+                                 ios
+                              </div>
+                              <div class="download-number">
+                                 183,123
+                              </div>
+                           </div>
+                           <div class="user-segregation d-flex mt-2">
+                              <div class="user-type-1">
+                                 <div class="usage-title">
+                                    Male
+                                 </div>
+                                 <div class="usage-number">
+                                    102,866
+                                 </div>
+                                 <div class="usage-desc">
+                                    Age: 18-46
+                                 </div>
+                              </div>
+                              <div class="user-type-2 ml-2">
+                                 <div class="usage-title">
+                                    Female
+                                 </div>
+                                 <div class="usage-number">
+                                    102,866
+                                 </div>
+                                 <div class="usage-desc">
+                                    Age: 19-48
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="progress mt-2" style="max-width: 100%">
+                              <div class="progress-bar" style="width: 60%; background-color: #0B9ABA"></div>
+                              <div class="progress-bar progress-bar-stripped" style="width: 40%; background-color: #B74C1E"></div>
+                           </div>
+                        </div>
+                     </div>
+                     <hr>
+                     <div class="m-2">
+                        <div class="android-users ml-2">
+                           <div class="downlods-card-title">
+                              <div class="downlods-card-title">
+                                 Android
+                              </div>
+                              <div class="download-number">
+                                 183,123
+                              </div>
+                           </div>
+                           <div class="user-segregation d-flex mt-2">
+                              <div class="user-type-1">
+                                 <div class="usage-title">
+                                    Male
+                                 </div>
+                                 <div class="usage-number">
+                                    102,866
+                                 </div>
+                                 <div class="usage-desc">
+                                    Age: 18-46
+                                 </div>
+                              </div>
+                              <div class="user-type-2 ml-2">
+                                 <div class="usage-title">
+                                    Female
+                                 </div>
+                                 <div class="usage-number">
+                                    102,866
+                                 </div>
+                                 <div class="usage-desc">
+                                   Age: 19-48
+                                 </div>
+                              </div>
+                           </div>
+                           <div class="progress mt-2" style="max-width: 100%">
+                              <div class="progress-bar" style="width: 60%; background-color: #0B9ABA"></div>
+                              <div class="progress-bar progress-bar-stripped" style="width: 40%; background-color: #B74C1E"></div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div class="card">
+                     <div class="card-header d-flex border-none-class" style="background: unset;">
+                        <div class="graph-title"> Gender </div>
+                        <div class="choose-options">
+                           <select class="option">
+                              <option value="volvo">Today </option>
+                              <option value="saab">Tomorrow </option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="card-body">
+                        <apx-chart
+                        [series]="chart1.series"
+                        [chart]="chart1.chart"
+                        [plotOptions]="chart1.plotOptions"
+                        [yaxis]="chart1.yaxis"
+                        [legend]="chart1.legend"
+                        [fill]="chart1.fill"
+                        [title]="chart1.title"
+                        [stroke]="chart1.stroke"
+                        [labels]="chart1.labels"
+                        [xaxis]="chart1.xaxis"
+                        [dataLabels]="chart1.dataLabels"
+                        ></apx-chart>
+                     </div>
+                  </div>
+               </div>
+               <div class="col-md-4 col-sm-6">
+                  <div class="card">
+                     <div class="card-header d-flex border-none-class" style="background: unset;">
+                        <div class="graph-title"> Establishment Enroll </div>
+                        <div class="choose-options">
+                           <select class="option">
+                              <option value="volvo">Today </option>
+                              <option value="saab">Tomorrow </option>
+                           </select>
+                        </div>
+                     </div>
+                     <div class="card-body">
+                        <apx-chart
+                        [series]="chart2.series"
+                        [chart]="chart2.chart"
+                        [plotOptions]="chart2.plotOptions"
+                        [yaxis]="chart2.yaxis"
+                        [legend]="chart2.legend"
+                        [fill]="chart2.fill"
+                        [title]="chart2.title"
+                        [stroke]="chart2.stroke"
+                        [labels]="chart2.labels"
+                        [xaxis]="chart2.xaxis"
+                        [dataLabels]="chart2.dataLabels"
+                        ></apx-chart>
+                     </div>
+                  </div>
+               </div>
+            </div>
+            <div class="row">
+
+               <div *ngFor="let stat of stats_cards;" class="col-md-4 col-sm-6 mb-2 mt-2">
+                  <div class="card">
+                  <div class="m-2">
+                     <div class="android-users ml-2">
+                        <div class="downlods-card-title">
+                           <div class="downlods-card-title">
+                              {{stat.title}}
+                           </div>
+                        </div>
+                        <div class="user-segregation d-flex mt-2">
+                           <div *ngFor="let item of stat.values; let index = index" class="user-type-{{index+1}}">
+                              <div class="usage-title">
+                                 {{item.title}}
+                              </div>
+                              <div class="usage-number  {{item.class}}">
+                                 {{item.value}}
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+                  </div>
+                </div>
+
+            </div>
          </div>
       </section>
-    </ng-template>  
+   </ng-template>
 </div>
-
-<!-- 
-<div  class="report-main">
-   <div  class="top-head">
-      <h3 class="top-h3"><span class="top-span">Home / </span><span class="top-span">Report / </span>Save a Plate</h3>
-      <h4 class="top-h4">Deal Type/Stats</h4>
-   </div>
-   <div class="export-btndiv">
-      <a href="#" class="export-btn">Export Report</a>
-   </div>
-   <div class="drop-down-sec">
-      <div class="dropdown">
-         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         La Casa Del Pueblo - City Mall
-         </a>
-         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-         </div>
-      </div>
-      <div class="dropdown">
-         <a class="btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-         01 Sep 2021 - 30 Sep 2021
-         </a>
-         <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
-            <a class="dropdown-item" href="#">Action</a>
-            <a class="dropdown-item" href="#">Another action</a>
-            <a class="dropdown-item" href="#">Something else here</a>
-         </div>
-      </div>
-   </div>
-   <div class="report-top">
-      <div class="row">
-         <div class="col-md-4">
-            <div class="din-sec">
-               <h3>Dine-In</h3>
-               <h2>23,421</h2>
-            </div>
-            <div class="din-wrap">
-               <div class="din-inner">
-                  <div class="din-in">
-                     <span class="bo-span">#BOGQ</span>
-                     <span class="bo-num">4,824</span>
-                  </div>
-                  <div class="din-in1">
-                     <span class="bo-span">%Redeem</span>
-                     <span class="bo-num">89%</span>
-                  </div>
-                  <div class="din-in2">
-                     <span class="bo-span">Cost</span>
-                     <span class="bo-num">$8,901</span>
-                  </div>
-               </div>
-               <div class="din-inner">
-                  <div class="din-in">
-                     <span class="bo-span">#%Off</span>
-                     <span class="bo-num">2,122</span>
-                  </div>
-                  <div class="din-in1">
-                     <span class="bo-span">%Redeem</span>
-                     <span class="bo-num">76%</span>
-                  </div>
-                  <div class="din-in2">
-                     <span class="bo-span">Cost</span>
-                     <span class="bo-num">$3,521</span>
-                  </div>
-               </div>
-               <div class="din-inner din-inner-new">
-                  <div class="din-in">
-                     <span class="bo-span">#Fry Friday</span>
-                     <span class="bo-num">2,098</span>
-                  </div>
-                  <div class="din-in1">
-                     <span class="bo-span">%Redeem</span>
-                     <span class="bo-num">82%</span>
-                  </div>
-                  <div class="din-in2">
-                     <span class="bo-span">Cost</span>
-                     <span class="bo-num">$4,217</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4">
-            <div class="din-sec din-sec2">
-               <h3>Take-Out</h3>
-               <h2>23,421</h2>
-            </div>
-            <div class="din-wrap">
-               <div class="din-inner">
-                  <div class="din-in">
-                     <span class="bo-span">#BOGQ</span>
-                     <span class="bo-num">4,824</span>
-                  </div>
-                  <div class="din-in1">
-                     <span class="bo-span">%Redeem</span>
-                     <span class="bo-num">89%</span>
-                  </div>
-                  <div class="din-in2">
-                     <span class="bo-span">Cost</span>
-                     <span class="bo-num">$8,901</span>
-                  </div>
-               </div>
-               <div class="din-inner">
-                  <div class="din-in">
-                     <span class="bo-span">#%Off</span>
-                     <span class="bo-num">2,122</span>
-                  </div>
-                  <div class="din-in1">
-                     <span class="bo-span">%Redeem</span>
-                     <span class="bo-num">76%</span>
-                  </div>
-                  <div class="din-in2">
-                     <span class="bo-span">Cost</span>
-                     <span class="bo-num">$3,521</span>
-                  </div>
-               </div>
-               <div class="din-inner din-inner-new">
-                  <div class="din-in">
-                     <span class="bo-span">#Fry Friday</span>
-                     <span class="bo-num">2,098</span>
-                  </div>
-                  <div class="din-in1">
-                     <span class="bo-span">%Redeem</span>
-                     <span class="bo-num">82%</span>
-                  </div>
-                  <div class="din-in2">
-                     <span class="bo-span">Cost</span>
-                     <span class="bo-num">$4,217</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-         <div class="col-md-4">
-            <div class="din-sec din-sec3">
-               <h3>SAP</h3>
-               <h2>23,421</h2>
-            </div>
-            <div class="din-wrap">
-               <div class="din-inner">
-                  <div class="din-in">
-                     <span class="bo-span">#BOGQ</span>
-                     <span class="bo-num">4,824</span>
-                  </div>
-                  <div class="din-in1">
-                     <span class="bo-span">%Redeem</span>
-                     <span class="bo-num">89%</span>
-                  </div>
-                  <div class="din-in2">
-                     <span class="bo-span">Cost</span>
-                     <span class="bo-num">$8,901</span>
-                  </div>
-               </div>
-               <div class="din-inner">
-                  <div class="din-in">
-                     <span class="bo-span">#%Off</span>
-                     <span class="bo-num">2,122</span>
-                  </div>
-                  <div class="din-in1">
-                     <span class="bo-span">%Redeem</span>
-                     <span class="bo-num">76%</span>
-                  </div>
-                  <div class="din-in2">
-                     <span class="bo-span">Cost</span>
-                     <span class="bo-num">$3,521</span>
-                  </div>
-               </div>
-               <div class="din-inner din-inner-new">
-                  <div class="din-in">
-                     <span class="bo-span">#Fry Friday</span>
-                     <span class="bo-num">2,098</span>
-                  </div>
-                  <div class="din-in1">
-                     <span class="bo-span">%Redeem</span>
-                     <span class="bo-num">82%</span>
-                  </div>
-                  <div class="din-in2">
-                     <span class="bo-span">Cost</span>
-                     <span class="bo-num">$4,217</span>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-      <div class="top-div">
-         <div class="row">
-            <div class="col-md-4">
-               <div class="din-wrap">
-                  <div class="din-inner">
-                     <span class="deals-span-new"># Deals</span>
-                     <div class="din-in"><span class="bo-span bo-span-gray"># Pushed</span>
-                        <span class="bo-num bo-num-new">2,345</span>
-                     </div>
-                     <div class="din-in1"><span class="bo-span">%Redeem</span><span class="bo-num bo-num-color-">1,897</span></div>
-                  </div>
-                  <div class="chart-div">
-                     <canvas id="myChart" width="100%" height="150" #mychart></canvas>
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="din-wrap">
-                  <div class="din-inner">
-                     <span class="deals-span-new"># Video</span>
-                     <div class="din-in"><span class="bo-span bo-span-gray"># Pushed</span>
-                        <span class="bo-num bo-num-new">2,345</span>
-                     </div>
-                     <div class="din-in1"><span class="bo-span">%Redeem</span><span class="bo-num bo-num-color- bo-num-color-green">1,897</span></div>
-                  </div>
-                  <div class="chart-div">
-                     <canvas id="myChart" width="100%" height="150" #mychart></canvas>
-                  </div>
-               </div>
-            </div>
-            <div class="col-md-4">
-               <div class="din-wrap">
-                  <div class="din-inner">
-                     <span class="deals-span-new"># Ban</span>
-                     <div class="din-in"><span class="bo-span bo-span-gray"># Pushed</span>
-                        <span class="bo-num bo-num-new">2,345</span>
-                     </div>
-                     <div class="din-in1"><span class="bo-span">%Redeem</span><span class="bo-num bo-num-color- bo-num-color-red">1,897</span></div>
-                  </div>
-                  <div class="chart-div">
-                     <canvas id="myChart" width="100%" height="150" #mychart></canvas>
-                  </div>
-               </div>
-            </div>
-         </div>
-      </div>
-   </div>
-</div>
- -->
