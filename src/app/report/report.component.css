@@ -180,9 +180,8 @@ span.bo-num.bo-num-color- {
     font-weight: bold;
     font-family: 'Gordita';
 }
-
 .dashboard1 {
-     font-family: 'Gordita';
+    font-family: 'Gordita';
 }
 .breadcrumb span {
     font-size: 14px;
@@ -291,7 +290,6 @@ span.bo-num.bo-num-color- {
 .color-green.usage-number {
     color: #3C9D39 !important;
 }
-
 .option-filters {
     width: 100%;
     height: auto;
@@ -310,10 +308,15 @@ span.bo-num.bo-num-color- {
 .filter-title {
     width: 50%;
 }
-
-.filter-field{
+.filter-field {
     width: 50%;
 }
 .filter-field.full-width {
     width: 100%;
+}
+.usage-number.color-orange {
+    color: #F99B33 !important;
+}
+.deal-type-restaurents-stats .usage-title {
+    font-size: 12px;
 }

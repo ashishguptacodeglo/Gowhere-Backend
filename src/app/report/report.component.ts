@@ -1,26 +1,6 @@
-import {
-    Component,
-    OnInit,
-    ViewChild
-} from '@angular/core';
+import {Component,OnInit,ViewChild} from '@angular/core';
+import {ChartComponent, ApexAxisChartSeries,ApexChart, ApexXAxis,ApexDataLabels,ApexStroke,ApexYAxis,ApexTitleSubtitle,ApexLegend,ApexFill,ApexPlotOptions,ApexTooltip,ApexResponsive} from "ng-apexcharts";
 
-import {FormGroup, FormControl} from '@angular/forms';
-
-
-import {
-    ChartComponent,
-    ApexAxisChartSeries,
-    ApexChart,
-    ApexXAxis,
-    ApexDataLabels,
-    ApexStroke,
-    ApexYAxis,
-    ApexTitleSubtitle,
-    ApexLegend,
-    ApexFill,
-    ApexPlotOptions,
-    ApexTooltip
-} from "ng-apexcharts";
 export type ChartOptions = {
     series: ApexAxisChartSeries;
     plotOptions: ApexPlotOptions;
@@ -31,10 +11,11 @@ export type ChartOptions = {
     dataLabels: ApexDataLabels;
     yaxis: ApexYAxis;
     title: ApexTitleSubtitle;
-    labels: string[];
+    labels: any;
     legend: ApexLegend;
     subtitle: ApexTitleSubtitle;
     tooltip: ApexTooltip;
+    responsive: ApexResponsive[];
 };
 @Component({
     selector: 'app-report',
@@ -42,68 +23,94 @@ export type ChartOptions = {
     styleUrls: ['./report.component.css']
 })
 export class ReportComponent {
-    public chartOptions: Partial < ChartOptions > | any;
-    public chart1: Partial < ChartOptions > | any;
-    public chart2: Partial < ChartOptions > | any;
-   
-
+    public stats_area_graph: Partial <ChartOptions> | any;
+    public stats_bar_graph1: Partial <ChartOptions> | any;
+    public stats_bar_graph2: Partial <ChartOptions> | any;
+    public deal_type_by_restaurents1: Partial <ChartOptions> | any;
+    public deal_type_by_restaurents2: Partial <ChartOptions> | any;
+    public deal_type_by_restaurents3: Partial <ChartOptions> | any;
+    
     current_page: any = "consumer_stats";
-    stats_cards: any = [
-      {
-        title : "# Deletes",
-        values : [
-          { title : "iOS" , value : "3,123",class:'color-red'},
-          { title : "Android" , value : "2,233",class:'color-red'}
-        ]
-      },
-      {
-        title : "# App Shares",
-        values : [
-          { title : "iOS" , value : "12,457",class:'color-black'},
-          { title : "Android" , value : "10,089",class:'color-green'}
-        ]
-      },
-      {
-        title : "# Deal Shares",
-        values : [
-          { title : "iOS" , value : "1,34,123",class:'color-black'},
-          { title : "Android" , value : "1,62,233",class:'color-green'}
-        ]
-      },{
-        title : "Click Spend",
-        values : [
-          { title : "iOS" , value : "1,34,123",class:'color-black'},
-          { title : "Android" , value : "1,62,233",class:'color-green'}
-        ]
-      },{
-        title : "Establishment",
-        values : [
-          { title : "Verified" , value : "23,123",class:'color-black'},
-          { title : "Non-Verified" , value : "1,421",class:'color-green'}
-        ]
-      },{
-        title : "Support Tickets",
-        values : [
-          { title : "Raised" , value : "23,123",class:'color-black'},
-          { title : "Resolved" , value : "1,421",class:'color-green'}
-        ]
-      },{
-        title : "Spin the Wheel",
-        values : [
-          { title : "Total Spins" , value : "23,123",class:'color-black'},
-          { title : "Total Rewards" , value : "1,421",class:'color-green'}
-        ]
-      }
-
-    ]
+    stats_cards: any = [{
+        title: "# Deletes",
+        values: [{
+            title: "iOS",
+            value: "3,123",
+            class: 'color-red'
+        }, {
+            title: "Android",
+            value: "2,233",
+            class: 'color-red'
+        }]
+    }, {
+        title: "# App Shares",
+        values: [{
+            title: "iOS",
+            value: "12,457",
+            class: 'color-black'
+        }, {
+            title: "Android",
+            value: "10,089",
+            class: 'color-green'
+        }]
+    }, {
+        title: "# Deal Shares",
+        values: [{
+            title: "iOS",
+            value: "1,34,123",
+            class: 'color-black'
+        }, {
+            title: "Android",
+            value: "1,62,233",
+            class: 'color-green'
+        }]
+    }, {
+        title: "Click Spend",
+        values: [{
+            title: "iOS",
+            value: "1,34,123",
+            class: 'color-black'
+        }, {
+            title: "Android",
+            value: "1,62,233",
+            class: 'color-green'
+        }]
+    }, {
+        title: "Establishment",
+        values: [{
+            title: "Verified",
+            value: "23,123",
+            class: 'color-black'
+        }, {
+            title: "Non-Verified",
+            value: "1,421",
+            class: 'color-green'
+        }]
+    }, {
+        title: "Support Tickets",
+        values: [{
+            title: "Raised",
+            value: "23,123",
+            class: 'color-black'
+        }, {
+            title: "Resolved",
+            value: "1,421",
+            class: 'color-green'
+        }]
+    }, {
+        title: "Spin the Wheel",
+        values: [{
+            title: "Total Spins",
+            value: "23,123",
+            class: 'color-black'
+        }, {
+            title: "Total Rewards",
+            value: "1,421",
+            class: 'color-green'
+        }]
+    }]
     constructor() {
-
-       
-
-
-
-
-        this.chartOptions = {
+        this.stats_area_graph = {
             series: [{
                 name: "Downloads",
                 fontFamily: 'Gordita',
@@ -158,7 +165,7 @@ export class ReportComponent {
                 horizontalAlign: "left"
             },
         };
-        this.chart1 = {
+        this.stats_bar_graph1 = {
             series: [{
                 name: "Male",
                 data: [44, 55, 57, 56]
@@ -212,7 +219,7 @@ export class ReportComponent {
                 },
             }
         };
-        this.chart2 = {
+        this.stats_bar_graph2 = {
             series: [{
                 name: "Enquiry Form",
                 data: [44, 55, 57, 56]
@@ -268,6 +275,102 @@ export class ReportComponent {
                     },
                 },
             }
+        };
+        this.deal_type_by_restaurents1 = {
+            series: [33, 33, 34],
+            chart: {
+                type: "donut"
+            },
+            stroke: {
+                width: 0
+            },
+            labels: ["# BOGO", "# % Off", "# Fry Friday"],
+            legend: {
+                show: false,
+                position: "top",
+            },
+            fill: {
+                type: "solid",
+                colors: ['#4663C4', '#2EA060', '#F99B33']
+            },
+            dataLabels: {
+                enabled: false
+            },
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    },
+                    legend: {
+                        position: "top"
+                    }
+                }
+            }]
+        };
+        this.deal_type_by_restaurents2 = {
+            series: [33, 33, 34],
+            chart: {
+                type: "donut"
+            },
+            stroke: {
+                width: 0
+            },
+            labels: ["# BOGO", "# % Off", "# Fry Friday"],
+            legend: {
+                show: false,
+                position: "top",
+            },
+            fill: {
+                type: "solid",
+                colors: ['#4663C4', '#2EA060', '#F99B33']
+            },
+            dataLabels: {
+                enabled: false
+            },
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    },
+                    legend: {
+                        position: "top"
+                    }
+                }
+            }]
+        };
+        this.deal_type_by_restaurents3 = {
+            series: [33, 33, 34],
+            chart: {
+                type: "donut"
+            },
+            stroke: {
+                width: 0
+            },
+            labels: ["# BOGO", "# % Off", "# Fry Friday"],
+            legend: {
+                show: false,
+                position: "top",
+            },
+            fill: {
+                type: "solid",
+                colors: ['#4663C4', '#2EA060', '#F99B33']
+            },
+            dataLabels: {
+                enabled: false
+            },
+            responsive: [{
+                breakpoint: 480,
+                options: {
+                    chart: {
+                        width: 200
+                    },
+                    legend: {
+                        position: "top"
+                    }
+                }
+            }]
         };
     }
     ngOnInit(): void {}
