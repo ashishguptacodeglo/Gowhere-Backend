@@ -20,7 +20,8 @@ const routes: Routes = [
   { path: 'transaction', canActivate: [AuthService], loadChildren: () => import('./transaction/transaction.module').then(m => m.TransactionModule) },
   { path: 'rating-reviews', canActivate: [AuthService], loadChildren: () => import('./rating-reviews/rating-reviews.module').then(m => m.RatingReviewsModule) },
   { path: 'report', canActivate: [AuthService], loadChildren: () => import('./report/report.module').then(m => m.ReportModule) },
-  { path: 'category-Management',canActivate: [AuthService],  loadChildren: () => import('./category-management/category-management.module').then(m => m.CategoryManagementModule) }
+  { path: 'category-Management',canActivate: [AuthService],  loadChildren: () => import('./category-management/category-management.module').then(m => m.CategoryManagementModule) },
+  { path: 'notifications', loadChildren: () => import('./notifications/notifications.module').then(m => m.NotificationsModule) }
 ];
 
 @NgModule({

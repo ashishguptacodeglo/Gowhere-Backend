@@ -373,7 +373,10 @@ export class ReportComponent {
             }]
         };
     }
-    ngOnInit(): void {}
+    ngOnInit(): void {
+
+        
+    }
     tabChange(current_page: any) {
         this.current_page = current_page;
     }

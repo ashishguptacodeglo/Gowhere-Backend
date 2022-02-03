@@ -1,127 +1,135 @@
 section.saveaplate {
     padding: 40px;
-  }
-  div#DataTables_Table_0_paginate {
+}
+div#DataTables_Table_0_paginate {
     padding: 40px;
-  }
-  .dataTables_filter{
+}
+.dataTables_filter {
     display: none;
-  }
-  select#item {
+}
+select#item {
     width: 420px;
     height: 40px;
     border-radius: 5px;
     padding: 5px;
-  }
-  input#time {
+    background: none;
+}
+input#time {
     width: 170px;
     height: 40px;
     border-radius: 5px;
-  }
-  
-  input#count {
+}
+input#count {
     width: 420px;
     height: 40px;
     border-radius: 5px;
     padding: 5px;
-  }
-  input#price {
+}
+input#price {
     width: 420px;
     height: 40px;
     border-radius: 5px;
     padding: 5px;
-  }
-  input#offer {
+}
+input#offer {
     width: 420px;
     height: 40px;
     border-radius: 5px;
     padding: 5px;
-  }
-  label {
+}
+label {
     font-size: 14px;
     font-family: Gordita;
     font-weight: 500;
     color: #444A4A;
     padding: 5px;
     margin-top: 10px;
-  }
-  button.btn.btn-secondary {
+}
+button.btn.btn-secondary {
     width: 120px;
-  }
-  .form-select {
+}
+.form-select {
     background-color: #449B44;
-    padding:10px;
-    border-radius:8px;
+    padding: 10px;
+    border-radius: 8px;
     color: #FFFFFF;
-  }
-  /* Save a plat style starts here */
-.save{
-  padding-top: 40px;
-  
-  }
-  .save1 h2{
-  width: 169px;
-  height: 28px;
-  font-family: Gordita;
-  font-weight: 400;
-  font-size: 28px;
-  color: #444A4A;
-  margin-left: 25px;
-  }
-  .add button{
-  margin-right: 50px;
-  width: 150px;
-  height: 36px;
-  border-radius: 5px;
-  background-color: #FFFFFF;
-  font-size: 14px;
-  font-family: Gordita;
-  font-weight: 500;
-  color: #444A4A;
-  border: solid 2px Green #1AB001 !important;
-  }
-  .content tr ,th{
-  border: solid 2px #F7F7F7;
-  background-color:#F7F7F7;
-  padding: 5px;
-  font-size: 14px;
-  font-weight: 500;
-  color: #444A4A;
-  text-align: center !important;
-  font-family: Gordita;
-  padding-left: 40px;
-  margin-top: 20px;
-  width: 1125px;
+}
+/* Save a plat style starts here */
+
+.save {
+    padding-top: 40px;
+}
+.save1 h2 {
+    width: 169px;
+    height: 28px;
+    font-family: Gordita;
+    font-weight: 400;
+    font-size: 28px;
+    color: #444A4A;
+    margin-left: 25px;
+}
+.add button {
+    margin-right: 50px;
+    width: 150px;
+    height: 36px;
+    border-radius: 5px;
+    background-color: #FFFFFF;
+    font-size: 14px;
+    font-family: Gordita;
+    font-weight: 500;
+    color: #444A4A;
+    border: solid 2px Green #1AB001 !important;
+}
+.content tr, th {
+    border: solid 2px #F7F7F7;
+    background-color: #F7F7F7;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #444A4A;
+    text-align: center !important;
+    font-family: Gordita;
+    padding-left: 40px;
+    margin-top: 20px;
+    width: 1125px;
     height: 60px;
-  
-  }
-  
-  .content td{
-  
-  background-color:#FFFFFF;
-  padding: 5px;
-  font-size: 14px;
-  font-weight: 400;
-  color: #444A4A;
-  text-align: center;
-  font-family: Gordita;
-  padding-left: 40px;
-  margin-top: 20px;
-  width: 26px;
+}
+.content td {
+    background-color: #FFFFFF;
+    padding: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #444A4A;
+    text-align: center;
+    font-family: Gordita;
+    padding-left: 40px;
+    margin-top: 20px;
+    width: 26px;
     height: 14px;
     border-radius: 10px;
     border-block: solid 2px #E2E2E2;
+}
+.content {
+    margin-left: 40px;
+    margin-right: 40px;
+}
+.dropdown {
+    padding: 20px;
+    border-radius: 28px;
+}
+
+.line-height-1 {
+    line-height: 1;
+    color: #444A4A !important;
+    background-color: #EFEFF4 !important;
+}
+
+#save-a-plate-form .input-group-text {
   
-  }
-  .content{
-  margin-left: 40px;
-  margin-right: 40px;
-  }
-  
-  
-  .dropdown{
-  padding: 20px;
-  border-radius: 28px;
-  }
-  
-  
+     background-color: white;
+      border-left: none;
+}
+
+#save-a-plate-form .time-field {
+    border-right: none;
+}

@@ -1,0 +1,149 @@
+<div class="page_tabs">
+   <div class="wraps">
+      <span class="links" (click)="tabChange('scheduled')" [class]="{'active': current_page=='scheduled'}">Scheduled</span>
+      <span class="links" (click)="tabChange('live')" [class]="{'active': current_page=='live'}">Live</span>
+      <span class="links" (click)="tabChange('wt_approvel')" [class]="{'active': current_page=='wt_approvel'}">Waiting For Approval</span>
+   </div>
+</div>
+<div class="tab-content"[ngSwitch]="current_page">
+   <ng-template [ngSwitchCase]="'scheduled'">
+
+
+      <section  class="dashboard" >
+         <div class="container">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                     <a (click)="tabChange('scheduled')">
+                        <span>Home</span>
+                     </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                     <span (click)="tabChange('scheduled')">Notifications</span>
+                  </li>
+               </ol>
+            </nav>
+            <div class="d-flex mb-3">
+               <div class="dashboard1  flex-fill ">Notifications</div>
+               <div class="add fill ">
+                  <button type="button"  data-toggle="modal" data-target="#add-category-modal"class="btn-btn-success">Add</button>
+               </div>
+            </div>
+            <div class="row">
+               <table class="categories">
+                  <thead>
+                     <tr>
+                        <th scope="col" >No.</th>
+                        <th scope="col" >Schedulde Date & Tim</th>
+                        <th scope="col">Audience</th>
+                        <th scope="col">Notification type</th>
+                        <th scope="col">Actions</th>
+                     </tr>
+                     <br/>
+                  </thead>
+                  <tbody>
+                     <tr *ngFor="let cat of categories; let index = index" >
+                        <td class="sr-no">{{index+1}}</td>
+                        <td class="icon-td">
+                           <img alt="{{cat.name}}" class="category-icon" src="{{cat.icon}}">
+                        </td>
+                        <td>
+                           <span>
+                              {{cat.name}}
+                           </span>
+                        </td>
+                        <td>{{cat.sub_cat_count}}</td>
+                        <td>{{cat.est_enrolled}}</td>
+                     </tr>
+                  </tbody>
+               </table>
+            </div>
+         </div>
+      </section>
+
+      
+
+
+
+   </ng-template>
+
+
+
+
+
+
+
+   <div class="modal fade" id="add-category-modal" tabindex="-1" role="dialog" aria-labelledby="add-category-modalTitle" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+         <div class="modal-content">
+            <div class="modal-header border-bottom-0 pb-0">
+               <h3 class="modal-title" id="exampleModalLongTitle">Add Category</h3>
+               <button type="button"   class="close" data-dismiss="modal" aria-label="Close">
+               <span aria-hidden="true">&times;</span>
+               </button>
+            </div>
+            <div class="modal-body">
+               <form class="form-horizontal" role="form" method="POST"  >
+                  <div class="row">
+                     <div class="form-group col">
+                        <label for="cat_name" class="control-label">Category Name</label>
+                        <div>
+                           <input id="cat_name" type="text" class="form-control shadow  bg-white rounded"  placeholder="Category Name" name="cat_name" >
+                        </div>
+                     </div>
+                     <div class="form-group col mr-5">
+                        <label for="category_icon" class="control-label">Category Icon</label>
+                        <div>
+                           <input  type="file" id="category_icon" class="form-control shadow  bg-white rounded" name="category_icon">
+                        </div>
+                     </div>
+                  </div>
+                  <div class="row">
+                     <div class="form-group col">
+                        <label for="cat_name" class="control-label">Sub Category Name</label>
+                        <div>
+                           <input id="cat_name" type="text" class="form-control shadow  bg-white rounded"  placeholder="Subcategory Name" name="subcat_name[]" >
+                        </div>
+                     </div>
+                     <div class="form-group col mr-5">
+                        <label for="category_icon" class="control-label">Sub Category Icon</label>
+                        <div>
+                           <input  type="file" id="category_icon" class="form-control shadow  bg-white rounded" name="subcategory_icon[]">
+                        </div>
+                     </div>
+                  </div>
+                 
+                  <div class="row text-right">
+                     <div class="form-group col">
+                        <button type="button" class="btn btn-outline-secondary line-height-1">
+                        Add
+                        </button>
+                     </div>
+                  </div>
+                  <div class="form-group row">
+                     <div class="col-6">
+                        <button type="submit" class="btn btn-outline-secondary line-height-1 save-button">
+                        Save
+                        </button>
+                     </div>
+                     <div class="col-6">
+                        <button type="button"  data-dismiss="modal" class="btn btn-outline-secondary line-height-1" >
+                        Cancel
+                        </button>
+                     </div>
+                  </div>
+               </form>
+            </div>
+         </div>
+      </div>
+   </div>
+
+
+
+
+
+
+  
+
+
+</div>
