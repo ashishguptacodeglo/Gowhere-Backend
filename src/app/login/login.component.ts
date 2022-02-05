@@ -76,7 +76,6 @@ export class LoginComponent implements OnInit {
         this.results = data
         this.dataService.triggerLogin(true);
         window.localStorage.setItem('auth_token',this.results.data.authToken);
-        console.log(this.results)
         this.router.navigate(['/establishment-info']);
       });
     }).catch((error:any)=>{});

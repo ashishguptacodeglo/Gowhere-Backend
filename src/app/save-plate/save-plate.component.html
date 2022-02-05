@@ -6,224 +6,174 @@
       <div class="option">
       </div>
       <div class="add">
-         <button type="button"  data-toggle="modal" data-target="#AddSaveAPlateModal"class="btn-btn-success">Add Items</button>
+         <button type="button"  data-toggle="modal" (click)="OpenModal()" data-target="#AddSaveAPlateModal"class="btn-btn-success">Add Items</button>
       </div>
    </div>
-   <table datatable>
-      <thead>
-         <tr>
+   <!--  -->
+  <table  datatable [dtOptions]="dtOptions" [dtTrigger]="dtTrigger" class="row-border hover save-plate-table">
+        <thead>
+          <tr>
             <th class="no-sorting">No.</th>
             <th>Item Image</th>
             <th>Item Name</th>
             <th>Available Time</th>
-            <th>Item Count</th>
+              <th>Item Count</th>
             <th>Offer Price</th>
             <th>Deal Type</th>
             <th>Status</th>
             <th>Action</th>
-         </tr>
-      </thead>
-      <tbody>
-         <tr>
-            <td>1</td>
-            <td></td>
-            <td>All-in one Spaghetti</td>
-            <td>8:00 PM - 11:00 PM</td>
-            <td>12 / 20</td>
-            <td>$10</td>
-            <td>Dine-In</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let items of plateList; let i=index;">
+            <td>{{i+1}}</td>
+            <td><img [src] ="items.imageURL" style="width: 100px;height: 100px;"></td>
+            <td>{{items.itemName}}</td>
+            <td>{{items.availableTimeFrom}} - {{items.availableTimeTo}}</td>
+            <td>{{items.totalCount}}</td>
+            <td>{{items.newPrice}}</td>
+            <td>{{items.totalCount}}</td>
             <td>
-               <select class="form-select" aria-label="Default select example">
-                  <option selected>Status</option>
-                  <option value="1">Open</option>
-                  <option value="2">Pending</option>
-                  <option value="2">Closed</option>
-               </select>
-            </td>
-            <td>Close</td>
-         </tr>
-         <tr>
-            <td>2</td>
-            <td></td>
-            <td>All-in one Spaghetti</td>
-            <td>8:00 PM - 11:00 PM</td>
-            <td>12 / 20</td>
-            <td>$10</td>
-            <td>Dine-In</td>
-            <td>
-               <select class="form-select" aria-label="Default select example">
-                  <option selected>Status</option>
-                  <option value="1">Open</option>
-                  <option value="2">Pending</option>
-                  <option value="2">Closed</option>
-               </select>
-            </td>
-            <td>Close</td>
-         </tr>
-         <tr>
-            <td>3</td>
-            <td></td>
-            <td>All-in one Spaghetti</td>
-            <td>8:00 PM - 11:00 PM</td>
-            <td>12 / 20</td>
-            <td>$10</td>
-            <td>Dine-In</td>
-            <td>
-               <select class="form-select" aria-label="Default select example">
-                  <option selected>Status</option>
-                  <option value="1">Open</option>
-                  <option value="2">Pending</option>
-                  <option value="2">Closed</option>
-               </select>
-            </td>
-            <td>Close</td>
-         </tr>
-         <tr>
-            <td>4</td>
-            <td></td>
-            <td>All-in one Spaghetti</td>
-            <td>8:00 PM - 11:00 PM</td>
-            <td>12 / 20</td>
-            <td>$10</td>
-            <td>Dine-In</td>
-            <td>
-               <select class="form-select" aria-label="Default select example">
-                  <option selected>Status</option>
-                  <option value="1">Open</option>
-                  <option value="2">Pending</option>
-                  <option value="2">Closed</option>
-               </select>
-            </td>
-            <td>Close</td>
-         </tr>
-         <tr>
-            <td>5</td>
-            <td></td>
-            <td>All-in one Spaghetti</td>
-            <td>8:00 PM - 11:00 PM</td>
-            <td>12 / 20</td>
-            <td>$10</td>
-            <td>Dine-In</td>
-            <td>
-               <select class="form-select" aria-label="Default select example">
-                  <option selected>Status</option>
-                  <option value="1">Open</option>
-                  <option value="2">Pending</option>
-                  <option value="2">Closed</option>
-               </select>
-            </td>
-            <td>Close</td>
-         </tr>
-      </tbody>
-   </table>
+                 
+             <select class="form-select" aria-label="Default select example">
+               <option selected>Status</option>
+               <option value="1">Open</option>
+               <option value="2">Pending</option>
+               <option value="2">Closed</option>
+               
+             </select>
+          </td>
+          <td>Close</td>
 
-   
-   <div class="modal fade" id="AddSaveAPlateModal" tabindex="-1" role="dialog" aria-labelledby="AddSaveAPlateModalTitle" aria-hidden="true">
+          </tr>
+         
+          
+        </tbody>
+      </table>
+
+
+   <div    class="modal fade" id="AddSaveAPlateModal" tabindex="-1" role="dialog" aria-labelledby="AddSaveAPlateModalTitle" aria-hidden="true">
       <div class="modal-dialog modal-dialog-centered" role="document">
          <div class="modal-content">
-            <div class="modal-header">
-               <h5 class="modal-title" id="exampleModalLongTitle">Add Item</h5>
+            <div class="modal-header border-bottom-0 pb-0">
+               <h3 class="modal-title" id="exampleModalLongTitle">Add Item</h3>
                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                <span aria-hidden="true">&times;</span>
                </button>
             </div>
             <div class="modal-body">
-
                <div class="modal-body">
-               <form  [formGroup]="SaveAPlateForm" class="form-horizontal"  (ngSubmit)="SaveAPlate()" id="save-a-plate-form"   >
+                  <form  [formGroup]="SaveAPlateForm" class="form-horizontal"  (ngSubmit)="SaveAPlate()" id="save-a-plate-form"   >
                   <div class="row">
                      <div class="form-group col-12">
                         <label for="item-name" class="control-label">Item Name</label>
                         <div class="mr-2">
-                           <select  formControlName="itemName" name="itemName" id="item-name" class="form-control shadow" 
-                                     [ngClass]="{ 'is-invalid': submitted && f.itemName.errors }"
-                             >
-                                 <option value="#">Select Item Name</option>
-                                 <option value="drink">Drinks</option>
-                                 <option value="food">Food</option>
-                                 <option value="soft">Soft Drink</option>
-                              </select>
-                              <div *ngIf="submitted && f.itemName.errors" class="invalid-feedback">
-                                 <div *ngIf="f.itemName.errors.required">Item Name Required</div>
-                              </div>
+                           <!--  -->
+                           <select   formControlName="itemName" name="itemName" id="item-name" class="custom-fields shadow" 
+                              [ngClass]="{ 'is-invalid': submitted && f.itemName.errors }"
+                              >
+                              <option value="">Select Item Name</option>
 
+                              <option *ngFor="let item of Items;" value="{{item.itemId}}">
+                                    {{item.itemName}}
+                              </option>
+
+                           </select>
+                           <div *ngIf="submitted && f.itemName.errors" class="invalid-feedback">
+                              <div *ngIf="f.itemName.errors.required">Item Name Required</div>
+                           </div>
                         </div>
                      </div>
-
                      <div class="form-group col-12">
                         <label  class="control-label">Available Time</label>
                         <div class="row">
-                        <div class="col-6">
-                           <div class="input-group mb-3 shadow">
-                              <input type="time" class="form-control time-field" name="availableTimeFrom">
-                              <div class="input-group-append">
+                           <div class="col-6">
+                              <div class="input-group mb-3 shadow">
+                                 <input type="time" formControlName="availableTimeFrom"  class="custom-fields time-field" [ngClass]="{ 'is-invalid': submitted && f.availableTimeFrom.errors }"  name="availableTimeFrom">
+                                <!--  <div class="input-group-append">
                                     <span class="input-group-text" >
-                                       <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/><path d="M13 7h-2v5.414l3.293 3.293 1.414-1.414L13 11.586z"/></svg>
+                                       <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                                          <path d="M13 7h-2v5.414l3.293 3.293 1.414-1.414L13 11.586z"/>
+                                       </svg>
                                     </span>
+                                 </div> -->
                               </div>
+                              <div *ngIf="submitted && f.availableTimeFrom.errors" class="invalid-feedback">
+                                  <div *ngIf="f.availableTimeFrom.errors.required">Pick Start Date is Required</div>
+                              </div>
+
                            </div>
-                        </div> 
-                        <div class="col-6">
-                           <div class="input-group mb-3 shadow">
-                              <input type="time" class="form-control time-field" name="availableTimeTo">
-                              <div class="input-group-append">
+                           <div class="col-6">
+                              <div class="input-group mb-3 shadow">
+                                 <input type="time" formControlName="availableTimeTo" class="custom-fields time-field" [ngClass]="{ 'is-invalid': submitted && f.availableTimeTo.errors }" name="availableTimeTo">
+                                <!--  <div class="input-group-append">
                                     <span class="input-group-text" >
-                                       <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/><path d="M13 7h-2v5.414l3.293 3.293 1.414-1.414L13 11.586z"/></svg>
+                                       <svg width="24px" height="24px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                          <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm0 18c-4.411 0-8-3.589-8-8s3.589-8 8-8 8 3.589 8 8-3.589 8-8 8z"/>
+                                          <path d="M13 7h-2v5.414l3.293 3.293 1.414-1.414L13 11.586z"/>
+                                       </svg>
                                     </span>
+                                 </div> -->
                               </div>
+                               <div *ngIf="submitted && f.availableTimeTo.errors" class="invalid-feedback">
+                                  <div *ngIf="f.availableTimeTo.errors.required">Pick End Date is Required</div>
+                              </div>
+
                            </div>
-                        </div>
                         </div>
                      </div>
+                     <div class="form-group col-12">
+                        <label for="totalCount" class="control-label">Item Available Count</label>
+                        <div class="mr-2">
+                           <input  type="text" 
+                                    formControlName="totalCount" 
+                                    (keypress)="numberOnly($event)"  
+                                    id="totalCount" 
+                                    placeholder="Enter Item Available Count" 
+                                    class="form-control shadow  bg-white rounded" 
+                                    name="totalCount">
+                            <div *ngIf="submitted && f.totalCount.errors" class="invalid-feedback">
+                                  <div *ngIf="f.totalCount.errors.required">Pick End Date is Required</div>
+                              </div>
+                        </div>
+                     </div>
+                     <div class="form-group col-12">
+                        <label for="newPrice" class="control-label">Selling price</label>
+                        <div class="mr-2">
+                           <input  type="text" (keypress)="numberOnly($event)" formControlName="newPrice"  id="newPrice" placeholder="Selling price" class="form-control shadow  bg-white rounded" name="newPrice">
 
+                            <div *ngIf="submitted && f.newPrice.errors" class="invalid-feedback">
+                                  <div *ngIf="f.newPrice.errors.required">Pick End Date is Required</div>
+                              </div>
+                        </div>
+                     </div>
+                     <div class="form-group col-12">
+                        <label for="oldPrice" class="control-label">Offer Price</label>
+                        <div class="mr-2">
+                           <input  type="text"  (keypress)="numberOnly($event)"  formControlName="oldPrice" id="oldPrice" placeholder="Offer Price" class="form-control shadow  bg-white rounded" name="oldPrice">
 
+                           <div *ngIf="submitted && f.oldPrice.errors" class="invalid-feedback">
+                                  <div *ngIf="f.oldPrice.errors.required">Pick End Date is Required</div>
+                              </div>
+                        </div>
+                     </div>
                   </div>
-
-               
-                
                   <div class="form-group row">
-                     <div class="col-6">
+                     <div class="col-6 text-right">
                         <button type="submit" class="btn btn-outline-secondary line-height-1 save-button">
-                             Save
+                        Save
                         </button>
                      </div>
                      <div class="col-6">
-                        <button type="button"   data-dismiss="modal" class="btn btn-outline-secondary line-height-1" >
-                              Cancel
+                        <button type="button" #closebutton  data-dismiss="modal" class="btn btn-outline-secondary line-height-1" >
+                            Cancel
                         </button>
                      </div>
                   </div>
-               </form>
-            </div>
-
-             <!--   <label>Item Name</label><br/>
-               <select name="item" class="shadow" id="item">
-                  <option value="#">Select Item Name</option>
-                  <option value="drink">Drinks</option>
-                  <option value="food">Food</option>
-                  <option value="soft">Soft Drink</option>
-               </select>
-               <label>Available Time</label><br/>
-               <div class="row">
-                  <div class="col-md-6">
-                     <input type="time" name="time" id="time" placeholder="Pick Start Time">
-                  </div>
-                  <div class="col-md-6">
-                     <input type="time" name="time" id="time" placeholder="Pick End Time">
-                  </div>
+                  </form>
                </div>
-               <br/>
-               <label>Item available Count</label><br/>
-               <input type="count" name="count" id="count" placeholder="Enter Item available count"><br/>
-               <label>Selling Price</label><br/>
-               <input type="price" name="price" id="price" placeholder="Enter Selling Price"><br/>
-               <label>Offer Price</label><br/>
-               <input type="text" name="offer" id="offer" placeholder="Enter Offer Price"><br/> -->
             </div>
-            <!-- <div class="modal-footer text-center">
-               <button type="button" class="btn btn-secondary line-height-1">Add</button>
-               <button type="button" class="btn btn-primary line-height-1" data-dismiss="modal">Cancel</button>
-            </div> -->
          </div>
       </div>
    </div>

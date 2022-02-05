@@ -320,3 +320,70 @@ span.bo-num.bo-num-color- {
 .deal-type-restaurents-stats .usage-title {
     font-size: 12px;
 }
+
+.sales-stats{
+    font-family: 'Gordita';
+
+}
+
+.card-green{
+background: #1AB001;
+color: #E6E6E6;
+}
+.card-blue{
+background: #239FA4;
+color: #E6E6E6;
+}
+
+.card-green-2{
+background: #23A476;
+color: #E6E6E6;
+}
+
+.break-hr{
+    width: 81%;
+}
+
+.break-hr hr {
+    width: 100%;
+    margin-top: 3%;
+    margin-left: 1%;
+    border-top: dashed 2px;
+}
+
+
+
+
+
+.sales-stats .tab-card-header {
+  background:none;
+}
+.sales-stats .tab-card-header > .nav-tabs {
+  border: none;
+  margin: 0px;
+}
+
+.sales-stats .tab-card-header > .nav-tabs > li > a {
+    border: 0;
+    border-bottom:2px solid transparent;
+    margin-right: 0;
+    color: #737373;
+    padding: 2px 7px;
+}
+
+.sales-stats .tab-card-header > .nav-tabs > li > a.show {
+    border-bottom: 2px solid #1AB001;
+    color: #1AB001;
+}
+
+.sales-stats .tab-card-header > .tab-content {
+  padding-bottom: 0;
+}
+
+.graph-head{
+    font-size: 14px;
+    font-weight: 500;
+}
+.graph-number {
+    font-weight: 700;
+}
