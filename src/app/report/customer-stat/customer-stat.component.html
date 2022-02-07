@@ -1,0 +1,175 @@
+<div class="d-flex mb-3">
+	<div class="dashboard1  flex-fill "><h2 class="">Consumer & Establishment Stats</h2></div>
+	<div class="add fill ">
+	  <button type="button" class="btn-btn-success">Export Report  </button>
+	</div>
+</div>
+<div class="row filter-options mt-2 mb-2">
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         Region
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option value="volvo">West </option>
+            <option value="saab">East </option>
+            <option value="saab">North </option>
+            <option value="saab">South </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         State
+      </div>
+      <div class="filter-field">
+         <select class="option-filters" (change) = "StateChange($event)" >
+            <option *ngFor="let state of statesList;"  value="{{state.name}}">{{state.name}}</option>
+            
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         City
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option  *ngFor="let city of citiesList;" value="{{city}}">{{city}} </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-field full-width">
+         <select class="option-filters">
+            <option value="volvo">01 Sep 2021 - 30 Sep 2021 </option>
+         </select>
+      </div>
+   </div>
+</div>
+<div class="row card">
+   <apx-chart   [series]="DownLoadsGraph.series"   [chart]="DownLoadsGraph.chart"  [xaxis]="DownLoadsGraph.xaxis"  [stroke]="DownLoadsGraph.stroke" [dataLabels]="DownLoadsGraph.dataLabels"  [yaxis]="DownLoadsGraph.yaxis"  [labels]="DownLoadsGraph.labels" [legend]="DownLoadsGraph.legend" [title]="DownLoadsGraph.title"  [subtitle]="DownLoadsGraph.subtitle" [fill]="DownLoadsGraph.fill" ></apx-chart>
+</div>
+<div class="row mt-5">
+   <div class="col-md-4 col-sm-6" id="panel-body">
+      <div class="card item-card card-block">
+         <div class="d-flex downlods-data" >
+            <div class="total-downloads ml-2">
+               <div class="download-title">Total downloads</div>
+               <div class="download-number">{{globalFunction.numberWithCommas(DownLoads.total)}}</div>
+            </div>
+            <div class="new-user">
+               <div class="new-user-title">New User/Day</div>
+               <div class="new-user-number">2,134</div>
+            </div>
+         </div>
+         <div class="m-2">
+            <div class="ios-users ml-2">
+               <div class="downlods-card-title">
+                  <div class="downlods-card-title">ios</div>
+                  <div class="download-number">{{globalFunction.numberWithCommas(DownLoads.ios.total)}}</div>
+               </div>
+               <div class="user-segregation d-flex mt-2">
+                  <div class="user-type-1">
+                     <div class="usage-title">Male</div>
+                     <div class="usage-number">{{globalFunction.numberWithCommas(DownLoads.ios.male)}}</div>
+                     <div class="usage-desc">Age: 18-46</div>
+                  </div>
+                  <div class="user-type-2 ml-2">
+                     <div class="usage-title">Female</div>
+                     <div class="usage-number">{{globalFunction.numberWithCommas(DownLoads.ios.female)}}</div>
+                     <div class="usage-desc"> Age: 19-48</div>
+                  </div>
+               </div>
+               <div class="progress mt-2" style="max-width: 100%">
+                  <div class="progress-bar" style="width: {{DownLoads.ios.malepercent}}%; background-color: #0B9ABA"></div>
+                  <div class="progress-bar progress-bar-stripped" style="width: {{DownLoads.ios.femalepercent}}%; background-color: #B74C1E"></div>
+               </div>
+            </div>
+         </div>
+         <hr>
+         <div class="m-2">
+            <div class="android-users ml-2">
+               <div class="downlods-card-title">
+                  <div class="downlods-card-title">Android</div>
+                  <div class="download-number">{{globalFunction.numberWithCommas(DownLoads.android.total)}}</div>
+               </div>
+               <div class="user-segregation d-flex mt-2">
+                  <div class="user-type-1">
+                     <div class="usage-title">Male </div>
+                     <div class="usage-number">{{globalFunction.numberWithCommas(DownLoads.android.male)}}</div>
+                     <div class="usage-desc">Age: 18-46</div>
+                  </div>
+                  <div class="user-type-2 ml-2">
+                     <div class="usage-title">Female</div>
+                     <div class="usage-number">{{globalFunction.numberWithCommas(DownLoads.android.female)}}</div>
+                     <div class="usage-desc">Age: 19-48</div>
+                  </div>
+               </div>
+               <div class="progress mt-2" style="max-width: 100%">
+                  <div class="progress-bar" style="width: {{DownLoads.android.malepercent}}%; background-color: #0B9ABA"></div>
+                  <div class="progress-bar progress-bar-stripped" style="width: {{DownLoads.android.femalepercent}}%; background-color: #B74C1E"></div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-4 col-sm-6">
+      <div class="card">
+         <div class="card-header d-flex border-none-class" style="background: unset;">
+            <div class="graph-title"> Gender </div>
+            <div class="choose-options">
+               <select class="option">
+                  <option value="volvo">Today </option>
+                  <option value="saab">Tomorrow </option>
+               </select>
+            </div>
+         </div>
+         <div class="card-body">
+            <apx-chart [series]="GenderGraph.series"  [chart]="GenderGraph.chart" [plotOptions]="GenderGraph.plotOptions"  [yaxis]="GenderGraph.yaxis" [legend]="GenderGraph.legend" [fill]="GenderGraph.fill"  [title]="GenderGraph.title" [stroke]="GenderGraph.stroke"  [labels]="GenderGraph.labels" [xaxis]="GenderGraph.xaxis"   [dataLabels]="GenderGraph.dataLabels"    ></apx-chart>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-4 col-sm-6">
+      <div class="card">
+         <div class="card-header d-flex border-none-class" style="background: unset;">
+            <div class="graph-title"> Establishment Enroll </div>
+            <div class="choose-options">
+               <select class="option">
+                  <option value="volvo">Today </option>
+                  <option value="saab">Tomorrow </option>
+               </select>
+            </div>
+         </div>
+         <div class="card-body">
+            <apx-chart   [series]="EstEnrolOptions.series"  [chart]="EstEnrolOptions.chart"   [plotOptions]="EstEnrolOptions.plotOptions" [yaxis]="EstEnrolOptions.yaxis"   [legend]="EstEnrolOptions.legend"  [fill]="EstEnrolOptions.fill" [title]="EstEnrolOptions.title" [stroke]="EstEnrolOptions.stroke"  [labels]="EstEnrolOptions.labels"   [xaxis]="EstEnrolOptions.xaxis"  [dataLabels]="EstEnrolOptions.dataLabels" ></apx-chart>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="row">
+   <div *ngFor="let stat of stats_cards;" class="col-md-4 col-sm-6 mb-2 mt-2">
+      <div class="card">
+         <div class="m-2">
+            <div class="android-users ml-2">
+               <div class="downlods-card-title">
+                  <div class="downlods-card-title">
+                     {{stat.title}}
+                  </div>
+               </div>
+               <div class="user-segregation d-flex mt-2">
+                  <div *ngFor="let item of stat.values; let index = index" class="user-type-{{index+1}}">
+                     <div class="usage-title">
+                        {{item.title}}
+                     </div>
+                     <div class="usage-number  {{item.class}}">
+                        {{item.value}}
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+</div>
+

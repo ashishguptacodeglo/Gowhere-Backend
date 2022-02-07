@@ -1,0 +1,12 @@
+
+.help-cards{
+color: #FFFFFF;
+}
+
+.help-cards .break-hr hr {
+border-color: white;
+}
+
+.help-cards .border-right-class{
+border-right: 1px solid #ffffff;
+}

@@ -8,7 +8,7 @@ body {
     margin: 0;
     padding: 0;
 }
-h1 {
+/*h1 {
     font-size: 48px;
     line-height: 56px;
 }
@@ -27,7 +27,7 @@ h4 {
 h5 {
     font-size: 18px;
     line-height: 20px;
-}
+}*/
 p {
     font-size: 14px;
     line-height: 20px;
@@ -1499,3 +1499,5 @@ button.btn.btn-secondary {
 .tab-content-menu {
     padding-top: 120px;
 }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

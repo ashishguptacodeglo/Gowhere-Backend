@@ -26,6 +26,31 @@
 <div class="tab-content"[ngSwitch]="current_page">
 
 
+
+<ng-template [ngSwitchCase]="'deal_type_stats'">
+      <section class="customer-stats" >
+         <div class="container">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                     <a (click)="tabChange('deal_type_stats')">
+                     <span>Home</span>
+                     </a>
+                  </li>
+                  <li class="breadcrumb-item">
+                     <a (click)="tabChange('deal_type_stats')">
+                     <span>Reports</span>
+                     </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                     <span (click)="tabChange('deal_type_stats')"> Deal Stats</span>
+                  </li>
+               </ol>
+            </nav>
+         </div>
+      </section>
+   </ng-template>
+
    <ng-template [ngSwitchCase]="'consumer_stats'">
       <section class="customer-stats" >
          <div class="container">
@@ -46,277 +71,7 @@
                   </li>
                </ol>
             </nav>
- 
-            <div class="d-flex mb-3">
-               <div class="dashboard1  flex-fill "><h2 class="">Consumer & Establishment Stats</h2></div>
-               <div class="add fill ">
-                  <button type="button" class="btn-btn-success">Export Report  </button>
-               </div>
-            </div>
-            
-            <div class="row filter-options mt-2 mb-2">
-               <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-title">
-                     Region
-                  </div>
-                  <div class="filter-field">
-                     <select class="option-filters">
-                        <option value="volvo">West </option>
-                        <option value="saab">East </option>
-                        <option value="saab">North </option>
-                        <option value="saab">South </option>
-                     </select>
-                  </div>
-               </div> 
-
-                <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-title">
-                     State
-                  </div>
-                  <div class="filter-field">
-                     <select class="option-filters">
-                        <option value="volvo">Texas </option>
-                        <option value="saab">East </option>
-                        <option value="saab">North </option>
-                        <option value="saab">South </option>
-                     </select>
-                  </div>
-               </div>  
-
-               <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-title">
-                     City
-                  </div>
-                  <div class="filter-field">
-                     <select class="option-filters">
-                        <option value="volvo">Austin </option>
-                        <option value="saab">East </option>
-                        <option value="saab">North </option>
-                        <option value="saab">South </option>
-                     </select>
-                  </div>
-               </div>
-
-               <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-field full-width">
-                     <!-- <input type="date" class="form-control"> -->
-                      <select class="option-filters">
-                        <option value="volvo">01 Sep 2021 - 30 Sep 2021 </option>
-                     </select>
-
-                  </div>
-               </div>
-
-               
-            </div>
-
-
-            <div class="row card">
-               <apx-chart
-               [series]="stats_area_graph.series"
-               [chart]="stats_area_graph.chart"
-               [xaxis]="stats_area_graph.xaxis"
-               [stroke]="stats_area_graph.stroke"
-               [dataLabels]="stats_area_graph.dataLabels"
-               [yaxis]="stats_area_graph.yaxis"
-               [labels]="stats_area_graph.labels"
-               [legend]="stats_area_graph.legend"
-               [title]="stats_area_graph.title"
-               [subtitle]="stats_area_graph.subtitle"
-               [fill]="stats_area_graph.fill"
-               ></apx-chart>
-            </div>
-            <div class="row mt-5">
-               <div class="col-md-4 col-sm-6" id="panel-body">
-                  <div class="card item-card card-block">
-                     <div class="d-flex downlods-data" >
-                        <div class="total-downloads ml-2">
-                           <div class="download-title">
-                              Total downloads
-                           </div>
-                           <div class="download-number">
-                              324,339
-                           </div>
-                        </div>
-                        <div class="new-user">
-                           <div class="new-user-title"> 
-                              New User/Day
-                           </div>
-                           <div class="new-user-number">
-                              2,134
-                           </div>
-                        </div>
-                     </div>
-                     <div class="m-2">
-                        <div class="ios-users ml-2">
-                           <div class="downlods-card-title">
-                              <div class="downlods-card-title">
-                                 ios
-                              </div>
-                              <div class="download-number">
-                                 183,123
-                              </div>
-                           </div>
-                           <div class="user-segregation d-flex mt-2">
-                              <div class="user-type-1">
-                                 <div class="usage-title">
-                                    Male
-                                 </div>
-                                 <div class="usage-number">
-                                    102,866
-                                 </div>
-                                 <div class="usage-desc">
-                                    Age: 18-46
-                                 </div>
-                              </div>
-                              <div class="user-type-2 ml-2">
-                                 <div class="usage-title">
-                                    Female
-                                 </div>
-                                 <div class="usage-number">
-                                    102,866
-                                 </div>
-                                 <div class="usage-desc">
-                                    Age: 19-48
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="progress mt-2" style="max-width: 100%">
-                              <div class="progress-bar" style="width: 60%; background-color: #0B9ABA"></div>
-                              <div class="progress-bar progress-bar-stripped" style="width: 40%; background-color: #B74C1E"></div>
-                           </div>
-                        </div>
-                     </div>
-                     <hr>
-                     <div class="m-2">
-                        <div class="android-users ml-2">
-                           <div class="downlods-card-title">
-                              <div class="downlods-card-title">
-                                 Android
-                              </div>
-                              <div class="download-number">
-                                 183,123
-                              </div>
-                           </div>
-                           <div class="user-segregation d-flex mt-2">
-                              <div class="user-type-1">
-                                 <div class="usage-title">
-                                    Male
-                                 </div>
-                                 <div class="usage-number">
-                                    102,866
-                                 </div>
-                                 <div class="usage-desc">
-                                    Age: 18-46
-                                 </div>
-                              </div>
-                              <div class="user-type-2 ml-2">
-                                 <div class="usage-title">
-                                    Female
-                                 </div>
-                                 <div class="usage-number">
-                                    102,866
-                                 </div>
-                                 <div class="usage-desc">
-                                   Age: 19-48
-                                 </div>
-                              </div>
-                           </div>
-                           <div class="progress mt-2" style="max-width: 100%">
-                              <div class="progress-bar" style="width: 60%; background-color: #0B9ABA"></div>
-                              <div class="progress-bar progress-bar-stripped" style="width: 40%; background-color: #B74C1E"></div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="card">
-                     <div class="card-header d-flex border-none-class" style="background: unset;">
-                        <div class="graph-title"> Gender </div>
-                        <div class="choose-options">
-                           <select class="option">
-                              <option value="volvo">Today </option>
-                              <option value="saab">Tomorrow </option>
-                           </select>
-                        </div>
-                     </div>
-                     <div class="card-body">
-                        <apx-chart
-                        [series]="stats_bar_graph1.series"
-                        [chart]="stats_bar_graph1.chart"
-                        [plotOptions]="stats_bar_graph1.plotOptions"
-                        [yaxis]="stats_bar_graph1.yaxis"
-                        [legend]="stats_bar_graph1.legend"
-                        [fill]="stats_bar_graph1.fill"
-                        [title]="stats_bar_graph1.title"
-                        [stroke]="stats_bar_graph1.stroke"
-                        [labels]="stats_bar_graph1.labels"
-                        [xaxis]="stats_bar_graph1.xaxis"
-                        [dataLabels]="stats_bar_graph1.dataLabels"
-                        ></apx-chart>
-                     </div>
-                  </div>
-               </div>
-               <div class="col-md-4 col-sm-6">
-                  <div class="card">
-                     <div class="card-header d-flex border-none-class" style="background: unset;">
-                        <div class="graph-title"> Establishment Enroll </div>
-                        <div class="choose-options">
-                           <select class="option">
-                              <option value="volvo">Today </option>
-                              <option value="saab">Tomorrow </option>
-                           </select>
-                        </div>
-                     </div>
-
-                     <div class="card-body">
-                        <apx-chart
-                        [series]="stats_bar_graph2.series"
-                        [chart]="stats_bar_graph2.chart"
-                        [plotOptions]="stats_bar_graph2.plotOptions"
-                        [yaxis]="stats_bar_graph2.yaxis"
-                        [legend]="stats_bar_graph2.legend"
-                        [fill]="stats_bar_graph2.fill"
-                        [title]="stats_bar_graph2.title"
-                        [stroke]="stats_bar_graph2.stroke"
-                        [labels]="stats_bar_graph2.labels"
-                        [xaxis]="stats_bar_graph2.xaxis"
-                        [dataLabels]="stats_bar_graph2.dataLabels"
-                        ></apx-chart>
-                     </div>
-
-
-                  </div>
-               </div>
-            </div>
-            <div class="row">
-
-               <div *ngFor="let stat of stats_cards;" class="col-md-4 col-sm-6 mb-2 mt-2">
-                  <div class="card">
-                  <div class="m-2">
-                     <div class="android-users ml-2">
-                        <div class="downlods-card-title">
-                           <div class="downlods-card-title">
-                              {{stat.title}}
-                           </div>
-                        </div>
-                        <div class="user-segregation d-flex mt-2">
-                           <div *ngFor="let item of stat.values; let index = index" class="user-type-{{index+1}}">
-                              <div class="usage-title">
-                                 {{item.title}}
-                              </div>
-                              <div class="usage-number  {{item.class}}">
-                                 {{item.value}}
-                              </div>
-                           </div>
-                        </div>
-                     </div>
-                  </div>
-                  </div>
-                </div>
-
-            </div>
+            <app-customer-stat></app-customer-stat>
          </div>
       </section>
    </ng-template>
@@ -341,191 +96,7 @@
                   </li>
                </ol>
             </nav>
- 
-            <div class="d-flex mb-3">
-               <div class="dashboard1  flex-fill "><h2 class=""> Deal Type By Restaurent Category</h2></div>
-               <div class="add fill ">
-                  <button type="button" class="btn-btn-success">Export Report  </button>
-               </div>
-            </div>
-            
-            <div class="row filter-options mt-2 mb-2">
-               <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-title">
-                     Region
-                  </div>
-                  <div class="filter-field">
-                     <select class="option-filters">
-                        <option value="volvo">West </option>
-                        <option value="saab">East </option>
-                        <option value="saab">North </option>
-                        <option value="saab">South </option>
-                     </select>
-                  </div>
-               </div> 
-
-                <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-title">
-                     State
-                  </div>
-                  <div class="filter-field">
-                     <select class="option-filters">
-                        <option value="volvo">Texas </option>
-                        <option value="saab">East </option>
-                        <option value="saab">North </option>
-                        <option value="saab">South </option>
-                     </select>
-                  </div>
-               </div>  
-
-               <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-title">
-                     City
-                  </div>
-                  <div class="filter-field">
-                     <select class="option-filters">
-                        <option value="volvo">Austin </option>
-                        <option value="saab">East </option>
-                        <option value="saab">North </option>
-                        <option value="saab">South </option>
-                     </select>
-                  </div>
-               </div>
-
-               <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-field full-width">
-                      <select class="option-filters">
-                        <option value="volvo">01 Sep 2021 - 30 Sep 2021 </option>
-                     </select>
-
-                  </div>
-               </div>
-
-               
-            </div>
-
-
-            <div class="row mt-4">
-
-
-               <div class="col-md-4 col-sm-6" >
-                     <div class="card item-card card-block">
-                     <div class="d-flex downlods-data" >
-                        <div class="total-downloads ml-2">
-                           <div class="download-title">Dine-In</div>
-                           <div class="download-number">6,521</div>
-                        </div>
-                     </div>
-
-                  <div class="card-body">
-                     <div class="row">
-                         <div  class="col-md-4 col-sm-12 border-right">
-                              <div class="usage-title"># BOGO</div>
-                              <div class="usage-number color-blue">2,345</div>
-                        </div> 
-                        <div  class="col-md-4 col-sm-12 border-right">
-                              <div class="usage-title"># % Off</div>
-                              <div class="usage-number color-green">3,153</div>
-                        </div> 
-                        <div  class="col-md-4 col-sm-12">
-                              <div class="usage-title"># Fry Friday</div>
-                              <div class="usage-number color-orange">1,245</div>
-                        </div>
-
-                     </div>
-                         <apx-chart
-                            [series]="deal_type_by_restaurents1.series"
-                            [chart]="deal_type_by_restaurents1.chart"
-                            [legend]="deal_type_by_restaurents1.legend"
-                            [dataLabels]="deal_type_by_restaurents1.dataLabels"
-                            [fill]="deal_type_by_restaurents1.fill"
-                            [labels]="deal_type_by_restaurents1.labels"
-                            [responsive]="deal_type_by_restaurents1.responsive"
-                            [stroke]="deal_type_by_restaurents1.stroke"
-                       ></apx-chart>
-                     </div>
-                     </div>
-               </div>
-
-               <div class="col-md-4 col-sm-6" >
-                     <div class="card item-card card-block">
-                     <div class="d-flex downlods-data" >
-                        <div class="total-downloads ml-2">
-                           <div class="download-title">Take-Out</div>
-                           <div class="download-number">6,521</div>
-                        </div>
-                     </div>
-
-                  <div class="card-body">
-                     <div class="row">
-                         <div  class="col-md-4 col-sm-12 border-right">
-                              <div class="usage-title"># BOGO</div>
-                              <div class="usage-number color-blue">2,345</div>
-                        </div> 
-                        <div  class="col-md-4 col-sm-12 border-right">
-                              <div class="usage-title"># % Off</div>
-                              <div class="usage-number color-green">3,153</div>
-                        </div> 
-                        <div  class="col-md-4 col-sm-12">
-                              <div class="usage-title"># Fry Friday</div>
-                              <div class="usage-number color-orange">1,245</div>
-                        </div>
-
-                     </div>
-                         <apx-chart
-                            [series]="deal_type_by_restaurents2.series"
-                            [chart]="deal_type_by_restaurents2.chart"
-                            [legend]="deal_type_by_restaurents2.legend"
-                            [dataLabels]="deal_type_by_restaurents2.dataLabels"
-                            [fill]="deal_type_by_restaurents2.fill"
-                            [labels]="deal_type_by_restaurents2.labels"
-                            [responsive]="deal_type_by_restaurents2.responsive"
-                            [stroke]="deal_type_by_restaurents2.stroke"
-                       ></apx-chart>
-                     </div>
-                     </div>
-               </div>
-
-               <div class="col-md-4 col-sm-6" >
-                     <div class="card item-card card-block">
-                     <div class="d-flex downlods-data" >
-                        <div class="total-downloads ml-2">
-                           <div class="download-title">Take-Out</div>
-                           <div class="download-number">6,521</div>
-                        </div>
-                     </div>
-
-                  <div class="card-body">
-                     <div class="row">
-                         <div  class="col-md-4 col-sm-12 border-right">
-                              <div class="usage-title"># BOGO</div>
-                              <div class="usage-number color-blue">2,345</div>
-                        </div> 
-                        <div  class="col-md-4 col-sm-12 border-right">
-                              <div class="usage-title"># % Off</div>
-                              <div class="usage-number color-green">3,153</div>
-                        </div> 
-                        <div  class="col-md-4 col-sm-12">
-                              <div class="usage-title"># Fry Friday</div>
-                              <div class="usage-number color-orange">1,245</div>
-                        </div>
-
-                     </div>
-                         <apx-chart
-                            [series]="deal_type_by_restaurents3.series"
-                            [chart]="deal_type_by_restaurents3.chart"
-                            [legend]="deal_type_by_restaurents3.legend"
-                            [dataLabels]="deal_type_by_restaurents3.dataLabels"
-                            [fill]="deal_type_by_restaurents3.fill"
-                            [labels]="deal_type_by_restaurents3.labels"
-                            [stroke]="deal_type_by_restaurents3.stroke"
-                            [responsive]="deal_type_by_restaurents3.responsive"
-                       ></apx-chart>
-                     </div>
-                     </div>
-               </div>
-
-            </div>
+            <app-deal-type-restaurents-stats></app-deal-type-restaurents-stats>
             
          </div>
       </section>
@@ -552,236 +123,46 @@
                   </li>
                </ol>
             </nav>
+
+            <app-sales-stat></app-sales-stat>
  
-            <div class="d-flex mb-3">
-               <div class="dashboard1  flex-fill "><h2 class="">Sales Stats</h2></div>
-               <div class="add fill ">
-                  <button type="button" class="btn-btn-success">Export Report  </button>
-               </div>
-            </div>
+           
             
-            <div class="row filter-options mt-2 mb-2">
-               <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-title">
-                     Region
-                  </div>
-                  <div class="filter-field">
-                     <select class="option-filters">
-                        <option value="volvo">West </option>
-                        <option value="saab">East </option>
-                        <option value="saab">North </option>
-                        <option value="saab">South </option>
-                     </select>
-                  </div>
-               </div> 
-
-                <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-title">
-                     State
-                  </div>
-                  <div class="filter-field">
-                     <select class="option-filters">
-                        <option value="volvo">Texas </option>
-                        <option value="saab">East </option>
-                        <option value="saab">North </option>
-                        <option value="saab">South </option>
-                     </select>
-                  </div>
-               </div>  
-
-               <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-title">
-                     City
-                  </div>
-                  <div class="filter-field">
-                     <select class="option-filters">
-                        <option value="volvo">Austin </option>
-                        <option value="saab">East </option>
-                        <option value="saab">North </option>
-                        <option value="saab">South </option>
-                     </select>
-                  </div>
-               </div>
-
-               <div class="col-sm-6 col-md-3 single-filter">
-                  <div class="filter-field full-width">
-                     <!-- <input type="date" class="form-control"> -->
-                      <select class="option-filters">
-                        <option value="volvo">01 Sep 2021 - 30 Sep 2021 </option>
-                     </select>
-
-                  </div>
-               </div>
-
-               
-            </div>
-
-             <div class="row mt-4 mb-4">
-                 <div class="col-md-4">
-                     <div class="card card-green">
-                         <div class="card-block m-2">
-                             <h5 class="">Total Sales</h5>
-                         </div> 
-                         <div class="card-block m-2">
-                             <h1 class="">175</h1>
-                         </div>
-                     </div>
-                 </div>
-                 
-                 <div class="col-md-4">
-                     <div class="card card-blue">
-                         <div class="card-block m-2">
-                             <h5 class="">Top Region</h5>
-                         </div> 
-                         <div class="card-block m-2">
-                             <h1 class="">237</h1>
-                         </div>
-                     </div>
-                 </div>
-                 
-                <div class="col-md-4">
-                     <div class="card card-green-2">
-                         <div class="card-block m-2">
-                             <h5 class="">Total Sales Reps</h5>
-                         </div> 
-                         <div class="card-block m-2">
-                             <h1 class="">215</h1>
-                         </div>
-                     </div>
-                 </div>
-            </div>
-
-            <div class="row mb-2">
-               <h2>$ Period Sales</h2>
-               <div class="break-hr"><hr/></div>
-            </div>
-
-
-            <div class="row">
-
-
-               <div *ngFor="let lg of line_graphs;" class="col-md-6 mt-2" >
-                  <div class="card">
-                     <div class="row mt-2 ml-2">
-                        <div class="col-md-6">
-                           <h4>{{lg.title}}</h4>
-                        </div> 
-                        <div class="col-md-6">
-                          <div class="tab-card-header">
-                               <ul class="nav nav-tabs card-header-tabs">
-                                 <li class="nav-item">
-                                     <a class="nav-link" >ALL</a>
-                                 </li>
-                                  <li class="nav-item">
-                                     <a class="nav-link show" >WTD</a>
-                                 </li> 
-                                  <li class="nav-item">
-                                     <a class="nav-link" >MTD</a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a class="nav-link" >QTD</a>
-                                 </li>    
-                                 <li class="nav-item">
-                                     <a class="nav-link" >YTD</a>
-                                 </li>                              
-                               </ul>
-                             </div>
-                        </div>
-                     </div>
-                     <div class="row mt-2 ml-2">
-                        <div class="col-md-3 border-right">
-                            <span class="graph-head">Current</span>
-                            <div class="graph-number" style="color: #3AAFC8;">$20,000</div>
-                        </div> 
-                        <div class="col-md-3 border-right">
-                            <span class="graph-head">Prior</span>
-                            <div class="graph-number" style="color: #FFB000;">$30,000</div>
-                        </div>
-                         <div class="col-md-3 border-right">
-                            <span class="graph-head">% Diff</span>
-                            <div class="graph-number" style="color: #4A4A4A;">25%</div>
-                        </div>  
-                        <div class="col-md-3">
-                            <span class="graph-head">Sales</span>
-                            <div class="graph-number" style="color: #1AB001;">25%</div>
-                        </div> 
-                     </div>
-                     <div class="">
-                         <apx-chart  [series]="linechart1.series"   [chart]="linechart1.chart" [xaxis]="linechart1.xaxis" [stroke]="linechart1.stroke" [fill]="linechart1.fill" [tooltip]="linechart1.tooltip" [dataLabels]="linechart1.dataLabels" [legend]="linechart1.legend" [markers]="linechart1.markers" [grid]="linechart1.grid"  [yaxis]="linechart1.yaxis"  [title]="linechart1.title"   [colors]="linechart1.colors" ></apx-chart>
-                   </div>
-              </div>
-             </div>
-
-
-
-            </div>
-
-             <div class="row mb-2 mt-2">
-               <h2># Contracts</h2>
-               <div class="break-hr"><hr/></div>
-            </div>
-
-            <div class="row">
-
-
-               <div *ngFor="let lg of line_graphs;" class="col-md-6 mt-2" >
-                  <div class="card">
-                     <div class="row mt-2 ml-2">
-                        <div class="col-md-6">
-                           <h4>{{lg.title}}</h4>
-                        </div> 
-                        <div class="col-md-6">
-                          <div class="tab-card-header">
-                               <ul class="nav nav-tabs card-header-tabs">
-                                 <li class="nav-item">
-                                     <a class="nav-link" >ALL</a>
-                                 </li>
-                                  <li class="nav-item">
-                                     <a class="nav-link show" >WTD</a>
-                                 </li> 
-                                  <li class="nav-item">
-                                     <a class="nav-link" >MTD</a>
-                                 </li>
-                                 <li class="nav-item">
-                                     <a class="nav-link" >QTD</a>
-                                 </li>    
-                                 <li class="nav-item">
-                                     <a class="nav-link" >YTD</a>
-                                 </li>                              
-                               </ul>
-                             </div>
-                        </div>
-                     </div>
-                     <div class="row mt-2 ml-2">
-                        <div class="col-md-3 border-right">
-                            <span class="graph-head">Current</span>
-                            <div class="graph-number" style="color: #3AAFC8;">$20,000</div>
-                        </div> 
-                        <div class="col-md-3 border-right">
-                            <span class="graph-head">Prior</span>
-                            <div class="graph-number" style="color: #FFB000;">$30,000</div>
-                        </div>
-                         <div class="col-md-3 border-right">
-                            <span class="graph-head">% Diff</span>
-                            <div class="graph-number" style="color: #4A4A4A;">25%</div>
-                        </div>  
-                        <div class="col-md-3">
-                            <span class="graph-head">Sales</span>
-                            <div class="graph-number" style="color: #1AB001;">25%</div>
-                        </div> 
-                     </div>
-                     <div class="">
-                         <apx-chart  [series]="linechart2.series"   [chart]="linechart2.chart" [xaxis]="linechart2.xaxis" [stroke]="linechart2.stroke" [fill]="linechart2.fill" [tooltip]="linechart2.tooltip" [dataLabels]="linechart2.dataLabels" [legend]="linechart2.legend" [markers]="linechart2.markers" [grid]="linechart2.grid"  [yaxis]="linechart2.yaxis"  [title]="linechart2.title"   [colors]="linechart2.colors" ></apx-chart>
-                   </div>
-              </div>
-             </div>
-
-
-
-            </div>
            
          </div>
       </section>
    </ng-template>
+
+<ng-template [ngSwitchCase]="'help_tickets'">
+      <section class="help-tickets" >
+         <div class="container">
+            <nav aria-label="breadcrumb">
+               <ol class="breadcrumb">
+                  <li class="breadcrumb-item">
+                     <a (click)="tabChange('help_tickets')">
+                     <span>Home</span>
+                     </a>
+                  </li>
+                  <li class="breadcrumb-item">
+                     <a (click)="tabChange('help_tickets')">
+                     <span>Reports</span>
+                     </a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">
+                     <span (click)="tabChange('help_tickets')">Help Tickets</span>
+                  </li>
+               </ol>
+            </nav>
+
+            <app-help-tickets></app-help-tickets>
+ 
+           
+            
+           
+         </div>
+      </section>
+   </ng-template>
+
+   
    
 </div>

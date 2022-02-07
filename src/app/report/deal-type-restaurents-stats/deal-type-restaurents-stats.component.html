@@ -1,0 +1,166 @@
+<div class="d-flex mb-3">
+   <div class="dashboard1  flex-fill ">
+      <h2 class=""> Deal Type By Restaurent Category</h2>
+   </div>
+   <div class="add fill ">
+      <button type="button" class="btn-btn-success">Export Report  </button>
+   </div>
+</div>
+<div class="row filter-options mt-2 mb-2">
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         Region
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option value="volvo">West </option>
+            <option value="saab">East </option>
+            <option value="saab">North </option>
+            <option value="saab">South </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         State
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option value="volvo">Texas </option>
+            <option value="saab">East </option>
+            <option value="saab">North </option>
+            <option value="saab">South </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         City
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option value="volvo">Austin </option>
+            <option value="saab">East </option>
+            <option value="saab">North </option>
+            <option value="saab">South </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-field full-width">
+         <select class="option-filters">
+            <option value="volvo">01 Sep 2021 - 30 Sep 2021 </option>
+         </select>
+      </div>
+   </div>
+</div>
+<div class="row mt-4">
+   <div class="col-md-4 col-sm-6" >
+      <div class="card item-card card-block">
+         <div class="d-flex downlods-data" >
+            <div class="total-downloads ml-2">
+               <div class="download-title">Dine-In</div>
+               <div class="download-number">6,521</div>
+            </div>
+         </div>
+         <div class="card-body">
+            <div class="row">
+               <div  class="col-md-4 col-sm-12 border-right">
+                  <div class="usage-title"># BOGO</div>
+                  <div class="usage-number color-blue">2,345</div>
+               </div>
+               <div  class="col-md-4 col-sm-12 border-right">
+                  <div class="usage-title"># % Off</div>
+                  <div class="usage-number color-green">3,153</div>
+               </div>
+               <div  class="col-md-4 col-sm-12">
+                  <div class="usage-title"># Fry Friday</div>
+                  <div class="usage-number color-orange">1,245</div>
+               </div>
+            </div>
+            <apx-chart
+            [series]="deal_type_by_restaurents1.series"
+            [chart]="deal_type_by_restaurents1.chart"
+            [legend]="deal_type_by_restaurents1.legend"
+            [dataLabels]="deal_type_by_restaurents1.dataLabels"
+            [fill]="deal_type_by_restaurents1.fill"
+            [labels]="deal_type_by_restaurents1.labels"
+            [responsive]="deal_type_by_restaurents1.responsive"
+            [stroke]="deal_type_by_restaurents1.stroke"
+            ></apx-chart>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-4 col-sm-6" >
+      <div class="card item-card card-block">
+         <div class="d-flex downlods-data" >
+            <div class="total-downloads ml-2">
+               <div class="download-title">Take-Out</div>
+               <div class="download-number">6,521</div>
+            </div>
+         </div>
+         <div class="card-body">
+            <div class="row">
+               <div  class="col-md-4 col-sm-12 border-right">
+                  <div class="usage-title"># BOGO</div>
+                  <div class="usage-number color-blue">2,345</div>
+               </div>
+               <div  class="col-md-4 col-sm-12 border-right">
+                  <div class="usage-title"># % Off</div>
+                  <div class="usage-number color-green">3,153</div>
+               </div>
+               <div  class="col-md-4 col-sm-12">
+                  <div class="usage-title"># Fry Friday</div>
+                  <div class="usage-number color-orange">1,245</div>
+               </div>
+            </div>
+            <apx-chart
+            [series]="deal_type_by_restaurents2.series"
+            [chart]="deal_type_by_restaurents2.chart"
+            [legend]="deal_type_by_restaurents2.legend"
+            [dataLabels]="deal_type_by_restaurents2.dataLabels"
+            [fill]="deal_type_by_restaurents2.fill"
+            [labels]="deal_type_by_restaurents2.labels"
+            [responsive]="deal_type_by_restaurents2.responsive"
+            [stroke]="deal_type_by_restaurents2.stroke"
+            ></apx-chart>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-4 col-sm-6" >
+      <div class="card item-card card-block">
+         <div class="d-flex downlods-data" >
+            <div class="total-downloads ml-2">
+               <div class="download-title">Take-Out</div>
+               <div class="download-number">6,521</div>
+            </div>
+         </div>
+         <div class="card-body">
+            <div class="row">
+               <div  class="col-md-4 col-sm-12 border-right">
+                  <div class="usage-title"># BOGO</div>
+                  <div class="usage-number color-blue">2,345</div>
+               </div>
+               <div  class="col-md-4 col-sm-12 border-right">
+                  <div class="usage-title"># % Off</div>
+                  <div class="usage-number color-green">3,153</div>
+               </div>
+               <div  class="col-md-4 col-sm-12">
+                  <div class="usage-title"># Fry Friday</div>
+                  <div class="usage-number color-orange">1,245</div>
+               </div>
+            </div>
+            <apx-chart
+            [series]="deal_type_by_restaurents3.series"
+            [chart]="deal_type_by_restaurents3.chart"
+            [legend]="deal_type_by_restaurents3.legend"
+            [dataLabels]="deal_type_by_restaurents3.dataLabels"
+            [fill]="deal_type_by_restaurents3.fill"
+            [labels]="deal_type_by_restaurents3.labels"
+            [stroke]="deal_type_by_restaurents3.stroke"
+            [responsive]="deal_type_by_restaurents3.responsive"
+            ></apx-chart>
+         </div>
+      </div>
+   </div>
+</div>

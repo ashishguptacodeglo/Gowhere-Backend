@@ -1,0 +1,207 @@
+<div class="d-flex mb-3">
+   <div class="dashboard1  flex-fill ">
+      <h2 class="">Sales Stats</h2>
+   </div>
+   <div class="add fill ">
+      <button type="button" class="btn-btn-success">Export Report  </button>
+   </div>
+</div>
+<div class="row filter-options mt-2 mb-2">
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         Region
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option value="volvo">West </option>
+            <option value="saab">East </option>
+            <option value="saab">North </option>
+            <option value="saab">South </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         State
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option value="volvo">Texas </option>
+            <option value="saab">East </option>
+            <option value="saab">North </option>
+            <option value="saab">South </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         City
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option value="volvo">Austin </option>
+            <option value="saab">East </option>
+            <option value="saab">North </option>
+            <option value="saab">South </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-field full-width">
+         <!-- <input type="date" class="form-control"> -->
+         <select class="option-filters">
+            <option value="volvo">01 Sep 2021 - 30 Sep 2021 </option>
+         </select>
+      </div>
+   </div>
+</div>
+<div class="row mt-4 mb-4">
+   <div class="col-md-4">
+      <div class="card card-green">
+         <div class="card-block m-2">
+            <h5 class="">Total Sales</h5>
+         </div>
+         <div class="card-block m-2">
+            <h1 class="">175</h1>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-4">
+      <div class="card card-blue">
+         <div class="card-block m-2">
+            <h5 class="">Top Region</h5>
+         </div>
+         <div class="card-block m-2">
+            <h1 class="">237</h1>
+         </div>
+      </div>
+   </div>
+   <div class="col-md-4">
+      <div class="card card-green-2">
+         <div class="card-block m-2">
+            <h5 class="">Total Sales Reps</h5>
+         </div>
+         <div class="card-block m-2">
+            <h1 class="">215</h1>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="row mb-2">
+   <h2>$ Period Sales</h2>
+   <div class="break-hr">
+      <hr/>
+   </div>
+</div>
+<div class="row">
+   <div *ngFor="let lg of line_graphs;" class="col-md-6 mt-2" >
+      <div class="card">
+         <div class="row mt-2 ml-2">
+            <div class="col-md-6">
+               <h4>{{lg.title}}</h4>
+            </div>
+            <div class="col-md-6">
+               <div class="tab-card-header">
+                  <ul class="nav nav-tabs card-header-tabs">
+                     <li class="nav-item">
+                        <a class="nav-link" >ALL</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link show" >WTD</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" >MTD</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" >QTD</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" >YTD</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="row mt-2 ml-2">
+            <div class="col-md-3 border-right">
+               <span class="graph-head">Current</span>
+               <div class="graph-number" style="color: #3AAFC8;">$20,000</div>
+            </div>
+            <div class="col-md-3 border-right">
+               <span class="graph-head">Prior</span>
+               <div class="graph-number" style="color: #FFB000;">$30,000</div>
+            </div>
+            <div class="col-md-3 border-right">
+               <span class="graph-head">% Diff</span>
+               <div class="graph-number" style="color: #4A4A4A;">25%</div>
+            </div>
+            <div class="col-md-3">
+               <span class="graph-head">Sales</span>
+               <div class="graph-number" style="color: #1AB001;">25%</div>
+            </div>
+         </div>
+         <div class="">
+            <apx-chart  [series]="linechart1.series"   [chart]="linechart1.chart" [xaxis]="linechart1.xaxis" [stroke]="linechart1.stroke" [fill]="linechart1.fill" [tooltip]="linechart1.tooltip" [dataLabels]="linechart1.dataLabels" [legend]="linechart1.legend" [markers]="linechart1.markers" [grid]="linechart1.grid"  [yaxis]="linechart1.yaxis"  [title]="linechart1.title"   [colors]="linechart1.colors" ></apx-chart>
+         </div>
+      </div>
+   </div>
+</div>
+<div class="row mb-2 mt-2">
+   <h2># Contracts</h2>
+   <div class="break-hr">
+      <hr/>
+   </div>
+</div>
+<div class="row">
+   <div *ngFor="let lg of line_graphs;" class="col-md-6 mt-2" >
+      <div class="card">
+         <div class="row mt-2 ml-2">
+            <div class="col-md-6">
+               <h4>{{lg.title}}</h4>
+            </div>
+            <div class="col-md-6">
+               <div class="tab-card-header">
+                  <ul class="nav nav-tabs card-header-tabs">
+                     <li class="nav-item">
+                        <a class="nav-link" >ALL</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link show" >WTD</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" >MTD</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" >QTD</a>
+                     </li>
+                     <li class="nav-item">
+                        <a class="nav-link" >YTD</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </div>
+         <div class="row mt-2 ml-2">
+            <div class="col-md-3 border-right">
+               <span class="graph-head">Current</span>
+               <div class="graph-number" style="color: #3AAFC8;">$20,000</div>
+            </div>
+            <div class="col-md-3 border-right">
+               <span class="graph-head">Prior</span>
+               <div class="graph-number" style="color: #FFB000;">$30,000</div>
+            </div>
+            <div class="col-md-3 border-right">
+               <span class="graph-head">% Diff</span>
+               <div class="graph-number" style="color: #4A4A4A;">25%</div>
+            </div>
+            <div class="col-md-3">
+               <span class="graph-head">Sales</span>
+               <div class="graph-number" style="color: #1AB001;">25%</div>
+            </div>
+         </div>
+         <div class="">
+            <apx-chart  [series]="linechart2.series"   [chart]="linechart2.chart" [xaxis]="linechart2.xaxis" [stroke]="linechart2.stroke" [fill]="linechart2.fill" [tooltip]="linechart2.tooltip" [dataLabels]="linechart2.dataLabels" [legend]="linechart2.legend" [markers]="linechart2.markers" [grid]="linechart2.grid"  [yaxis]="linechart2.yaxis"  [title]="linechart2.title"   [colors]="linechart2.colors" ></apx-chart>
+         </div>
+      </div>
+   </div>
+</div>

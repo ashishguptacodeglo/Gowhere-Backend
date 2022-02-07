@@ -24,6 +24,9 @@ import { LoginComponent } from './login/login.component';
 import { NewItemComponent } from './new-item/new-item.component';
 import { HttpInterceptorInterceptor } from './services/http-interceptor.interceptor';
 import { DatepickerDirective } from './directive/datepicker.directive';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
+
 
 
 @NgModule({
@@ -51,7 +54,8 @@ import { DatepickerDirective } from './directive/datepicker.directive';
     FormsModule, 
     ReactiveFormsModule,
     NgOtpInputModule,
-    MatProgressBarModule
+    MatProgressBarModule,
+    BrowserAnimationsModule
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: HttpInterceptorInterceptor, multi:true}

@@ -1,0 +1,95 @@
+<div class="d-flex mb-3">
+   <div class="dashboard1  flex-fill ">
+      <h2 class=""> Help Tickets</h2>
+   </div>
+   <div class="add fill ">
+      <button type="button" class="btn-btn-success">Export Report  </button>
+   </div>
+</div>
+<div class="row filter-options mt-2 mb-2">
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         Region
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option value="volvo">West </option>
+            <option value="saab">East </option>
+            <option value="saab">North </option>
+            <option value="saab">South </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         State
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option value="volvo">Texas </option>
+            <option value="saab">East </option>
+            <option value="saab">North </option>
+            <option value="saab">South </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-title">
+         City
+      </div>
+      <div class="filter-field">
+         <select class="option-filters">
+            <option value="volvo">Austin </option>
+            <option value="saab">East </option>
+            <option value="saab">North </option>
+            <option value="saab">South </option>
+         </select>
+      </div>
+   </div>
+   <div class="col-sm-6 col-md-3 single-filter">
+      <div class="filter-field full-width">
+         <select class="option-filters">
+            <option value="volvo">01 Sep 2021 - 30 Sep 2021 </option>
+         </select>
+      </div>
+   </div>
+</div>
+
+
+ <div class="row mt-4 mb-4">
+   <div class="col-md-6 mb-5 help-cards"  *ngFor="let card of cards;">
+      <div class="card" style="background:{{card.color}}">
+         <div class="card-block ml-2 mt-2">
+            <h4 class="">{{card.title}}</h4>
+         </div>
+         <div class="card-block m-2">
+           <div class="mb-2 d-flex">
+			   <h5># Tickets</h5>
+			   <div class="break-hr">
+			      <hr/>
+			   </div>
+			</div>
+			<div class="row">
+				<div class="col-md-3 border-right-class" *ngFor="let t of card.tickets;">
+					<h6>{{t.title}}</h6>
+					<h4>{{t.count}}</h4>
+				</div>
+			</div>
+			 <div class="mb-2 d-flex">
+			   <h4>Weekly</h4>
+			   <div class="break-hr">
+			      <hr/>
+			   </div>
+			</div>
+			<div class="row">
+				<div class="col-md-4 border-right-class" *ngFor="let w of card.weekly;">
+					<h6>{{w.title}}</h6>
+					<h4>{{w.count}}</h4>
+				</div>
+			</div>
+
+         </div>
+      </div>
+   </div>
+  
+</div>
